@@ -90,14 +90,6 @@ ul.instruction li:before {
 	border-bottom: 1px solid #ababab;
 }
 
-.button-color-blue {
-	color: #fff;
-	background-color: #4285f4;
-	padding: 0.3em 0.4em;
-	font-size: 86%;
-	font-weight: bold;
-}
-
 .mqtt-index {
 	margin: 0;
 	padding-left: 1em;
