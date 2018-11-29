@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Benachrichtigungen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://www.helios.de/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Benachrichtigungen</h1>
+<ul class="instruction">
+<li>Tippen Sie nach dem Starten der App auf den Listeneintrag eines
+Push-Server-Kontos, um alle erhaltenen Nachrichten anzusehen (die App
+kann auch gestartet oder in den Vordergrund geholt werden, wenn Sie auf
+eine Benachrichtigung in der Informationsleiste tippen):</li>
+</ul>
+<p><img class="thumb" src="../img/messages.png" width="275">
+<img class="large" src="../img/messages.png"></p>
+<ul class="instruction">
+<li>Zum Löschen von Nachrichten klicken Sie auf <img src="../img/trash.png"
+height="16"> und entscheiden Sie, ob <em>alle</em> Benachrichtigungen
+vom Mobilgerät gelöscht werden sollen oder nur <em>diejenigen</em>,
+welche älter als einen Tag sind.</li>
+<li>Möchten Sie (versehentlich) vom Mobilgerät gelöschte Benachrichtigungen
+wiederherstellen, tippen Sie auf <span class="magenta-button">RESTORE MESSAGES.</span></li>
+</ul>
+<p>Empfangene Nachrichten, die älter als 30 Tage sind, werden automatisch
+gelöscht.</p>
+<p>Ist ein Mobilgerät länger nicht aktiv, werden bei Google Push-Benachrichtigungen
+maximal 99 Nachrichten pro Mobilgerät gespeichert und zugestellt, sobald
+das Mobilgerät wieder online ist. Bei über 100 anstehenden Nachrichten,
+die nicht zugestellt werden konnten, löscht Google alle Push-Benachrichtigungen
+für dieses Mobilgerät (in diesem Fall erhalten sie eine Benachrichtigung:<br />
+<em>„Pending Messages Deleted …“)</em>.</p>
+<p>Erst nachdem das Mobilgerät wieder online ist, aktiviert Google den
+Empfang von neuen Nachrichten für das betreffende Mobilgerät. Mobilgeräte,
+die regelmäßig online sind (weniger als 100 anstehende Meldungen),
+funktionieren einwandfrei.</p>
+<p>Dennoch werden beim nächsten Öffnen der App die letzten 100
+Nachrichten direkt vom Server geladen (synchronisiert), sofern diese nicht
+bereits per Cloud Messaging zugestellt wurden.</p>
+</body>
+</html>

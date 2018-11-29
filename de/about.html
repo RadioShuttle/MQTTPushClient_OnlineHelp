@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Über MQTT Push Client</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://www.helios.de/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Über MQTT Push Client</h1>
+<p>Die in dieser App definierten MQTT-Topics werden vom
+RadioShuttle MQTT-Push-Server überwacht. Bei Aktivität werden sie sofort
+an die App weitergeleitet, wo die Nachricht zusammen mit einem Audiosignal
+als Push-Benachrichtigung angezeigt wird.</p>
+<p>Die App verwaltet die Einstellungen für Push-Benachrichtigungen.
+Dort sind auch alle Push-Benachrichtigungen einsehbar. Nach einmaligem
+Einrichten werden Push-Benachrichtigungen automatisch empfangen, auch
+wenn die App nicht gestartet ist. Die App ist das Bindeglied zwischen
+dem RadioShuttle MQTT-Push-Server sowie den Push-Diensten von Apple bzw.
+Google.</p>
+<h3>Weitere Informationen:</h3>
+<p style="margin-bottom: -0.5em"><a href="http://www.radioshuttle.de/mqtt/push-benachrichtigung/">RadioShuttle Push-Benachrichtigung</a></p>
+<p><a href="http://www.radioshuttle.de/">RadioShuttle</a></p>
+</body>
+</html>

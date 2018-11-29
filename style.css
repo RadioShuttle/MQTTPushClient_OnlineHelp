@@ -1,0 +1,146 @@
+body, th, td {
+	font-family: sans-serif;
+}
+
+p {
+	margin: 1em 0;
+	line-height:1.4em;
+}
+
+img {
+	vertical-align: text-bottom;
+}
+
+h1 {
+	font-size: 175%;
+	font-weight: normal;
+	color: #007aff;
+}
+
+h2 {
+	font-size: 100%;
+	text-transform:uppercase;
+	font-weight: normal;
+	margin: 3.5ex 0 2.5ex 0;
+	color:#444;
+}
+
+h3 {
+	font-size: 100%;
+}
+
+a {
+	color: #000;
+}
+
+a:visited {
+	color: #666;
+}
+
+a:active {
+	color: red;
+}
+
+td,th {
+	line-height: 1.4em;
+	padding: 0.5em;
+}
+
+ul {
+	padding: 0 0 0 1.2em;
+}
+
+ul li {
+	padding: 0;
+	margin: 0.5em 0;
+	line-height:1.4em;
+}
+
+ul.instruction {
+	list-style: none;
+}
+
+ul.instruction li {
+	position: relative;
+}
+
+ul.instruction li:before {
+	content:"\25B6\FE0E";
+	position:absolute;
+	left:-1.2em;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.google-text {
+	color: #4285f4;
+}
+.magenta-button {
+	color: #ff3399;
+	font-weight: bold;
+}
+
+.button-color {
+	background-color: #DDD;
+	padding: 0.4em 0.5em;
+	font-size: 86%;
+	font-weight: bold;
+	border-bottom: 1px solid #ababab;
+}
+
+.button-color-blue {
+	color: #fff;
+	background-color: #4285f4;
+	padding: 0.3em 0.4em;
+	font-size: 86%;
+	font-weight: bold;
+}
+
+.mqtt-index {
+	margin: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.mqtt-index a {
+	text-decoration: none;
+	display: block;
+	padding: 1em 1em 1em 0;
+	border-bottom: 1px solid #BBB;
+	color: #000;
+}
+
+.note {
+	background-color: #EEE;
+	padding: 0.7em;
+	border: 1px solid #000;
+	font-style: oblique;
+	margin: 1.5em 0;
+}
+
+.note h6 {
+	font-size: 100%;
+	font-weight: bold;
+	margin: 0.25em 0;
+}
+
+.note p {
+	margin: 0.75em 0;
+}
+
+.note p:last-child {
+	margin-bottom: 0;
+}
+
+img.thumb {
+	box-shadow: 3px 3px 5px #888888;
+}
+
+img.large {
+	width: 100%;
+	max-width: 600px;
+	display: none;
+	box-shadow: 3px 3px 5px #888888;
+}

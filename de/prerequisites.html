@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Voraussetzungen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://www.helios.de/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Voraussetzungen</h1>
+<p>Die Adresse des Push-Servers sowie Ihre Zugangsdaten für den MQTT-Server
+(Benutzernamen/Passwort) müssen Ihnen bereits bekannt sein. Wenn Sie noch
+keine Zugangsdaten haben, können Sie testweise mit den voreingestellten
+Servern arbeiten (unter <a href="http://mqtt.arduino-hannover.de" target="_blank">
+mqtt.arduino-hannover.de</a> können Sie sich ein Konto für den MQTT-Server
+anlegen).</p>
+</ul>
+</body>
+</html>

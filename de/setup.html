@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>App einrichten</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://www.helios.de/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>App einrichten</h1>
+<ul class="instruction">
+<li>Tippen Sie nach dem Starten der App auf das Symbol <img src="../img/plus_icon.png"
+height="16"> und geben Sie im Fenster „Add Server“ die Adressen des
+Push-Servers und des MQTT-Servers („Host“), Ihren Benutzernamen („User“)
+sowie das zugehörige Passwort („Pwd“) ein. Im Fenster der Serverkonfiguration
+sind bereits die Adressen von Push- und MQTT-Server vorgegeben. Diese
+Adressen können mit den von Ihnen gewünschten Serverdaten überschrieben
+werden.</li>
+</ul>
+<div class="note">
+<h6>Hinweis:</h6>
+<p>Der Standard-Port für den Push-Notification-Server ist 2033. Diese
+Angabe kann entfallen, wenn der Push-Server unter diesem Port erreichbar
+ist. Andernfalls muss der Port an den Domain-Namen angehängt werden,
+z.&nbsp;B. „yourpushserver.de:2009“.</p>
+</div>
+<p><img class="thumb" src="../img/add_server.png" width="275">
+<img class="large" src="../img/add_server.png"></p>
+<ul class="instruction">
+<li>Tippen Sie auf <span class="button-color">Save</span>. Bei unverschlüsselten
+Verbindungen, oder wenn die Authentizität eines Push-Servers nicht bestätigt
+werden kann, erscheint eine Warnmeldung. Siehe dazu auch Abschnitt
+<a href="security.html">Sicherheit</a>.<br />
+In der Startansicht sollte jetzt Ihr Konto am MQTT-Server zu sehen sein:</li>
+</ul>
+<p><img class="thumb" src="../img/mqttserver.png" width="275">
+<img class="large" src="../img/mqttserver.png"></p>
+<ul class="instruction">
+<li>Zum Bearbeiten oder Löschen eines Listeneintrags drücken Sie so lange
+auf den entsprechenden Eintrag („Long Press“) bis das gewünschte Icon
+(<img src="../img/edit.png" height="16"> oder <img src="../img/delete.png"
+height="16">) in der Menüleiste erscheint.</li>
+</ul>
+<div class="note">
+<h6>Hinweis:</h6>
+<p>Mehrere Anwender können ein identisches Konto verwenden. Beispielsweise
+können alle Mitglieder einer Familie oder Gruppe automatisch die identischen
+Einstellungen nutzen und gleichzeitig benachrichtigt werden.</p>
+</div>
+</body>
+</html>
