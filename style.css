@@ -77,6 +77,7 @@ ul.instruction li:before {
 .google-text {
 	color: #4285f4;
 }
+
 .magenta-button {
 	color: #ff3399;
 	font-weight: bold;
@@ -88,6 +89,18 @@ ul.instruction li:before {
 	font-size: 86%;
 	font-weight: bold;
 	border-bottom: 1px solid #ababab;
+}
+
+.iOS {
+	color: #007aff;
+}
+
+.apple {
+	display: none;
+}
+
+.android {
+	display: inline;
 }
 
 .mqtt-index {
