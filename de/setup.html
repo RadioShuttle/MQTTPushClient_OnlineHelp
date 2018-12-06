@@ -8,6 +8,10 @@
 <script type="text/javascript" src="/jquery/jquery-latest.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
 	$("img.thumb").click(function() {
 		$("img.thumb").show().next("img.large").hide();
 		$(this).hide();
@@ -22,10 +26,19 @@ $(document).ready(function() {
 </head>
 <body>
 <h1>App einrichten</h1>
+<div class="apple">
+<p>Wenn die App zum ersten Mal gestartet wird, werden Sie gefragt, ob die
+App Benachrichtigungen senden soll. Sie sollten dies mit
+<span class="iOS"><strong>Allow</strong></span> bestätigen:<br />
+<br /><img src="../img/iOS_notification_setup.png" width="275"></p>
+</div>
 <ul class="instruction">
-<li>Tippen Sie nach dem Starten der App auf das Symbol <img src="../img/plus_icon.png"
-height="16"> und geben Sie im Fenster „Add Server“ die Adressen des
-Push-Servers und des MQTT-Servers („Host“), Ihren Benutzernamen („User“)
+<li>Tippen Sie nach dem Starten der App auf das Symbol <span class="android">
+<img src="../img/plus_icon.png" height="16"></span> <span
+class="apple"><span class="iOS">Edit</span> und dann auf <img
+src="../img/iOS_plus_icon.png" height="16"> <strong>Add new server</strong></span>
+und geben Sie im Fenster „Add Server“ (iOS: „New Server“) die Adressen
+des Push-Servers und des MQTT-Servers („Host“), Ihren Benutzernamen („User“)
 sowie das zugehörige Passwort („Pwd“) ein. Im Fenster der Serverkonfiguration
 sind bereits die Adressen von Push- und MQTT-Server vorgegeben. Diese
 Adressen können mit den von Ihnen gewünschten Serverdaten überschrieben
@@ -38,22 +51,38 @@ Angabe kann entfallen, wenn der Push-Server unter diesem Port erreichbar
 ist. Andernfalls muss der Port an den Domain-Namen angehängt werden,
 z.&nbsp;B. „yourpushserver.de:2009“.</p>
 </div>
+<div class="android">
 <p><img class="thumb" src="../img/add_server.png" width="275">
 <img class="large" src="../img/add_server.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/add_server_iOS.png" width="275">
+<img class="large" src="../img/add_server_iOS.png"></p>
+</div>
 <ul class="instruction">
-<li>Tippen Sie auf <span class="button-color">Save</span>. Bei unverschlüsselten
+<li>Tippen Sie auf <span class="android"><span class="button-color">Save</span>.</span>
+<span class="apple"><span class="iOS">Save</span>.</span> Bei unverschlüsselten
 Verbindungen, oder wenn die Authentizität eines Push-Servers nicht bestätigt
 werden kann, erscheint eine Warnmeldung. Siehe dazu auch Abschnitt
 <a href="security.html">Sicherheit</a>.<br />
 In der Startansicht sollte jetzt Ihr Konto am MQTT-Server zu sehen sein:</li>
 </ul>
+<div class="android">
 <p><img class="thumb" src="../img/mqttserver.png" width="275">
 <img class="large" src="../img/mqttserver.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/mqttserver_iOS.png" width="275">
+<img class="large" src="../img/mqttserver_iOS.png"></p>
+</div>
 <ul class="instruction">
-<li>Zum Bearbeiten oder Löschen eines Listeneintrags drücken Sie so lange
+<li>Zum Bearbeiten oder Löschen eines Listeneintrags <span class="android">drücken Sie so lange
 auf den entsprechenden Eintrag („Long Press“) bis das gewünschte Icon
 (<img src="../img/edit.png" height="16"> oder <img src="../img/delete.png"
-height="16">) in der Menüleiste erscheint.</li>
+height="16">) in der Menüleiste erscheint</span><span class="apple">tippen
+Sie auf <span class="iOS">Edit</span> und dann auf den Servereintrag bzw.
+auf <img src="../img/iOS_delete_icon.png" height="16"> und dann auf
+<img src="../img/iOS_delete_red.png" height="20">)</span>.</li>
 </ul>
 <div class="note">
 <h6>Hinweis:</h6>

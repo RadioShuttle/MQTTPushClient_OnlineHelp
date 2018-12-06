@@ -8,6 +8,10 @@
 <script type="text/javascript" src="/jquery/jquery-latest.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	});
 	$("img.thumb").click(function() {
 		$("img.thumb").show().next("img.large").hide();
 		$(this).hide();
@@ -24,19 +28,28 @@ $(document).ready(function() {
 <h1>Benachrichtigungen</h1>
 <ul class="instruction">
 <li>Tippen Sie nach dem Starten der App auf den Listeneintrag eines
-Push-Server-Kontos, um alle erhaltenen Nachrichten anzusehen (die App
+Push-Server-Kontos, um alle empfangenen Nachrichten anzusehen (die App
 kann auch gestartet oder in den Vordergrund geholt werden, wenn Sie auf
 eine Benachrichtigung in der Informationsleiste tippen):</li>
 </ul>
+<div class="android">
 <p><img class="thumb" src="../img/messages.png" width="275">
 <img class="large" src="../img/messages.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/messages_iOS.png" width="275">
+<img class="large" src="../img/messages_iOS.png"></p>
+</div>
 <ul class="instruction">
-<li>Zum Löschen von Nachrichten klicken Sie auf <img src="../img/trash.png"
-height="16"> und entscheiden Sie, ob <em>alle</em> Benachrichtigungen
-vom Mobilgerät gelöscht werden sollen oder nur <em>diejenigen</em>,
-welche älter als einen Tag sind.</li>
+<li>Zum Löschen von Nachrichten klicken Sie auf <span class="android"><img
+src="../img/trash.png" height="16"></span><span class="apple"><img
+src="../img/iOS_trash.png" height="16"></span> und entscheiden Sie, ob
+<em>alle</em> Benachrichtigungen vom Mobilgerät gelöscht werden sollen
+oder nur <em>diejenigen</em>, welche älter als einen Tag sind.</li>
 <li>Möchten Sie (versehentlich) vom Mobilgerät gelöschte Benachrichtigungen
-wiederherstellen, tippen Sie auf <span class="magenta-button">RESTORE MESSAGES.</span></li>
+wiederherstellen, tippen Sie auf <span class="android"><span class="magenta-button">RESTORE
+MESSAGES</span></span><span class="apple"><span class="iOS">Restore messages
+from server</span></span>.</li>
 </ul>
 <p>Empfangene Nachrichten, die älter als 30 Tage sind, werden automatisch
 gelöscht.</p>

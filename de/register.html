@@ -8,6 +8,10 @@
 <script type="text/javascript" src="/jquery/jquery-latest.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
 	$("img.thumb").click(function() {
 		$("img.thumb").show().next("img.large").hide();
 		$(this).hide();
@@ -25,13 +29,18 @@ $(document).ready(function() {
 <p>Für den Empfang von Nachrichten ist es erforderlich, sich auf mindestens
 ein Topic zu registrieren.</p>
 <ul class="instruction">
-<li>Drücken Sie im Fenster „MQTT Push Client“ so lange auf den gewünschten
+<li><span class="android">Drücken Sie im Fenster „MQTT Push Client“ so lange auf den gewünschten
 Servereintrag („Long Press“) bis das Icon <img src="../img/edit.png" height="16">
-in der Menüleiste erscheint und tippen Sie darauf.</li>
-<li>Tippen Sie dann im Fenster „Edit Server“ auf <span class="button-color">MQTT TOPICS</span>.</li>
-<li>Tippen Sie im Fenster „Topics“ auf <img src="../img/plus_icon.png"
-height="16"> und geben Sie das Topic an, auf das Sie sich registrieren
-möchten.</li>
+in der Menüleiste erscheint und tippen Sie darauf.</span><span class="apple">Tippen
+Sie im Fenster „MQTT Push Client“ auf <span class="iOS">Edit</span> und
+dann auf den Servereintrag.</span></li>
+<li>Tippen Sie dann im Fenster „Edit Server“ auf <span class="android"><span
+class="button-color">MQTT TOPICS</span>.</span>
+<span class="apple"> <span class="iOS">MQTT Topics</span>.</span></li>
+<li>Tippen Sie im Fenster „Topics“ auf <span class="android"><img src="../img/plus_icon.png"
+height="16"></span><span class="apple"><img src="../img/iOS_plus_icon.png" height="16">
+<strong>Add new topic</strong></span> und geben Sie das Topic an, auf das Sie
+sich registrieren möchten.</li>
 <li>Wählen Sie im Abschnitt „Notifications“ aus, wie Sie benachrichtigt
 werden möchten.</li>
 </ul>
@@ -42,10 +51,17 @@ sein. Das bedeutet, die Topics müssen auf Ihrem MQTT-Server angelegt worden
 sein, und Sie müssen über Lese- und ggf. Schreibberechtigung für diese
 Topics verfügen.</p>
 </div>
+<div class="android">
 <p><img class="thumb" src="../img/select_notification-style.png" width="275">
 <img class="large" src="../img/select_notification-style.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/select_notification-style_iOS.png" width="275">
+<img class="large" src="../img/select_notification-style_iOS.png"></p>
+</div>
 <ul class="instruction">
-<li>Tippen Sie auf <span class="magenta-button">ADD</span>.<br />
+<li>Tippen Sie auf <span class="android"><span class="magenta-button">ADD</span>.</span>
+<span class="apple"><span class="iOS">Save</span>.</span><br />
 Jetzt haben Sie sich auf ein Topic registriert, über das Sie per
 Benachrichtigung und Tonsignal (je nach Einstellung) informiert werden.</li>
 </ul>
@@ -56,13 +72,21 @@ keine Berechtigung für ein Topic besitzen oder das Topic nicht existiert.
 Daher kann es sein, dass ein Topic in der App angezeigt wird, Sie aber
 keine Nachrichten dafür erhalten.</p>
 </div>
+<div class="android">
 <p><img class="thumb" src="../img/topics_list.png" width="275">
 <img class="large" src="../img/topics_list.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/topics_list_iOS.png" width="275">
+<img class="large" src="../img/topics_list.png_iOS"></p>
+</div>
 <ul class="instruction">
-<li>Zum Bearbeiten oder Löschen eines Listeneintrags drücken Sie so lange
-auf den entsprechenden Eintrag („Long Press“) bis das gewünschte Icon
-(<img src="../img/edit.png" height="16"> oder <img src="../img/delete.png"
-height="16">) in der Menüleiste erscheint.</li>
+<li>Zum Bearbeiten oder Löschen eines Listeneintrags
+<span class="android">drücken Sie so lange auf den entsprechenden Eintrag („Long Press“) bis das
+gewünschte Icon (<img src="../img/edit.png" height="16"> oder <img src="../img/delete.png"
+height="16">) in der Menüleiste erscheint.</span><span class="apple">tippen
+Sie auf das Topic bzw. auf <img src="../img/iOS_delete_icon.png" height="16">
+und dann auf <img src="../img/iOS_delete_red.png" height="20">.</span></li>
 </ul>
 </body>
 </html>

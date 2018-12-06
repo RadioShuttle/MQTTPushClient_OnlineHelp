@@ -8,6 +8,10 @@
 <script type="text/javascript" src="/jquery/jquery-latest.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	});
 	$("img.thumb").click(function() {
 		$("img.thumb").show().next("img.large").hide();
 		$(this).hide();
@@ -27,13 +31,18 @@ Topics eine Nachricht senden. Denkbar wäre beispielsweise, dass sich
 darüber die Alarmanlage in einem entfernten Objekt per App ein- bzw.
 ausschalten lässt.</p>
 <ul class="instruction">
-<li>Drücken Sie im Fenster „MQTT Push Client“ so lange auf den gewünschten
-Servereintrag („Long Press“) bis das Icon <img src="../img/edit.png" height="16">
-in der Menüleiste erscheint und tippen Sie darauf.</li>
-<li>Tippen Sie dann im Fenster „Edit Server“ auf <span class="button-color">MQTT ACTIONS</span>.
-<li>Tippen Sie auf <img src="../img/plus_icon.png" height="16"> und
-geben Sie Namen, Topic sowie Inhalt der Aktion an, die Sie definieren
-möchten.</li>
+<li><span class="android">Drücken Sie im Fenster „MQTT Push Client“ so
+lange auf den gewünschten Servereintrag („Long Press“) bis das Icon <img
+src="../img/edit.png" height="16"> in der Menüleiste erscheint und tippen
+Sie darauf.</span><span class="apple">Tippen Sie auf <span
+class="iOS">Edit</span> und dann auf den Servereintrag.</span></li>
+<li>Tippen Sie dann im Fenster „Edit Server“ auf <span class="android"><span
+class="button-color">MQTT ACTIONS</span>.</span><span class="apple">
+<span class="iOS">MQTT Actions</span>.</span>
+<li>Tippen Sie auf <span class="android"><img src="../img/plus_icon.png"
+height="16"></span><span class="apple"><img src="../img/iOS_plus_icon.png"
+height="16"> <strong>Add new action</strong></span> und geben Sie Namen,
+Topic sowie Inhalt der Aktion an, die Sie definieren möchten.</li>
 </ul>
 <div class="note">
 <h6>Hinweis:</h6>
@@ -41,10 +50,17 @@ möchten.</li>
 Details finden Sie in der Dokumentation für den MQTT-Server.</p>
 </div>
 <ul class="instruction">
-<li>Tippen Sie auf <span class="magenta-button">ADD</span>.</li>
+<li>Tippen Sie auf <span class="android"><span class="magenta-button">ADD</span></span><span
+class="apple"><span class="iOS">Save</span></span>.</li>
 </ul>
+<div class="android">
 <p><img class="thumb" src="../img/add_action.png" width="275">
 <img class="large" src="../img/add_action.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/add_action_iOS.png" width="275">
+<img class="large" src="../img/add_action_iOS.png"></p>
+</div>
 <div class="note">
 <h6>Hinweis:</h6>
 <p>Das Topic, für das Sie eine Aktion definieren, muss bereits angelegt
@@ -52,27 +68,41 @@ sein. Im obigen Beispiel wurde das Topic „mqttuser/Alarm1“ bereits angelegt.
 Im Fenster „MQTT Actions“ sollte nun die von Ihnen angelegte Aktion zu sehen
 sein.</p>
 </div>
+<div class="android">
 <p><img class="thumb" src="../img/actions_list.png" width="275">
 <img class="large" src="../img/actions_list.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/actions_list_iOS.png" width="275">
+<img class="large" src="../img/actions_list_iOS.png"></p>
+</div>
 <ul class="instruction">
-<li>Zum Bearbeiten oder Löschen eines Listeneintrags drücken Sie so lange
+<li>Zum Bearbeiten oder Löschen eines Listeneintrags <span class="android">drücken Sie so lange
 auf den entsprechenden Eintrag („Long Press“) bis das gewünschte Icon
 (<img src="../img/edit.png" height="16"> oder <img src="../img/delete.png"
-height="16">) in der Menüleiste erscheint.</li>
+height="16">) in der Menüleiste erscheint.</span><span class="apple">tippen Sie auf die Aktion
+bzw. auf <img src="../img/iOS_delete_icon.png" height="16"> und dann auf
+<img src="../img/iOS_delete_red.png" height="20">.</span></li>
 </ul>
 <h3>Aktionen ausführen</h3>
 <ul class="instruction">
 <li>Tippen Sie nach dem Starten der App auf den gewünschten Servereintrag.</li>
-<li>Wählen Sie dann im Fenster „Messages“ die gewünschte Aktion aus dem
-Überlaufmenü (<img src="../img/overflow_icon.png" height="16">) aus.</li>
+<li><span class="android">Wählen Sie dann im Fenster „Messages“ die gewünschte
+Aktion aus dem Überlaufmenü (<img src="../img/overflow_icon.png" height="16">)
+aus.</span><span class="apple">Tippen Sie auf <span class="iOS">MQTT Actions</span>
+und wählen Sie die gewünschte Aktion aus.</span></li>
 </ul>
+<div class="android">
 <p><img class="thumb" src="../img/select_topic.png" width="275">
 <img class="large" src="../img/select_topic.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/select_topic_iOS.png" width="275">
+<img class="large" src="../img/select_topic-iOS.png"></p>
+</div>
 <ul class="instruction">
 <li>Kurz darauf erhalten Sie eine Push-Benachrichtigung, dass die Aktion
 auf das registrierte Topic weitergeleitet wurde.</li>
 </ul>
-<p><img class="thumb" src="../img/action_notification.png" width="275">
-<img class="large" src="../img/action_notification.png"></p>
 </body>
 </html>
