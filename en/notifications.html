@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Notifications</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Notifications</h1>
+<ul class="instruction">
+<li>After the app has been started, tap on the list entry of a push server account
+to view all received messages (the app can also be started or moved into
+the foreground by tapping on a notification in the info bar):</li>
+</ul>
+<div class="android">
+<p><img class="thumb" src="../img/messages.png" width="275">
+<img class="large" src="../img/messages.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/messages_iOS.png" width="275">
+<img class="large" src="../img/messages_iOS.png"></p>
+</div>
+<ul class="instruction">
+<li>To delete messages tap on <span class="android"><img
+src="../img/trash.png" height="16"></span><span class="apple"><img
+src="../img/iOS_trash.png" height="16"></span> and decide if
+<em>all</em> notifications should be deleted from the mobile device or just
+<em>those</em> that are older than a day.</li>
+<li>To restore notifications that were (accidently) deleted from the mobile
+device, tap on <span class="android"><span class="magenta-button">RESTORE
+MESSAGES</span></span><span class="apple"><span class="iOS">Restore messages
+from server</span></span>.</li>
+</ul>
+<p>Received messages older than 30 days are deleted automatically.</p>
+<p>If a mobile device has not been active for a longer period, Google
+stores and delivers 99 push notifications maximum per mobile device as
+soon as the mobile device is online again. If 100 pending messages
+that could not be delivered are exceeded, Google deletes all push
+notifications for this mobile device (in such a case you will receive
+a notification: <em>“Pending Messages Deleted …”)</em>.</p>
+<p>Only after the mobile device is online again, Google activates the reception
+of new messages for the mobile device concerned. However, mobile devices
+that are online on a regular basis (less than 100 pending messages),
+work properly.</p>
+<p>Nevertheless, the next time the app is started, the last 100 messages
+are loaded (synchronized) directly from the server, unless they have
+already been delivered via cloud messaging.</p>
+</body>
+</html>

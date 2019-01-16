@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Define Actions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Define Actions</h1>
+<p>The app allows defining actions which send notifications to certain
+topics. It would be conceivable, for example, that the alarm system in
+a remote object could be switched on and off via this app.</p>
+<ul class="instruction">
+<li><span class="android">In the “MQTT Push Client” window perform a long
+press on the respective server entry until the <img src="../img/edit.png"
+height="16"> icon appears in the menu bar and tap on it.</span><span
+class="apple">In the “MQTT Push Client” window tap on <span
+class="iOS">Edit</span>.</span></li>
+<li>In the “Edit Server” window tap on <span class="android"><span
+class="button-color">MQTT ACTIONS</span>.</span><span class="apple">
+<span class="iOS">MQTT Actions</span>.</span>
+<li>Tap on <span class="android"><img src="../img/plus_icon.png"
+height="16"></span><span class="apple"><img src="../img/iOS_plus_icon.png"
+height="16"> <strong>Add new action</strong></span> and specify name,
+topic and content of the action that you wish to define.</li>
+</ul>
+<div class="note">
+<h6>Note:</h6>
+<p>The “Retain” option allows holding notifications.
+Details can be found in the MQTT server documentation.</p>
+</div>
+<ul class="instruction">
+<li>Tap on <span class="android"><span class="magenta-button">ADD</span></span><span
+class="apple"><span class="iOS">Save</span></span>.</li>
+</ul>
+<div class="android">
+<p><img class="thumb" src="../img/add_action.png" width="275">
+<img class="large" src="../img/add_action.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/add_action_iOS.png" width="275">
+<img class="large" src="../img/add_action_iOS.png"></p>
+</div>
+<div class="note">
+<h6>Note:</h6>
+<p>The topic for that you define an action must already have been created.
+In the example above, the topic “mqttuser/Alarm1” does already exist.
+The action you have defined should now be listed in the “MQTT Actions”
+window.</p>
+</div>
+<div class="android">
+<p><img class="thumb" src="../img/actions_list.png" width="275">
+<img class="large" src="../img/actions_list.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/actions_list_iOS.png" width="275">
+<img class="large" src="../img/actions_list_iOS.png"></p>
+</div>
+<ul class="instruction">
+<li>For editing or deleting a list item <span class="android">perform a
+long press on the respective entry until the desired icon
+(<img src="../img/edit.png" height="16"> or <img src="../img/delete.png"
+height="16">) appears in the menu bar.</span><span class="apple">tap on
+the action or on <img src="../img/iOS_delete_icon.png" height="16"> and then
+on <img src="../img/iOS_delete_red.png" height="20">.</span></li>
+</ul>
+<h3>Execute an action</h3>
+<ul class="instruction">
+<li>After the app has been started, tap on the desired server entry.</li>
+<li><span class="android">In the “Messages” window select the desired
+action from the overflow menu (<img src="../img/overflow_icon.png"
+height="16">).</span><span class="apple">Tap on <span class="iOS">MQTT Actions</span>
+and select the desired action.</span></li>
+</ul>
+<div class="android">
+<p><img class="thumb" src="../img/select_topic.png" width="275">
+<img class="large" src="../img/select_topic.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/select_topic_iOS.png" width="275">
+<img class="large" src="../img/select_topic_iOS.png"></p>
+</div>
+<ul class="instruction">
+<li>Shortly thereafter, you will receive a push notification that the
+action was forwarded to the registered topic.</li>
+</ul>
+</body>
+</html>

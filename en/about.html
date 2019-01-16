@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About MQTT Push Client</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>About MQTT Push Client</h1>
+<p>MQTT topics that have been defined in this app are monitored by the
+RadioShuttle MQTT push server. Upon activity, they are immediately forwarded
+to the app, which displays the message, accompanied by an audio signal,
+as a push notification.</p>
+<p>The app manages push notification settings. It can also display all push
+notifications. After one-time setup, push notifications are automatically
+received, even if the app is not running. The app is the link between the
+RadioShuttle MQTT push server and the push services by Apple and Google.</p>
+<h3>More information:</h3>
+<p style="margin-bottom: -0.5em"><a href="http://www.radioshuttle.de/en/mqtt-2/push-notification/">RadioShuttle Push Notification</a></p>
+<p><a href="http://www.radioshuttle.de/en/radioshuttle-2/">RadioShuttle</a></p>
+</body>
+</html>

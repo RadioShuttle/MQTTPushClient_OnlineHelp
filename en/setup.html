@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Set Up the App</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Set Up the App</h1>
+<div class="apple">
+<p>When the app is started for the very first time, you will be asked if
+the app is allowed to send notifications. You should confirm this by tapping
+on the <span class="iOS"><strong>Allow</strong></span> button:</p>
+<p><img class="thumb" src="../img/iOS_notification_setup.png" width="275">
+<img class="large" src="../img/iOS_notification_setup.png"></p>
+</div>
+<ul class="instruction">
+<li>After the app has been started, tap on the <span class="android">
+<img src="../img/plus_icon.png" height="16"> icon</span> <span
+class="apple"><span class="iOS">Edit</span> icon and on <img
+src="../img/iOS_plus_icon.png" height="16"> <strong>Add new server</strong></span>
+and specify the push server address, the MQTT server address (“Host”),
+your user name (“User”) and the corresponding password (“Pwd”) in the
+<span class="android">“Add Server”</span> <span
+class="apple">“New Server”</span> window. The addresses of the push and
+MQTT server are already preset in the server configuration window. These
+addresses can be overwritten with the desired server data.</li>
+</ul>
+<div class="note">
+<h6>Note:</h6>
+<p>The standard port for the push notification server is 2033. This
+specification can be omitted if the push server is accessible under this
+port number. Otherwise the port number must be appended to the domain name,
+e.g. “yourpushserver.de:2009”.</p>
+</div>
+<div class="android">
+<p><img class="thumb" src="../img/add_server.png" width="275">
+<img class="large" src="../img/add_server.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/add_server_iOS.png" width="275">
+<img class="large" src="../img/add_server_iOS.png"></p>
+</div>
+<ul class="instruction">
+<li>Tap on <span class="android"><span class="button-color">Save</span>.</span>
+<span class="apple"><span class="iOS">Save</span>.</span> When using unencrypted
+connections, or if the authenticity of a push server cannot be confirmed,
+a warning message is issued. See also <a href="security.html">Security</a>.<br />
+Your MQTT server account should now be listed on the home page:</li>
+</ul>
+<div class="android">
+<p><img class="thumb" src="../img/mqttserver.png" width="275">
+<img class="large" src="../img/mqttserver.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/mqttserver_iOS.png" width="275">
+<img class="large" src="../img/mqttserver_iOS.png"></p>
+</div>
+<ul class="instruction">
+<li>For editing or deleting a list item, <span class="android">perform a
+long press on the respective entry until the desired icon
+(<img src="../img/edit.png" height="16"> or <img src="../img/delete.png"
+height="16">) appears in the menu bar</span><span class="apple">tap on
+<span class="iOS">Edit</span> and then on the server entry, or
+on <img src="../img/iOS_delete_icon.png" height="16"> and then on
+<img src="../img/iOS_delete_red.png" height="20">)</span>.</li>
+</ul>
+<div class="note">
+<h6>Note:</h6>
+<p>Multiple users can use an identical account. For example, family members
+or members of a group can automatically use identical settings and get
+notified at the same time.</p>
+</div>
+</body>
+</html>
