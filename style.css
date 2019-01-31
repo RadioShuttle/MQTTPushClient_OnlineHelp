@@ -121,10 +121,13 @@ ul.instruction li:before {
 	background-color: #EEE;
 	padding: 0.7em;
 	border: 1px solid #000;
-	font-style: oblique;
+	font-style: italic;
 	margin: 1.5em 0;
 }
 
+.note em {
+	font-style: normal;
+}
 .note h6 {
 	font-size: 100%;
 	font-weight: bold;
