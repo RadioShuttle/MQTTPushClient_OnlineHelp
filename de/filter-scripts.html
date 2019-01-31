@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Filterskripte für Topics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Filterskripte für Topics</h1>
+<div class="android">
+<p><img class="thumb" src="../img/javascript_editor.png" width="275">
+<img class="large" src="../img/javascript_editor.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/javascript_editor.png_iOS.png" width="275">
+<img class="large" src="../img/javascript_editor.png_iOS.png"></p>
+</div>
+<ul class="instruction">
+<li>Implementieren Sie die Funktion <tt>filterMsg()</tt> um Nachrichten
+zu filtern. Die Originalnachricht ist im Parameter „msg.content“ enthalten,
+welcher der Variablen „content“ zugewiesen wird.
+</li>
+<li>Modifizieren Sie „msg.content“ und weisen Sie den geänderten Inhalt
+der Variablen „content“ zu, welche ihrerseits an das aufrufende Programm
+zurückgegeben wird und somit den darzustellenden Inhalt bestimmt.</li>
+</ul>
+<div class="note">
+<p><strong>Wichtig:</strong><br />
+Der Inhalt von „content“ muss vom Typ <tt>string</tt> sein, d.&nbsp;h.
+ggf. müssen Sie numerische Werte konvertieren. Vermeiden Sie komplexen
+Code sowie Aktionen, die nicht dem Filtern der Nachricht dienen.</p>
+</div>
+<div class="note">
+<p><strong>Tipp:</strong><br />
+Verwenden Sie die Einfügen-Funktion aus dem Kontextmenü (führen Sie dazu
+einen Longpress im Eingabefeld aus), um Texte aus der Zwischenablage
+einzufügen. Schauen Sie sich dazu auch die mitgelieferten Beispiele an
+(<img src="../img/overflow_icon.png" height="16"> > <tt>Insert Example >
+&lt;Beispiele&gt;</tt>).</p>
+</div>
+<ul class="instruction">
+<li>Tippen Sie zum Testen Ihrer Funktion auf <span class="android"><span
+class="button-color">Run</span>.</span>
+Geben Sie dazu eine Testnachricht in das Eingabefeld „Test Data“ ein.
+</li>
+</ul>
+<div class="note">
+<p><strong>Hinweis:</strong><br />
+Sollten Sie bereits Nachrichten für Ihr Topic erhalten haben, wird dieses
+Feld mit dem Wert der letzten Nachricht vorbelegt.</p>
+</div>
+<p>Das Resultat des Testlaufs wird in der Statuszeile des Editors angezeigt.</p>
+<p>Hier finden Sie alle Variablen, auf die Sie in der Funktion
+<tt>filterMsg()</tt> Zugriff haben:</p>
+<table border="1">
+<tr>
+<th>Variable</th>
+<th>Erläuterung</th>
+</tr>
+<tr>
+<td>msg.receivedDate</td>
+<td>Zeitpunkt des Empfangs der Nachricht (JavaScript-Objekt <tt>Date</tt>)</td>
+</tr>
+<tr>
+<td>msg.topic</td>
+<td>Topic der Nachricht</td>
+</tr>
+<tr>
+<td>msg.content</td>
+<td>Nachrichteninhalt</td>
+</tr>
+<tr>
+<td>acc.user</td>
+<td>MQTT-Benutzername</td>
+</tr>
+<tr>
+<td>acc.mqttServer</td>
+<td>MQTT-Server</td>
+</tr>
+<tr>
+<td>acc.pushServer</td>
+<td>MQTT-Push-Server</td>
+</tr>
+</table>
+</body>
+</html>

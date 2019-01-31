@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Filter Scripts for Topics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Filter Scripts for Topics</h1>
+<div class="android">
+<p><img class="thumb" src="../img/javascript_editor.png" width="275">
+<img class="large" src="../img/javascript_editor.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/javascript_editor.png_iOS.png" width="275">
+<img class="large" src="../img/javascript_editor.png_iOS.png"></p>
+</div>
+<ul class="instruction">
+<li>Implement the filterMsg() function to filter messages. The original
+message is contained in the parameter “msg.content”, which is assigned
+to the variable “content”.
+</li>
+<li>Modify “msg.content” and assign the changed content to the variable
+“content”, which in turn is assigned to the calling program and thus determines
+the content to be displayed.</li>
+</ul>
+<div class="note">
+<p><strong>Important:</strong><br />
+The content of “content” must be of type <tt>string</tt>, i.e. if necessary,
+numeric values must be converted. Avoid complex code and actions that
+are not used to filter the message.</p>
+</div>
+<div class="note">
+<p><strong>Tip:</strong><br />
+Use the insert function from the context menu (do a longpress in the input
+field) to paste text from the clipboard. Please also have a look at the
+provided examples (<img src="../img/overflow_icon.png" height="16"> >
+<tt>Insert Example > &lt;Examples&gt;</tt>).</p>
+</div>
+<ul class="instruction">
+<li>Tap on <span class="android"><span
+class="button-color">Run</span> to test your function.</span>
+Enter a test message in the “Test Data” input field.
+</li>
+</ul>
+<div class="note">
+<p><strong>Note:</strong><br />
+If you have already received news for your Topic, this field will be
+filled with the value of the last message.</p>
+</div>
+<p>The result of the test run is displayed in the editor status line.</p>
+<p>Variables that you can access in the <tt>filterMsg()</tt> function:</p>
+<table border="1">
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>msg.receivedDate</td>
+<td>Time at which the message was received (JavaScript <tt>Date</tt> object)</td>
+</tr>
+<tr>
+<td>msg.topic</td>
+<td>Message topic</td>
+</tr>
+<tr>
+<td>msg.content</td>
+<td>Message content</td>
+</tr>
+<tr>
+<td>acc.user</td>
+<td>MQTT user name</td>
+</tr>
+<tr>
+<td>acc.mqttServer</td>
+<td>MQTT server</td>
+</tr>
+<tr>
+<td>acc.pushServer</td>
+<td>MQTT push server</td>
+</tr>
+</table>
+</body>
+</html>
