@@ -26,6 +26,10 @@ $(document).ready(function() {
 </head>
 <body>
 <h1>Filterskripte für Topics</h1>
+<ul class="instruction">
+<li>Zum Filtern von Nachrichten implementieren bzw. vervollständigen Sie
+die Funktion <tt>filterMsg()</tt>.</li>
+</ul>
 <div class="android">
 <p><img class="thumb" src="../img/javascript_editor.png" width="275">
 <img class="large" src="../img/javascript_editor.png"></p>
@@ -34,20 +38,19 @@ $(document).ready(function() {
 <p><img class="thumb" src="../img/javascript_editor.png_iOS.png" width="275">
 <img class="large" src="../img/javascript_editor.png_iOS.png"></p>
 </div>
+<p> Die Originalnachricht ist im Parameter „msg.content“ enthalten
+und wurde auch der Variablen „content“ zugewiesen.</p>
 <ul class="instruction">
-<li>Implementieren Sie die Funktion <tt>filterMsg()</tt> um Nachrichten
-zu filtern. Die Originalnachricht ist im Parameter „msg.content“ enthalten,
-welcher der Variablen „content“ zugewiesen wird.
-</li>
-<li>Modifizieren Sie „msg.content“ und weisen Sie den geänderten Inhalt
-der Variablen „content“ zu, welche ihrerseits an das aufrufende Programm
-zurückgegeben wird und somit den darzustellenden Inhalt bestimmt.</li>
+<li>Modifizieren Sie „msg.content“ und weisen Sie der Variable „content“
+den modifizierten Inhalt zu.</li>
 </ul>
+<p>Die Variable „content“ wird an das aufrufende Programm zurückgegeben
+und bestimmt den darzustellenden Inhalt.</p>
 <div class="note">
 <p><strong>Wichtig:</strong><br />
 Der Inhalt von „content“ muss vom Typ <tt>string</tt> sein, d.&nbsp;h.
-ggf. müssen Sie numerische Werte konvertieren. Vermeiden Sie komplexen
-Code sowie Aktionen, die nicht dem Filtern der Nachricht dienen.</p>
+Sie müssen gegebenenfalls numerische Werte konvertieren. Vermeiden Sie
+komplexen Code sowie Aktionen, die nicht dem Filtern der Nachricht dienen.</p>
 </div>
 <div class="note">
 <p><strong>Tipp:</strong><br />
@@ -74,7 +77,7 @@ werden.</p>
 <tt>filterMsg()</tt> Zugriff haben:</p>
 <table border="1">
 <tr>
-<th>Variable</th>
+<th>Parameter</th>
 <th>Erläuterung</th>
 </tr>
 <tr>

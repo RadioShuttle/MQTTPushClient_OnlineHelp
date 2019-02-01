@@ -26,6 +26,9 @@ $(document).ready(function() {
 </head>
 <body>
 <h1>Filter Scripts for Topics</h1>
+<ul class="instruction">
+<li>To filter messages, implement or complete the <tt>filterMsg()</tt> function.</li>
+</ul>
 <div class="android">
 <p><img class="thumb" src="../img/javascript_editor.png" width="275">
 <img class="large" src="../img/javascript_editor.png"></p>
@@ -34,15 +37,14 @@ $(document).ready(function() {
 <p><img class="thumb" src="../img/javascript_editor.png_iOS.png" width="275">
 <img class="large" src="../img/javascript_editor.png_iOS.png"></p>
 </div>
+<p>The original message is contained in the parameter “msg.content” and
+was also assigned to the variable “content”.</p>
 <ul class="instruction">
-<li>Implement the <tt>filterMsg()</tt> function to filter messages. The original
-message is contained in the parameter “msg.content”, which is assigned
-to the variable “content”.
-</li>
-<li>Modify “msg.content” and assign the changed content to the variable
-“content”, which in turn is assigned to the calling program and thus determines
-the content to be displayed.</li>
+<li>Modify “msg.content” and assign the modified content to the variable
+“content”.</li>
 </ul>
+<p>The variable “content” is returned to the calling program and determines
+the content to be displayed.</p>
 <div class="note">
 <p><strong>Important:</strong><br />
 The content of “content” must be of type <tt>string</tt>, i.e. if necessary,
@@ -71,7 +73,7 @@ message will be preset but can be overwritten.</p>
 <p>Variables that you can access in the <tt>filterMsg()</tt> function:</p>
 <table border="1">
 <tr>
-<th>Variable</th>
+<th>Parameter</th>
 <th>Description</th>
 </tr>
 <tr>
