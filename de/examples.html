@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Beipiele</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Beispiele für Filterskripte</h1>
+<p>Folgende Beispiele zeigen, wie Daten aus Nachrichten mit
+unterschiedlichen Strukturen extrahiert und aufbereitet werden.
+Die Beispiele können Sie auch mit (<img src="../img/overflow_icon.png"
+height="16"> > Insert Example > <em>&lt;Beispiele&gt;</em>) in Ihren Code einfügen und
+anpassen. </p>
+<p><strong>JSON</strong></p>
+<p>Daten sind im JSON-Format (Temperatur <tt>t</tt> und Luftfeuchtigkeit
+<tt>h</tt>), hier: <tt>{"t" : 24, "h" : 30}</tt></p>
+<pre>var j = JSON.parse(content);
+if (j.t && j.h) {
+ content = "Temperature: " + j.t + "°, Humidity: " + j.h + "%";
+}</pre>
+<p><em>Erläuterung:</em></p>
+<ul>
+<li>In der ersten Zeile wird der Inhalt geparst und ein JavaScript-Objekt
+„j“ zurückgegeben</li>
+<li>Über „j“ kann jetzt auf die Werte zugegriffen werden</li>
+</ul>
+
+<p><strong>Split</strong></p>
+<p>Daten liegen im Textformat vor (Temperatur und Luftfeuchtigkeit). Werte
+werden durch ein Leerzeichen getrennt. Hier: <tt>23.1 30.5</tt></p>
+<pre>var s = content.split(" ");
+if (s.length >= 2) {
+content = "Temperature: " + s[0] + "°, Humidity: " + s[1] + "%";
+}</pre>
+<p><em>Erläuterung:</em></p>
+<ul>
+<li>Die Funktion <tt>split()</tt> zerlegt die Zeichenkette („msg.content“)
+in zwei Teilstrings. Wären mehrere Leerzeichen in der Nachricht enthalten, würden
+entsprechend mehr Werte zurückgegeben werden</li>
+<li>Über „s“ (Array) kann jetzt auf die Werte zugegriffen werden</li>
+</ul>
+
+<p><strong>Regular Expression</strong></p>
+<p>Daten liegen im Textformat vor. Das Beispiel zeigt, wie mit Hilfe eines
+regulären Ausdrucks (Muster) nach allen numerischen Werten (Vorkommen des
+Musters) in der Nachricht gesucht wird. Hier: <tt>t=24.2, h=30</tt></p>
+<pre>var res = content.match(/[+-]?\d+(\.\d+)?/g);
+if (res && res.length >= 2) {
+ content = "Temperature: " + res[0] + "°, Humidity: " + res[1] + "%";
+}</pre>
+<p><em>Erläuterung:</em></p>
+<ul>
+<li>Die Funktion <tt>match()</tt> sucht nach allen numerischen Werten in der
+Zeichenkette, auf die das angegebene Muster passt (regulärer Ausdruck)</li>
+<li>Über „res“ (Array) kann jetzt auf die Werte zugegriffen werden</li>
+</ul>
+</p>
+</body>
+</html>
