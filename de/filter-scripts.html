@@ -26,10 +26,14 @@ $(document).ready(function() {
 </head>
 <body>
 <h1>Filterskripte für Topics</h1>
-<ul class="instruction">
-<li>Zum Filtern von Nachrichten implementieren bzw. vervollständigen Sie
-die Funktion <tt>filterMsg()</tt>.</li>
-</ul>
+<p>Standardmäßig werden MQTT-Push-Benachrichtigungen über empfangene
+MQTT-Daten direkt im Fenster „Messages“, das für einfache Textnachrichten
+geeignet ist, angezeigt. MQTT-Benachrichtigungen können allerdings
+auch binär, XML, JSON oder anderweitig kodiert sein. Hier bieten
+JavaScript-basierte Filterskripte die Möglichkeit, die Banchrichtigungen
+zu analysieren und zu formatieren, um die gewünschten Daten in Form einer
+Textnachricht
+darzustellen.</p>
 <div class="android">
 <p><img class="thumb" src="../img/javascript_editor.png" width="275">
 <img class="large" src="../img/javascript_editor.png"></p>
@@ -38,8 +42,16 @@ die Funktion <tt>filterMsg()</tt>.</li>
 <p><img class="thumb" src="../img/javascript_editor.png_iOS.png" width="275">
 <img class="large" src="../img/javascript_editor.png_iOS.png"></p>
 </div>
-<p> Die Originalnachricht ist im Parameter „msg.content“ enthalten
-und wurde auch der Variablen „content“ zugewiesen.</p>
+<p>Die Filterskripte können per Texteingabe oder <em>Copy/Paste</em>
+übernommen werden. Zusätzlich werden sie auf dem Server gespeichert,
+damit alle Mobilgeräte eines Kontos den identischen Inhalt anzeigen. Die
+Ausführung der Filterskripte erfolgt auf dem Mobilgerät während der
+Anzeige. Es besteht die Möglichkeit, erfasste Skripte vorab zu testen.
+Alternativ kann ein JavaScript in einem Webbrowser entwickelt bzw.
+getestet und übernommen werden.</p>
+<p>Implementieren Sie die Funktion <tt>filterMsg()</tt> um Nachrichten
+zu filtern. Die Originalnachricht ist im Parameter „msg.content“ enthalten,
+welcher der Variablen „content“ zugewiesen wird.</p>
 <ul class="instruction">
 <li>Modifizieren Sie „msg.content“ und weisen Sie der Variable „content“
 den modifizierten Inhalt zu.</li>
@@ -52,28 +64,19 @@ Der Inhalt von „content“ muss vom Typ <tt>string</tt> sein, d.&nbsp;h.
 Sie müssen gegebenenfalls numerische Werte konvertieren. Vermeiden Sie
 komplexen Code sowie Aktionen, die nicht dem Filtern der Nachricht dienen.</p>
 </div>
-<div class="note">
-<p><strong>Tipp:</strong><br />
-Verwenden Sie die Einfügen-Funktion aus dem Kontextmenü (führen Sie dazu
-einen „Long Press“ im Eingabefeld aus), um Texte aus der Zwischenablage
-einzufügen. Schauen Sie sich dazu auch die mitgelieferten Beispiele an
-(<img src="../img/overflow_icon.png" height="16"> > <tt>Insert Example >
-&lt;Beispiele&gt;</tt>).</p>
-</div>
 <ul class="instruction">
 <li>Tippen Sie zum Testen Ihrer Funktion auf <span class="android"><span
 class="button-color">Run</span>.</span>
 Geben Sie dazu eine Testnachricht in das Eingabefeld „Test Data“ ein.
 </li>
 </ul>
-<div class="note">
-<p><strong>Hinweis:</strong><br />
-Sollten Sie bereits Nachrichten für Ihr Topic erhalten haben, wird dieses
+<p>Das Resultat des Testlaufs wird in der Statuszeile des Editors angezeigt.</p>
+<p>Sollten Sie bereits Nachrichten für Ihr Topic erhalten haben, wird dieses
 Feld zwar mit dem Wert der letzten Nachricht vorbelegt, kann aber überschrieben
 werden.</p>
-</div>
-<p>Das Resultat des Testlaufs wird in der Statuszeile des Editors angezeigt.</p>
-<p>Hier finden Sie alle Variablen, auf die Sie in der Funktion
+<p>Weitere mitgelieferte <a href="examples">Beispiele</a>.</p>
+<h2>Variablen</h2>
+<p>Variablen, auf die Sie in der Funktion
 <tt>filterMsg()</tt> Zugriff haben:</p>
 <table border="1">
 <tr>
