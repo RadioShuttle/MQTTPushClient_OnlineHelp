@@ -67,10 +67,10 @@ Anzeige. Es besteht die Möglichkeit, erfasste Skripte vorab zu testen.
 Alternativ kann ein JavaScript in einem Webbrowser entwickelt bzw.
 getestet und übernommen werden.</p>
 <p>Implementieren Sie die Funktion <tt>filterMsg()</tt> um Nachrichten
-zu filtern. Die Originalnachricht ist im Parameter „msg.content“ enthalten,
+zu filtern. Die Originalnachricht ist im Parameter „msg.text“ enthalten,
 welcher der Variablen „content“ zugewiesen wird.</p>
 <ul class="instruction">
-<li>Modifizieren Sie „msg.content“ und weisen Sie der Variable „content“
+<li>Modifizieren Sie „msg.text“ und weisen Sie der Variable „content“
 den modifizierten Inhalt zu.</li>
 </ul>
 <p>Die Variable „content“ wird an das aufrufende Programm zurückgegeben
@@ -127,7 +127,7 @@ content = "Temperature: " + s[0] + "°, Humidity: " + s[1] + "%";
 }</pre>
 <p><em>Erläuterung:</em></p>
 <ul>
-<li>Die Funktion <tt>split()</tt> zerlegt die Zeichenkette („msg.content“)
+<li>Die Funktion <tt>split()</tt> zerlegt die Zeichenkette („msg.text“)
 in zwei Teilstrings. Wären mehrere Leerzeichen in der Nachricht enthalten, würden
 entsprechend mehr Werte zurückgegeben werden</li>
 <li>Über „s“ (Array) kann jetzt auf die Werte zugegriffen werden</li>
@@ -170,8 +170,14 @@ Zeichenkette, auf die das angegebene Muster passt (regulärer Ausdruck)</li>
 <td>Topic der Nachricht</td>
 </tr>
 <tr>
-<td>msg.content</td>
-<td>Nachrichteninhalt</td>
+<td>msg.text</td>
+<td>Nachrichteninhalt (Orginalnachricht interpretiert als UTF-8 String,
+nicht darstellbare Zeichen und ungültige Werte werden durch ein � ersetzt
+bzw. gekennzeichnet)</td>
+</tr>
+<tr>
+<td>msg.raw</td>
+<td>JavaScript ArrayBuffer-Objekt, das die Originalnachricht enthält</td>
 </tr>
 <tr>
 <td>acc.user</td>

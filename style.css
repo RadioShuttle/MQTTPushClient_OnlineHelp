@@ -41,6 +41,10 @@ a:active {
 	color: red;
 }
 
+table {
+	border-collapse: collapse;
+}
+
 td,th {
 	line-height: 1.4em;
 	padding: 0.5em;
@@ -151,4 +155,37 @@ img.large {
 	max-width: 600px;
 	display: none;
 	box-shadow: 3px 3px 5px #888888;
+}
+
+.LAY {
+	display: none;
+	position: fixed;
+	top: 0.5em;
+	left: 0.8em;
+	right: 0.8em;
+	font-size: 90%;
+	color: #000000;
+	border: 1px solid #000000;
+	border-radius: 1em;
+	box-shadow: 2px 2px 4px #999999;
+	padding: 0.5em 3em 0.5em 1.5em;
+	background-color: #eeffee;
+}
+
+pre.wrap {
+	white-space: pre-wrap;
+}
+
+.close {
+	position: fixed;
+	top: 0.3em;
+	right: 0.7em;
+	font-size: 200%;
+	cursor: pointer;
+}
+
+.clicklink {
+	margin-left: 1.5em;
+	font-size: 85%;
+	text-decoration: underline;
 }
