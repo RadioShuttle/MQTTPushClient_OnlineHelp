@@ -89,10 +89,11 @@ ul.instruction li:before {
 
 .button-color {
 	background-color: #DDD;
-	padding: 0.4em 0.5em;
-	font-size: 86%;
+	padding: 0.3em 1em 0.2em 1em;
+	font-size: 65%;
 	font-weight: bold;
-	border-bottom: 1px solid #ababab;
+	border-bottom: 1px solid #cdcdcd;
+	border-radius: 0.1em;
 }
 
 .iOS {
@@ -187,5 +188,9 @@ pre.wrap {
 .clicklink {
 	margin-left: 1.5em;
 	font-size: 85%;
-	text-decoration: underline;
+	color: #007aff;
+}
+
+.examples {
+	line-height: 1em; 
 }
