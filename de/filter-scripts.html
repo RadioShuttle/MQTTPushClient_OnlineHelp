@@ -21,8 +21,14 @@ $(document).ready(function() {
 		$(this).hide();
 		$(this).prev("img.thumb").show();
 	});
-	
-	
+	$("span.Binary").click(function() {
+		$("div.LAY").hide();
+		$("div#Binary_LAY").fadeIn(50);
+	});
+	$("span.Hexdump").click(function() {
+		$("div.LAY").hide();
+		$("div#Hexdump_LAY").fadeIn(50);
+	});
 	$("span.JSON").click(function() {
 		$("div.LAY").hide();
 		$("div#JSON_LAY").fadeIn(50);
@@ -97,7 +103,7 @@ Strukturen extrahiert und aufbereitet werden. Die Beispiele können Sie auch
 mit (<img src="../img/overflow_icon.png" height="16"> > Insert Example >
 <em>&lt;Beispiele&gt;</em>) in Ihren Code einfügen und anpassen.</p>
 
-<p><span class="clicklink JSON">JSON</span></p>
+<p class="examples"><span class="clicklink JSON">JSON</span></p>
 <div id="JSON_LAY" class="LAY">
 <div class="close">&otimes;</div>
 <p><strong>JSON</strong></p>
@@ -115,7 +121,7 @@ if (j.t && j.h) {
 </ul>
 </div>
 
-<p><span class="clicklink Split">Split</span></p>
+<p class="examples"><span class="clicklink Split">Split</span></p>
 <div id="Split_LAY" class="LAY">
 <div class="close">&otimes;</div>
 <p><strong>Split</strong></p>
@@ -134,7 +140,7 @@ entsprechend mehr Werte zurückgegeben werden</li>
 </ul>
 </div>
 
-<p><span class="clicklink RegEx">Regular Expression</span></p>
+<p class="examples"><span class="clicklink RegEx">Regular Expression</span></p>
 <div id="RegEx_LAY" class="LAY">
 <div class="close">&otimes;</div>
 <p><strong>Regular Expression</strong></p>
@@ -151,6 +157,58 @@ if (res && res.length >= 2) {
 Zeichenkette, auf die das angegebene Muster passt (regulärer Ausdruck)</li>
 <li>Über „res“ (Array) kann jetzt auf die Werte zugegriffen werden</li>
 </ul>
+</div>
+
+<p class="examples"><span class="clicklink Binary">Binary</span></p>
+<div id="Binary_LAY" class="LAY">
+<div class="close">&otimes;</div>
+<p><strong>Binary</strong></p>
+<p>Daten liegen im Format Binary vor …</p>
+<pre class="wrap">/* 12 bytes: uint16, uint16, float32, float32 (little endian) */
+if (msg.raw.length >= 12) {
+ var dv = new DataView(msg.raw.buffer);
+ if (dv.getUint16(0, true) == 33841) {
+   var t = dv.getFloat32(4, true);
+   var h = dv.getFloat32(8, true);
+   content = 'Temperature: ' + t.toFixed(1) + '° , Humidity: ' + h.toFixed(1) + '%';
+ }
+}
+</pre>
+</div>
+
+<p class="examples"><span class="clicklink Hexdump">Hexdump</span></p>
+<div id="Hexdump_LAY" class="LAY">
+<div class="close">&otimes;</div>
+<p><strong>Hexdump</strong></p>
+<p>Daten liegen im Format Hexdump vor …</p>
+<pre class="wrap">var b = new Uint8Array(msg.raw);
+var width = 8;
+content = '';
+var hexStr, lineHex, lineAsc, offset;
+for(var i = 0; i < b.length; i += width) {
+ lineHex = ''; lineAsc = '';
+ for(var j = 0; j < width && j + i < b.length; j++) {
+   hexStr = b[i + j].toString(16);
+   if (hexStr.length % 2) {
+     hexStr = '0' + hexStr;
+   }
+   lineHex += hexStr + ' ';
+   if (b[i + j] >= 32 && b[i + j] <= 126) {
+     lineAsc += String.fromCharCode(b[i + j]);
+   } else {
+     lineAsc += '.';
+   }
+ }
+ for(var z = 0; z < width - j; z++) {
+   lineHex += ' ';
+ }
+ offset = i.toString(16);
+ if (offset.length % 2) {
+   offset = '0' + offset;
+ }
+ content += offset + ': ' + lineHex + lineAsc + '\n';
+}
+</pre>
 </div>
 
 <h2>Variablen</h2>
@@ -172,8 +230,8 @@ Zeichenkette, auf die das angegebene Muster passt (regulärer Ausdruck)</li>
 <tr>
 <td>msg.text</td>
 <td>Nachrichteninhalt (Orginalnachricht interpretiert als UTF-8 String,
-nicht darstellbare Zeichen und ungültige Werte werden durch ein � ersetzt
-bzw. gekennzeichnet)</td>
+nicht darstellbare Zeichen und ungültige Werte werden durch ein &#xfffd;
+ersetzt bzw. gekennzeichnet)</td>
 </tr>
 <tr>
 <td>msg.raw</td>
