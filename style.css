@@ -180,9 +180,9 @@ pre.wrap {
 }
 
 .close {
-	position: absolute;
-	top: 0.2em;
-	right: 0.5em;
+	position: fixed;
+	top: 1.4em;
+	right: 0.6em;
 	font-size: 200%;
 	cursor: pointer;
 }
