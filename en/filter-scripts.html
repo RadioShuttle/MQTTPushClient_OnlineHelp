@@ -21,14 +21,40 @@ $(document).ready(function() {
 		$(this).hide();
 		$(this).prev("img.thumb").show();
 	});
+	$("span.Binary").click(function() {
+		$("div.LAY").hide();
+		$("div#Binary_LAY").fadeIn(50);
+	});
+	$("span.Hexdump").click(function() {
+		$("div.LAY").hide();
+		$("div#Hexdump_LAY").fadeIn(50);
+	});
+	$("span.JSON").click(function() {
+		$("div.LAY").hide();
+		$("div#JSON_LAY").fadeIn(50);
+	});
+	$("span.Split").click(function() {
+		$("div.LAY").hide();
+		$("div#Split_LAY").fadeIn(50);
+	});
+	$("span.RegEx").click(function() {
+		$("div.LAY").hide();
+		$("div#RegEx_LAY").fadeIn(50);
+	});
+	$("div.close").click(function() {
+		$("div.LAY").hide();
+	});
 });
 </script>
 </head>
 <body>
 <h1>Filter Scripts for Topics</h1>
-<ul class="instruction">
-<li>To filter messages, implement or complete the <tt>filterMsg()</tt> function.</li>
-</ul>
+<p>By default, MQTT push notifications about received MQTT data are
+displayed directly in the “Messages” window, which is suitable for simple
+text messages. However, MQTT notifications can also be binary, XML, JSON,
+or otherwise encoded. Here, JavaScript-based filter scripts offer the
+possibility to analyze and format the notifications in order to display
+the desired data in the form of a text message.</p>
 <div class="android">
 <p><img class="thumb" src="../img/javascript_editor.png" width="275">
 <img class="large" src="../img/javascript_editor.png"></p>
@@ -37,10 +63,17 @@ $(document).ready(function() {
 <p><img class="thumb" src="../img/javascript_editor.png_iOS.png" width="275">
 <img class="large" src="../img/javascript_editor.png_iOS.png"></p>
 </div>
-<p>The original message is contained in the parameter “msg.content” and
-was also assigned to the variable “content”.</p>
+<p>Filter scripts can be accepted via text input or <em>Copy/Paste</em>.
+In addition, they are stored on the server so that all mobile devices of
+an account display the identical content. The filter scripts are executed
+on the mobile device during display. It is possible to test scripts in
+advance. Alternatively, a JavaScript can be developed, tested and adopted
+in a web browser.</p>
+<p>To fiter messages, implement the <tt>filterMsg()</tt> function. The
+original message is contained in the “msg.text” parameter and was also
+assigned to the variable “content”.</p>
 <ul class="instruction">
-<li>Modify “msg.content” and assign the modified content to the variable
+<li>Modify “msg.text” and assign the modified content to the variable
 “content”.</li>
 </ul>
 <p>The variable “content” is returned to the calling program and determines
@@ -51,26 +84,154 @@ The content of “content” must be of type <tt>string</tt>, i.e. if necessary,
 numeric values must be converted. Avoid complex code and actions that
 are not used to filter the message.</p>
 </div>
-<div class="note">
-<p><strong>Tip:</strong><br />
-Use the insert function from the context menu (perform a long press in the input
-field) to paste text from the clipboard. Please also have a look at the
-provided examples (<img src="../img/overflow_icon.png" height="16"> >
-<tt>Insert Example > &lt;Examples&gt;</tt>).</p>
-</div>
 <ul class="instruction">
 <li>Tap on <span class="android"><span
 class="button-color">Run</span> to test your function.</span>
 Enter a test message in the “Test Data” input field.
 </li>
 </ul>
-<div class="note">
-<p><strong>Note:</strong><br />
-If you have already received news for your topic, the value of the last
-message will be preset but can be overwritten.</p>
-</div>
 <p>The result of the test run is displayed in the editor status line.</p>
-<p>Variables that you can access in the <tt>filterMsg()</tt> function:</p>
+<p>If you have already received news for your topic, the value of the last
+message will be preset but can be overwritten.</p>
+<h2>Additional filter scripts</h2>
+<p>Folgende Beispiele zeigen, wie Daten aus Nachrichten mit unterschiedlichen
+Strukturen extrahiert und aufbereitet werden. Die Beispiele können Sie auch
+mit (<img src="../img/overflow_icon.png" height="16"> > Insert Example >
+<em>&lt;Beispiele&gt;</em>) in Ihren Code einfügen und anpassen.</p>
+
+<p class="examples"><span class="clicklink JSON">JSON</span></p>
+<div id="JSON_LAY" class="LAY">
+<div class="close">&otimes;</div>
+<p><strong>JSON</strong></p>
+<p>The data exists in the format JSON (temperature <tt>t</tt> and humidity
+<tt>h</tt>)</p>
+<pre class="wrap">var j = JSON.parse(content);
+if (j.t && j.h) {
+ content = "Temperature: " + j.t + "°, Humidity: " + j.h + "%";
+}</pre>
+<p><em>Example:</em></p>
+<p>Message: <tt>{"t" : 24, "h" : 30}</tt><br />
+Ergebnis : „Temperature: 24°, Humidity: 30%“</p>
+<p><em>Explanation:</em></p>
+<ul>
+<li>The first line parses the content and returns a JavaScript object
+“j”</li>
+<li>The values can now be accessed via “j”</li>
+</ul>
+</div>
+
+<p class="examples"><span class="clicklink Split">Split</span></p>
+<div id="Split_LAY" class="LAY">
+<div class="close">&otimes;</div>
+<p><strong>Split</strong></p>
+<p>The data exists in text format (temperature and humidity). The values
+are separated by a blank character.</p>
+<pre class="wrap">var s = content.split(" ");
+if (s.length >= 2) {
+content = "Temperature: " + s[0] + "°, Humidity: " + s[1] + "%";
+}</pre>
+<p><em>Example:</em></p>
+<p>Message: <tt>23.1 30.5</tt><br />
+Result : „Temperature: 23.1°, Humidity: 30.5%“</p>
+<p><em>Explanation:</em></p>
+<ul>
+<li>The <tt>split()</tt> functions breaks the string (“msg.text”) into
+two substrings. If the message contained several spaces, more values
+would be returned correspondingly</li>
+<li>The values can now be accessed via “s” (array)</li>
+</ul>
+</div>
+
+<p class="examples"><span class="clicklink RegEx">Regular Expression</span></p>
+<div id="RegEx_LAY" class="LAY">
+<div class="close">&otimes;</div>
+<p><strong>Regular Expression</strong></p>
+<p>The data exists in text format. The example shows how a regular
+expression (pattern) can be used for all numeric values (occurrence of
+the pattern) in the message.</p>
+<pre class="wrap">var res = content.match(/[+-]?\d+(\.\d+)?/g);
+if (res && res.length >= 2) {
+ content = "Temperature: " + res[0] + "°, Humidity: " + res[1] + "%";
+}</pre>
+<p><em>Example:</em></p>
+<p>Message: <tt>24.2 30</tt><br />
+Result : „Temperature: 24.2°, Humidity: 30%“</p>
+<p><em>Explanation:</em></p>
+<ul>
+<li>The <tt>match()</tt> function searches for all numeric values in the
+string that match the specified pattern (regular expression)</li>
+<li>The values can now be accessed via “res” (array)</li>
+</ul>
+</div>
+
+<p class="examples"><span class="clicklink Binary">Binary</span></p>
+<div id="Binary_LAY" class="LAY">
+<div class="close">&otimes;</div>
+<p><strong>Binary</strong></p>
+<p>The data exists in binary format.</p>
+<pre class="wrap">/* 12 bytes: uint16, uint16, float32, float32 (little endian) */
+if (msg.raw.length >= 12) {
+ var dv = new DataView(msg.raw.buffer);
+ if (dv.getUint16(0, true) == 33841) {
+   var t = dv.getFloat32(4, true);
+   var h = dv.getFloat32(8, true);
+   content = 'Temperature: ' + t.toFixed(1) + '° , Humidity: ' + h.toFixed(1) + '%';
+ }
+}
+</pre>
+<p><em>Example:</em></p>
+<p>Message: <tt>49, 132, 0, 0, 175, 59, 168, 65, 184, 224, 0, 66</tt><br />
+Result : „Temperature: 21.0°, Humidity: 32.2%“</p>
+<p><em>Explanation:</em></p>
+<ul>
+<li>First it is checked whether the data block is at least 12 bytes in size.</li>
+<li>A <tt>DataView</tt> object is instantiated. The parameter is the <tt>ArrayBuffer</tt>
+of the message (“msg.raw”)</li>
+<li>An integer value as well as temperature and humidity (floating point
+numbers) are then read via the DataView object. The byte order is in the
+little-endian format</li>
+</ul>
+</div>
+
+<p class="examples"><span class="clicklink Hexdump">Hexdump</span></p>
+<div id="Hexdump_LAY" class="LAY">
+<div class="close">&otimes;</div>
+<p><strong>Hexdump</strong></p>
+<p>The example outputs the message in hexadecimal format (additionally
+displayable characters in ASCII format).</p>
+<pre class="wrap">var b = new Uint8Array(msg.raw);
+var width = 8;
+content = '';
+var hexStr, lineHex, lineAsc, offset;
+for(var i = 0; i < b.length; i += width) {
+ lineHex = ''; lineAsc = '';
+ for(var j = 0; j < width && j + i < b.length; j++) {
+   hexStr = b[i + j].toString(16);
+   if (hexStr.length % 2) {
+     hexStr = '0' + hexStr;
+   }
+   lineHex += hexStr + ' ';
+   if (b[i + j] >= 32 && b[i + j] <= 126) {
+     lineAsc += String.fromCharCode(b[i + j]);
+   } else {
+     lineAsc += '.';
+   }
+ }
+ for(var z = 0; z < width - j; z++) {
+   lineHex += ' ';
+ }
+ offset = i.toString(16);
+ if (offset.length % 2) {
+   offset = '0' + offset;
+ }
+ content += offset + ': ' + lineHex + lineAsc + '\n';
+}
+</pre>
+</div>
+
+<h2>Variables</h2>
+<p>Variables that can be accessed from the
+<tt>filterMsg()</tt> function:</p>
 <table border="1">
 <tr>
 <th>Parameter</th>
@@ -85,7 +246,7 @@ message will be preset but can be overwritten.</p>
 <td>Message topic</td>
 </tr>
 <tr>
-<td>msg.content</td>
+<td>msg.text</td>
 <td>Message content</td>
 </tr>
 <tr>
