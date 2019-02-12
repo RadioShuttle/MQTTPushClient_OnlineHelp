@@ -53,7 +53,7 @@ $(document).ready(function() {
 MQTT-Daten direkt im Fenster „Messages“, das für einfache Textnachrichten
 geeignet ist, angezeigt. MQTT-Benachrichtigungen können allerdings
 auch binär, XML, JSON oder anderweitig kodiert sein. Hier bieten
-JavaScript-basierte Filterskripte die Möglichkeit, die Banchrichtigungen
+JavaScript-basierte Filterskripte die Möglichkeit, die Benachrichtigungen
 zu analysieren und zu formatieren, um die gewünschten Daten in Form einer
 Textnachricht
 darzustellen.</p>
@@ -189,8 +189,8 @@ Ergebnis : „Temperature: 21.0°, Humidity: 32.2%“</p>
 <p><em>Erläuterung:</em></p>
 <ul>
 <li>Zunächst wird geprüft, ob der Datenblock mindestens 12 bytes groß ist</li>
-<li>Es wird ein DataView-Objekt instanziiert. Parameter ist der ArrayBuffer
-der Nachricht („msg.raw“)</li>
+<li>Es wird ein <tt>DataView</tt>-Objekt instanziiert. Parameter ist der
+<tt>ArrayBuffer</tt> der Nachricht („msg.raw“)</li>
 <li>Anschließend wird über das DataView-Objekt ein Integerwert sowie
 Temperatur und Luftfeuchtigkeit (Fließkommazahlen) gelesen. Die Byte-Reihenfolge
 ist im Format little-endian</li>
