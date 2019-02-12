@@ -161,7 +161,8 @@ img.large {
 .LAY {
 	display: none;
 	position: fixed;
-	top: 0.5em;
+	height: 30em;
+	top: 3.0em;
 	left: 0.8em;
 	right: 0.8em;
 	font-size: 90%;
@@ -169,8 +170,9 @@ img.large {
 	border: 1px solid #000000;
 	border-radius: 1em;
 	box-shadow: 2px 2px 4px #999999;
-	padding: 0em 0.4em;
+	padding: 0.4em 0.6em;
 	background-color: #eeffee;
+	overflow: auto;
 }
 
 pre.wrap {
@@ -178,9 +180,9 @@ pre.wrap {
 }
 
 .close {
-	position: fixed;
-	top: 0.3em;
-	right: 0.7em;
+	position: absolute;
+	top: 0.2em;
+	right: 0.5em;
 	font-size: 200%;
 	cursor: pointer;
 }
