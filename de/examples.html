@@ -33,10 +33,10 @@ $(document).ready(function() {
 if (j.t && j.h) {
  content = "Temperature: " + j.t + "°, Humidity: " + j.h + "%";
 }</pre>
-<p><em>Beispiel:</em></p>
+<p><em>Beispiel</em></p>
 <p>Nachricht: <tt>{"t" : 24, "h" : 30}</tt><br />
-Ergebnis : „Temperature: 24°, Humidity: 30%“</p>
-<p><em>Erläuterung:</em></p>
+Ergebnis: „Temperature: 24°, Humidity: 30%“</p>
+<p><em>Erläuterung</em></p>
 <ul>
 <li>In der ersten Zeile wird der Inhalt geparst und ein JavaScript-Objekt
 „j“ zurückgegeben</li>
@@ -50,10 +50,10 @@ werden durch ein Leerzeichen getrennt.</p>
 if (s.length >= 2) {
 content = "Temperature: " + s[0] + "°, Humidity: " + s[1] + "%";
 }</pre>
-<p><em>Beispiel:</em></p>
+<p><em>Beispiel</em></p>
 <p>Nachricht: <tt>23.1 30.5</tt><br />
-Ergebnis : „Temperature: 23.1°, Humidity: 30.5%“</p>
-<p><em>Erläuterung:</em></p>
+Ergebnis: „Temperature: 23.1°, Humidity: 30.5%“</p>
+<p><em>Erläuterung</em></p>
 <ul>
 <li>Die Funktion <tt>split()</tt> zerlegt die Zeichenkette („msg.text“)
 in zwei Teilstrings. Wären mehrere Leerzeichen in der Nachricht enthalten, würden
@@ -69,10 +69,10 @@ Musters) in der Nachricht gesucht wird.</p>
 if (res && res.length >= 2) {
  content = "Temperature: " + res[0] + "°, Humidity: " + res[1] + "%";
 }</pre>
-<p><em>Beispiel:</em></p>
+<p><em>Beispiel</em></p>
 <p>Nachricht: <tt>24.2 30</tt><br />
-Ergebnis : „Temperature: 24.2°, Humidity: 30%“</p>
-<p><em>Erläuterung:</em></p>
+Ergebnis: „Temperature: 24.2°, Humidity: 30%“</p>
+<p><em>Erläuterung</em></p>
 <ul>
 <li>Die Funktion <tt>match()</tt> sucht nach allen numerischen Werten in der
 Zeichenkette, auf die das angegebene Muster passt (regulärer Ausdruck)</li>
@@ -91,10 +91,10 @@ if (msg.raw.length >= 12) {
  }
 }
 </pre>
-<p><em>Beispiel:</em></p>
+<p><em>Beispiel</em></p>
 <p>Nachricht: <tt>49, 132, 0, 0, 175, 59, 168, 65, 184, 224, 0, 66</tt><br />
-Ergebnis : „Temperature: 21.0°, Humidity: 32.2%“</p>
-<p><em>Erläuterung:</em></p>
+Ergebnis: „Temperature: 21.0°, Humidity: 32.2%“</p>
+<p><em>Erläuterung</em></p>
 <ul>
 <li>Zunächst wird geprüft, ob der Datenblock mindestens 12 bytes groß ist</li>
 <li>Es wird ein <tt>DataView</tt>-Objekt instanziiert. Parameter ist der

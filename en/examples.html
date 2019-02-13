@@ -33,10 +33,10 @@ $(document).ready(function() {
 if (j.t && j.h) {
  content = "Temperature: " + j.t + "°, Humidity: " + j.h + "%";
 }</pre>
-<p><em>Example:</em></p>
+<p><em>Example</em></p>
 <p>Message: <tt>{"t" : 24, "h" : 30}</tt><br />
-Ergebnis : „Temperature: 24°, Humidity: 30%“</p>
-<p><em>Explanation:</em></p>
+Result: „Temperature: 24°, Humidity: 30%“</p>
+<p><em>Explanation</em></p>
 <ul>
 <li>The first line parses the content and returns a JavaScript object
 “j”</li>
@@ -50,10 +50,10 @@ are separated by a blank character.</p>
 if (s.length >= 2) {
 content = "Temperature: " + s[0] + "°, Humidity: " + s[1] + "%";
 }</pre>
-<p><em>Example:</em></p>
+<p><em>Example</em></p>
 <p>Message: <tt>23.1 30.5</tt><br />
 Result : „Temperature: 23.1°, Humidity: 30.5%“</p>
-<p><em>Explanation:</em></p>
+<p><em>Explanation</em></p>
 <ul>
 <li>The <tt>split()</tt> functions breaks the string (“msg.text”) into
 two substrings. If the message contained several spaces, more values
@@ -69,10 +69,10 @@ the pattern) in the message.</p>
 if (res && res.length >= 2) {
  content = "Temperature: " + res[0] + "°, Humidity: " + res[1] + "%";
 }</pre>
-<p><em>Example:</em></p>
+<p><em>Example</em></p>
 <p>Message: <tt>24.2 30</tt><br />
-Result : „Temperature: 24.2°, Humidity: 30%“</p>
-<p><em>Explanation:</em></p>
+Result: „Temperature: 24.2°, Humidity: 30%“</p>
+<p><em>Explanation</em></p>
 <ul>
 <li>The <tt>match()</tt> function searches for all numeric values in the
 string that match the specified pattern (regular expression)</li>
@@ -91,10 +91,10 @@ if (msg.raw.length >= 12) {
  }
 }
 </pre>
-<p><em>Example:</em></p>
+<p><em>Example</em></p>
 <p>Message: <tt>49, 132, 0, 0, 175, 59, 168, 65, 184, 224, 0, 66</tt><br />
-Result : „Temperature: 21.0°, Humidity: 32.2%“</p>
-<p><em>Explanation:</em></p>
+Result: „Temperature: 21.0°, Humidity: 32.2%“</p>
+<p><em>Explanation</em></p>
 <ul>
 <li>First it is checked whether the data block is at least 12 bytes in size.</li>
 <li>A <tt>DataView</tt> object is instantiated. The parameter is the <tt>ArrayBuffer</tt>
