@@ -163,11 +163,10 @@ pre.wrap {
 }
 
 .clicklink {
-	margin-left: 1.5em;
 	font-size: 85%;
-	color: #007aff;
 }
 
 .examples {
 	line-height: 1em; 
+	margin-left: 1.5em;
 }
