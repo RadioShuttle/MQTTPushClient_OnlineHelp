@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Scripts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Example Scripts</h1>
+<p id="json"><strong>JSON</strong></p>
+<p>The data exists in the format JSON (temperature <tt>t</tt> and humidity
+<tt>h</tt>)</p>
+<pre class="wrap">var j = JSON.parse(content);
+if (j.t && j.h) {
+ content = "Temperature: " + j.t + "°, Humidity: " + j.h + "%";
+}</pre>
+<p><em>Example:</em></p>
+<p>Message: <tt>{"t" : 24, "h" : 30}</tt><br />
+Ergebnis : „Temperature: 24°, Humidity: 30%“</p>
+<p><em>Explanation:</em></p>
+<ul>
+<li>The first line parses the content and returns a JavaScript object
+“j”</li>
+<li>The values can now be accessed via “j”</li>
+</ul>
+<br />
+<p id="split"><strong>Split</strong></p>
+<p>The data exists in text format (temperature and humidity). The values
+are separated by a blank character.</p>
+<pre class="wrap">var s = content.split(" ");
+if (s.length >= 2) {
+content = "Temperature: " + s[0] + "°, Humidity: " + s[1] + "%";
+}</pre>
+<p><em>Example:</em></p>
+<p>Message: <tt>23.1 30.5</tt><br />
+Result : „Temperature: 23.1°, Humidity: 30.5%“</p>
+<p><em>Explanation:</em></p>
+<ul>
+<li>The <tt>split()</tt> functions breaks the string (“msg.text”) into
+two substrings. If the message contained several spaces, more values
+would be returned correspondingly</li>
+<li>The values can now be accessed via “s” (array)</li>
+</ul>
+<br />
+<p id="regex"><strong>Regular Expression</strong></p>
+<p>The data exists in text format. The example shows how a regular
+expression (pattern) can be used for all numeric values (occurrence of
+the pattern) in the message.</p>
+<pre class="wrap">var res = content.match(/[+-]?\d+(\.\d+)?/g);
+if (res && res.length >= 2) {
+ content = "Temperature: " + res[0] + "°, Humidity: " + res[1] + "%";
+}</pre>
+<p><em>Example:</em></p>
+<p>Message: <tt>24.2 30</tt><br />
+Result : „Temperature: 24.2°, Humidity: 30%“</p>
+<p><em>Explanation:</em></p>
+<ul>
+<li>The <tt>match()</tt> function searches for all numeric values in the
+string that match the specified pattern (regular expression)</li>
+<li>The values can now be accessed via “res” (array)</li>
+</ul>
+<br />
+<p id="binary"><strong>Binary</strong></p>
+<p>The data exists in binary format.</p>
+<pre class="wrap">/* 12 bytes: uint16, uint16, float32, float32 (little endian) */
+if (msg.raw.length >= 12) {
+ var dv = new DataView(msg.raw.buffer);
+ if (dv.getUint16(0, true) == 33841) {
+   var t = dv.getFloat32(4, true);
+   var h = dv.getFloat32(8, true);
+   content = 'Temperature: ' + t.toFixed(1) + '° , Humidity: ' + h.toFixed(1) + '%';
+ }
+}
+</pre>
+<p><em>Example:</em></p>
+<p>Message: <tt>49, 132, 0, 0, 175, 59, 168, 65, 184, 224, 0, 66</tt><br />
+Result : „Temperature: 21.0°, Humidity: 32.2%“</p>
+<p><em>Explanation:</em></p>
+<ul>
+<li>First it is checked whether the data block is at least 12 bytes in size.</li>
+<li>A <tt>DataView</tt> object is instantiated. The parameter is the <tt>ArrayBuffer</tt>
+of the message (“msg.raw”)</li>
+<li>An integer value as well as temperature and humidity (floating point
+numbers) are then read via the DataView object. The byte order is in the
+little-endian format</li>
+</ul>
+<br />
+<p id="hexdump"><strong>Hexdump</strong></p>
+<p>The example outputs the message in hexadecimal format (additionally
+displayable characters in ASCII format).</p>
+<pre class="wrap">var b = new Uint8Array(msg.raw);
+var width = 8;
+content = '';
+var hexStr, lineHex, lineAsc, offset;
+for(var i = 0; i < b.length; i += width) {
+ lineHex = ''; lineAsc = '';
+ for(var j = 0; j < width && j + i < b.length; j++) {
+   hexStr = b[i + j].toString(16);
+   if (hexStr.length % 2) {
+     hexStr = '0' + hexStr;
+   }
+   lineHex += hexStr + ' ';
+   if (b[i + j] >= 32 && b[i + j] <= 126) {
+     lineAsc += String.fromCharCode(b[i + j]);
+   } else {
+     lineAsc += '.';
+   }
+ }
+ for(var z = 0; z < width - j; z++) {
+   lineHex += ' ';
+ }
+ offset = i.toString(16);
+ if (offset.length % 2) {
+   offset = '0' + offset;
+ }
+ content += offset + ': ' + lineHex + lineAsc + '\n';
+}
+</pre>
+</body>
+</html>

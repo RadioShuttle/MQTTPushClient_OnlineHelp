@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Beispielskripte</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Beispielskripte</h1>
+<p id="json"><strong>JSON</strong></p>
+<p>Daten liegen im Format JSON vor (Temperatur <tt>t</tt> und Luftfeuchtigkeit
+<tt>h</tt>)</p>
+<pre class="wrap">var j = JSON.parse(content);
+if (j.t && j.h) {
+ content = "Temperature: " + j.t + "°, Humidity: " + j.h + "%";
+}</pre>
+<p><em>Beispiel:</em></p>
+<p>Nachricht: <tt>{"t" : 24, "h" : 30}</tt><br />
+Ergebnis : „Temperature: 24°, Humidity: 30%“</p>
+<p><em>Erläuterung:</em></p>
+<ul>
+<li>In der ersten Zeile wird der Inhalt geparst und ein JavaScript-Objekt
+„j“ zurückgegeben</li>
+<li>Über „j“ kann jetzt auf die Werte zugegriffen werden</li>
+</ul>
+<br />
+<p id="split"><strong>Split</strong></p>
+<p>Daten liegen im Textformat vor (Temperatur und Luftfeuchtigkeit). Werte
+werden durch ein Leerzeichen getrennt.</p>
+<pre class="wrap">var s = content.split(" ");
+if (s.length >= 2) {
+content = "Temperature: " + s[0] + "°, Humidity: " + s[1] + "%";
+}</pre>
+<p><em>Beispiel:</em></p>
+<p>Nachricht: <tt>23.1 30.5</tt><br />
+Ergebnis : „Temperature: 23.1°, Humidity: 30.5%“</p>
+<p><em>Erläuterung:</em></p>
+<ul>
+<li>Die Funktion <tt>split()</tt> zerlegt die Zeichenkette („msg.text“)
+in zwei Teilstrings. Wären mehrere Leerzeichen in der Nachricht enthalten, würden
+entsprechend mehr Werte zurückgegeben werden</li>
+<li>Über „s“ (Array) kann jetzt auf die Werte zugegriffen werden</li>
+</ul>
+<br />
+<p id="regex"><strong>Regular Expression</strong></p>
+<p>Daten liegen im Textformat vor. Das Beispiel zeigt, wie mit Hilfe eines
+regulären Ausdrucks (Muster) nach allen numerischen Werten (Vorkommen des
+Musters) in der Nachricht gesucht wird.</p>
+<pre class="wrap">var res = content.match(/[+-]?\d+(\.\d+)?/g);
+if (res && res.length >= 2) {
+ content = "Temperature: " + res[0] + "°, Humidity: " + res[1] + "%";
+}</pre>
+<p><em>Beispiel:</em></p>
+<p>Nachricht: <tt>24.2 30</tt><br />
+Ergebnis : „Temperature: 24.2°, Humidity: 30%“</p>
+<p><em>Erläuterung:</em></p>
+<ul>
+<li>Die Funktion <tt>match()</tt> sucht nach allen numerischen Werten in der
+Zeichenkette, auf die das angegebene Muster passt (regulärer Ausdruck)</li>
+<li>Über „res“ (Array) kann jetzt auf die Werte zugegriffen werden</li>
+</ul>
+<br />
+<p id="binary"><strong>Binary</strong></p>
+<p>Daten liegen im Binärformat vor.</p>
+<pre class="wrap">/* 12 bytes: uint16, uint16, float32, float32 (little endian) */
+if (msg.raw.length >= 12) {
+ var dv = new DataView(msg.raw.buffer);
+ if (dv.getUint16(0, true) == 33841) {
+   var t = dv.getFloat32(4, true);
+   var h = dv.getFloat32(8, true);
+   content = 'Temperature: ' + t.toFixed(1) + '° , Humidity: ' + h.toFixed(1) + '%';
+ }
+}
+</pre>
+<p><em>Beispiel:</em></p>
+<p>Nachricht: <tt>49, 132, 0, 0, 175, 59, 168, 65, 184, 224, 0, 66</tt><br />
+Ergebnis : „Temperature: 21.0°, Humidity: 32.2%“</p>
+<p><em>Erläuterung:</em></p>
+<ul>
+<li>Zunächst wird geprüft, ob der Datenblock mindestens 12 bytes groß ist</li>
+<li>Es wird ein <tt>DataView</tt>-Objekt instanziiert. Parameter ist der
+<tt>ArrayBuffer</tt> der Nachricht („msg.raw“)</li>
+<li>Anschließend wird über das DataView-Objekt ein Integerwert sowie
+Temperatur und Luftfeuchtigkeit (Fließkommazahlen) gelesen. Die Byte-Reihenfolge
+ist im Format little-endian</li>
+</ul>
+<br />
+<p id="hexdump"><strong>Hexdump</strong></p>
+<p>Das Beispiel gibt die Nachricht im Hexadezimalsystem aus (zusätzlich
+darstellbare Zeichen im ASCII-Format).</p>
+<pre class="wrap">var b = new Uint8Array(msg.raw);
+var width = 8;
+content = '';
+var hexStr, lineHex, lineAsc, offset;
+for(var i = 0; i < b.length; i += width) {
+ lineHex = ''; lineAsc = '';
+ for(var j = 0; j < width && j + i < b.length; j++) {
+   hexStr = b[i + j].toString(16);
+   if (hexStr.length % 2) {
+     hexStr = '0' + hexStr;
+   }
+   lineHex += hexStr + ' ';
+   if (b[i + j] >= 32 && b[i + j] <= 126) {
+     lineAsc += String.fromCharCode(b[i + j]);
+   } else {
+     lineAsc += '.';
+   }
+ }
+ for(var z = 0; z < width - j; z++) {
+   lineHex += ' ';
+ }
+ offset = i.toString(16);
+ if (offset.length % 2) {
+   offset = '0' + offset;
+ }
+ content += offset + ': ' + lineHex + lineAsc + '\n';
+}
+</pre>
+</body>
+</html>
