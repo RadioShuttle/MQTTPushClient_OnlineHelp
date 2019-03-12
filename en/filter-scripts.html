@@ -25,6 +25,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<div class="android">
 <h1>Filter Scripts for Topics</h1>
 <p>By default, MQTT push notifications about received MQTT data are
 displayed directly in the “Messages” window, which is suitable for simple
@@ -104,7 +105,7 @@ marked by the &#xfffd; character</td>
 </tr>
 <tr>
 <td>msg.raw</td>
-<td>JavaScript ArrayBuffer object containing the original message</td>
+<td>JavaScript <tt>ArrayBuffer</tt> object containing the original message</td>
 </tr>
 <tr>
 <td>acc.user</td>
@@ -119,5 +120,6 @@ marked by the &#xfffd; character</td>
 <td>MQTT push server</td>
 </tr>
 </table>
+</div>
 </body>
 </html>

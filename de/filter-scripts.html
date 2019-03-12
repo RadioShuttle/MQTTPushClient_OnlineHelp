@@ -25,6 +25,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<div class="android">
 <h1>Filterskripte für Topics</h1>
 <p>Standardmäßig werden MQTT-Push-Benachrichtigungen über empfangene
 MQTT-Daten direkt im Fenster „Messages“, das für einfache Textnachrichten
@@ -108,7 +109,7 @@ ersetzt bzw. gekennzeichnet)</td>
 </tr>
 <tr>
 <td>msg.raw</td>
-<td>JavaScript ArrayBuffer-Objekt, das die Originalnachricht enthält</td>
+<td>JavaScript <tt>ArrayBuffer</tt>-Objekt, das die Originalnachricht enthält</td>
 </tr>
 <tr>
 <td>acc.user</td>
@@ -123,5 +124,6 @@ ersetzt bzw. gekennzeichnet)</td>
 <td>MQTT-Push-Server</td>
 </tr>
 </table>
+</div>
 </body>
 </html>
