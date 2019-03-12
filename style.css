@@ -100,6 +100,10 @@ ul.instruction li:before {
 	color: #007aff;
 }
 
+.iOS-red {
+	color: #ff3333;
+}
+
 .apple {
 	display: none;
 }
