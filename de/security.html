@@ -30,15 +30,25 @@ $(document).ready(function() {
 Sollte die Verbindung zum Push-Server unverschlüsselt sein, erhalten Sie
 eine Warnmeldung. Wenn Sie die Verbindung zulassen, sollte Ihnen bewusst
 sein, dass die Daten Ihres MQTT-Accounts im Klartext übertragen werden:</p>
+<div class="android">
 <p><img class="thumb" src="../img/cleartext_warning.png" width="275">
 <img class="large" src="../img/cleartext_warning.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/cleartext_warning_iOS.png" width="275">
+<img class="large" src="../img/cleartext_warning_iOS.png"></p>
+</div>
 <p>Die Verbindung zum Push-Server erfolgt verschlüsselt, wenn der Betreiber
 des Push-Servers SSL aktiviert hat. Die Authentizität des Push-Servers
-wird anhand von Zertifikaten überprüft. Kann die Authentizität des
+wird anhand von Zertifikaten überprüft.</p>
+<p>Kann die Authentizität des
 Push-Servers nicht bestätigt werden, erscheint ein Sicherheitshinweis:
-<em>„Push Server <Servername> uses an invalid certificate: …“</em>.</p>
+<span class="android"><em>“Push Server “&lt;server_name&gt;” uses an invalid certificate:
+…”</em></span><span class="apple">Push Server “&lt;server_name&gt;” uses an invalid
+certificate.</span>.</p>
 <p>Sie können Verbindungen zu diesem Server aufnehmen, indem sie auf
-<span class="magenta-button">ADD EXCEPTION</span> tippen, sollten sich
+<span class="android"><span class="magenta-button">ADD
+EXCEPTION</span></span><span class="apple"><span class="iOS-red">Continue</span></span> tippen, sollten sich
 jedoch darüber im Klaren sein, dass damit auch die Möglichkeit besteht,
 dass ein Dritter an Ihre MQTT-Account-Daten gelangt.</p>
 </body>

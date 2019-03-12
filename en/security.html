@@ -26,18 +26,27 @@ $(document).ready(function() {
 </head>
 <body>
 <h1>Security</h1>
-<p>Usually, the connection to a push server is encrypted.
-If the connection to a push server is not encrypted you will receive a
-warning. If you allow the connection, you should be aware that the data
-of your MQTT account will be transmitted in plain text:</p>
+<p>Usually, the connection to a push server is encrypted, if not you will
+receive a warning. If you allow the connection, you should be aware that
+the data of your MQTT account will be transmitted in plain text:</p>
+<div class="android">
 <p><img class="thumb" src="../img/cleartext_warning.png" width="275">
 <img class="large" src="../img/cleartext_warning.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/cleartext_warning_iOS.png" width="275">
+<img class="large" src="../img/cleartext_warning_iOS.png"></p>
+</div>
 <p>The connection to the push server is encrypted if the push server
-operator has SSL activated. The authenticity of the push server is verified
+operator has SSL activated.</p>
+<p>The authenticity of the push server is verified
 using certificates. If the authenticity of a push server cannot be confirmed
-a security note is displayed: <em>“Push Server <Servername> uses an invalid certificate: …”</em>.</p>
-<p>You can connect to this server by tapping on <span class="magenta-button">ADD
-EXCEPTION</span>, but also be aware that this may enable third-parties
-to gain access to your MQTT account data.</p>
+a security note is displayed: <span class="android"><em>“Push Server
+“&lt;server_name&gt;” uses an invalid certificate: …”</em></span><span class="apple">Push
+Server “&lt;server_name&gt;” uses an invalid certificate</span>.</p>
+<p>You can connect to this server by tapping on <span class="android"><span class="magenta-button">ADD
+EXCEPTION</span></span><span class="apple"><span class="iOS-red">Continue</span></span>,
+but also be aware that this may enable third-parties to gain access to
+your MQTT account data.</p>
 </body>
 </html>
