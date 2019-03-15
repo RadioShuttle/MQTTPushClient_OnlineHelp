@@ -25,7 +25,6 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<div class="android">
 <h1>Filterskripte für Topics</h1>
 <p>Standardmäßig werden MQTT-Push-Benachrichtigungen über empfangene
 MQTT-Daten direkt im Fenster „Messages“, das für einfache Textnachrichten
@@ -40,8 +39,8 @@ darzustellen.</p>
 <img class="large" src="../img/javascript_editor.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/javascript_editor.png_iOS.png" width="275">
-<img class="large" src="../img/javascript_editor.png_iOS.png"></p>
+<p><img class="thumb" src="../img/javascript_editor_iOS.png" width="275">
+<img class="large" src="../img/javascript_editor_iOS.png"></p>
 </div>
 <p>Die Filterskripte können per Texteingabe oder <em>Copy/Paste</em>
 übernommen werden. Zusätzlich werden sie auf dem Server gespeichert,
@@ -67,7 +66,7 @@ komplexen Code sowie Aktionen, die nicht dem Filtern der Nachricht dienen.</p>
 </div>
 <ul class="instruction">
 <li>Tippen Sie zum Testen Ihrer Funktion auf <span class="android"><span
-class="button-color">Run</span>.</span>
+class="button-color">Run</span></span><span class="apple"><span class="iOS">Run</span></span>.
 Geben Sie dazu eine Testnachricht in das Eingabefeld „Test Data“ ein.
 </li>
 </ul>
@@ -78,8 +77,9 @@ werden.</p>
 <h2>Weitere Filterskripte</h2>
 <p>Folgende Beispiele zeigen, wie Daten aus Nachrichten mit unterschiedlichen
 Strukturen extrahiert und aufbereitet werden. Die Beispiele können Sie auch
-mit (<img src="../img/overflow_icon.png" height="16"> > Insert Example >
-<em>&lt;Beispiele&gt;</em>) in Ihren Code einfügen und anpassen:</p>
+mit (<span class="android"><img src="../img/overflow_icon.png" height="16"> > Insert Example >
+<em>&lt;Beispiele&gt;</em></span><span class="apple"><img src="../img/share1.png" height="16"> > Insert Example >
+<em>&lt;Beispiele&gt;</em></span>) in Ihren Code einfügen und anpassen:</p>
 <p class="examples"><a href="examples.html#json"><span class="clicklink">JSON</span></a></p>
 <p class="examples"><a href="examples.html#split"><span class="clicklink">Split</span></a></p>
 <p class="examples"><a href="examples.html#regex"><span class="clicklink">Regular Expression</span></a></p>
@@ -124,6 +124,5 @@ ersetzt bzw. gekennzeichnet)</td>
 <td>MQTT-Push-Server</td>
 </tr>
 </table>
-</div>
 </body>
 </html>

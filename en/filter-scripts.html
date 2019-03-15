@@ -25,7 +25,6 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<div class="android">
 <h1>Filter Scripts for Topics</h1>
 <p>By default, MQTT push notifications about received MQTT data are
 displayed directly in the “Messages” window, which is suitable for simple
@@ -38,8 +37,8 @@ the desired data in the form of a text message.</p>
 <img class="large" src="../img/javascript_editor.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/javascript_editor.png_iOS.png" width="275">
-<img class="large" src="../img/javascript_editor.png_iOS.png"></p>
+<p><img class="thumb" src="../img/javascript_editor_iOS.png" width="275">
+<img class="large" src="../img/javascript_editor_iOS.png"></p>
 </div>
 <p>Filter scripts can be accepted via text input or <em>Copy/Paste</em>.
 In addition, they are stored on the server so that all mobile devices of
@@ -64,7 +63,8 @@ are not used to filter the message.</p>
 </div>
 <ul class="instruction">
 <li>Tap on <span class="android"><span
-class="button-color">Run</span> to test your function.</span>
+class="button-color">Run</span></span><span class="apple"><span class="iOS">Run</span></span>
+to test your function.</span>
 Enter a test message in the “Test Data” input field.
 </li>
 </ul>
@@ -73,8 +73,9 @@ Enter a test message in the “Test Data” input field.
 message will be preset but can be overwritten.</p>
 <h2>Additional filter scripts</h2>
 <p>The following examples show how data is extracted and formatted from
-messages with different structures. You can also use (<img src="../img/overflow_icon.png"
-height="16"> > Insert Example > <em>&lt;Examples&gt;</em>) to insert the
+messages with different structures. You can also use (<span class="android"><img src="../img/overflow_icon.png" height="16"> > Insert Example >
+<em>&lt;Beispiele&gt;</em></span><span class="apple"><img src="../img/share1.png" height="16"> > Insert Example >
+<em>&lt;Beispiele&gt;</em></span>) to insert the
 examples into your code and customize them:</p>
 <p class="examples"><a href="examples.html#json"><span class="clicklink">JSON</span></a></p>
 <p class="examples"><a href="examples.html#split"><span class="clicklink">Split</span></a></p>
@@ -120,6 +121,5 @@ marked by the &#xfffd; character</td>
 <td>MQTT push server</td>
 </tr>
 </table>
-</div>
 </body>
 </html>
