@@ -29,6 +29,19 @@ h3 {
 	font-size: 100%;
 }
 
+table, th, td {
+	border: 1px solid #000;
+}
+
+table {
+	border-collapse: collapse;
+	width: 80%;
+}
+
+td {
+	vertical-align: top;
+}
+
 a {
 	color: #000;
 }
