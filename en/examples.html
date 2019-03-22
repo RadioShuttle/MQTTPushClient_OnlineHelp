@@ -81,7 +81,7 @@ string that match the specified pattern (regular expression)</li>
 <br />
 <p id="binary"><strong>Binary</strong></p>
 <p>The data exists in binary format.</p>
-<pre class="wrap">/* 12 bytes: uint16, uint16, float32, float32 (little endian) */
+<pre class="wrap">
 if (msg.raw.byteLength >= 12) {
  var dv = new DataView(msg.raw);
  if (dv.getUint16(0, true) == 33841) {
