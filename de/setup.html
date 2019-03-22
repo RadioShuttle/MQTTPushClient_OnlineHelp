@@ -66,9 +66,9 @@ z.&nbsp;B. „yourpushserver.de:2009“.</p>
 <span class="apple"><span class="iOS">Save</span>.</span> Bei unverschlüsselten
 Verbindungen, oder wenn die Authentizität eines Push-Servers nicht bestätigt
 werden kann, erscheint eine Warnmeldung. Siehe dazu auch Abschnitt
-<a href="security.html">Sicherheit</a>.<br />
-In der Startansicht sollte jetzt Ihr Konto am MQTT-Server zu sehen sein:</li>
+<a href="security.html">Sicherheit</a>.</li>
 </ul>
+<p>In der Startansicht sollte jetzt Ihr Konto am MQTT-Server zu sehen sein:</p>
 <div class="android">
 <p><img class="thumb" src="../img/mqttserver.png" width="275">
 <img class="large" src="../img/mqttserver.png"></p>
@@ -77,6 +77,27 @@ In der Startansicht sollte jetzt Ihr Konto am MQTT-Server zu sehen sein:</li>
 <p><img class="thumb" src="../img/mqttserver_iOS.png" width="275">
 <img class="large" src="../img/mqttserver_iOS.png"></p>
 </div>
+<p>Über ein Farbsymbol neben dem Servernamen lässt sich der Status der
+Verbindung bestimmen. Dieses Symbol kann drei verschiedene Farben annehmen:</p>
+<table>
+<tr>
+<td><img src="../img/green.png" height="14"></td>
+<td><em>Alles OK. Push-Server und MQTT-Server sind erreichbar und online.
+Benachrichtigungen sind aktiviert.</em></td>
+</tr>
+<tr>
+<td><img src="../img/yellow.png" height="14"></td>
+<td><em>Wie grün, aber Benachrichtigungen funktionieren
+möglicherweise nicht, da keine Verbindung zum Cloud-Messaging-Dienst
+möglich ist (beispielsweise wenn keine Verbindung zum Internet besteht).</em></td>
+</tr>
+<tr>
+<td><img src="../img/red.png" height="14"></td>
+<td><em>Der Push-Server oder der angegebene MQTT-Server sind nicht
+erreichbar oder die Autorisierung schlug fehl. Auch Benachrichtigungen
+funktionieren möglicherweise nicht.</em></td>
+</tr>
+</table>
 <ul class="instruction">
 <li>Zum Bearbeiten oder Löschen eines Listeneintrags <span class="android">drücken Sie so lange
 auf den entsprechenden Eintrag („Long Press“) bis das gewünschte Icon

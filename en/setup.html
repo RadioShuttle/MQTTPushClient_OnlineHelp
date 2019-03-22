@@ -64,9 +64,9 @@ e.g. “yourpushserver.de:2009”.</p>
 <li>Tap on <span class="android"><span class="button-color">Save</span>.</span>
 <span class="apple"><span class="iOS">Save</span>.</span> When using unencrypted
 connections, or if the authenticity of a push server cannot be confirmed,
-a warning message is issued. See also <a href="security.html">Security</a>.<br />
-Your MQTT server account should now be listed on the home page:</li>
+a warning message is issued. See also <a href="security.html">Security</a>.</li>
 </ul>
+<p>Your MQTT server account should now be listed on the home page:</p>
 <div class="android">
 <p><img class="thumb" src="../img/mqttserver.png" width="275">
 <img class="large" src="../img/mqttserver.png"></p>
@@ -75,6 +75,26 @@ Your MQTT server account should now be listed on the home page:</li>
 <p><img class="thumb" src="../img/mqttserver_iOS.png" width="275">
 <img class="large" src="../img/mqttserver_iOS.png"></p>
 </div>
+<p>An icon adjacent to the server name informs you about the connection
+status. This icon can take on three different colors:</p>
+<table>
+<tr>
+<td><img src="../img/green.png" height="14"></td>
+<td><em>Ok. Push server and MQTT server are up and running an available.
+Cloud messaging is active.</em></td>
+</tr>
+<tr>
+<td><img src="../img/yellow.png" height="14"></td>
+<td><em>Like above, only with the difference that cloud messaging might
+not work because no connection to the cloud messaging service could be
+established (e.g. no Internet connection).</em></td>
+</tr>
+<tr>
+<td><img src="../img/red.png" height="14"></td>
+<td><em>Push server or the specified MQTT server are not available, or
+the authorization failed. Also, notifications may not work.</em></td>
+</tr>
+</table>
 <ul class="instruction">
 <li>For editing or deleting a list item, <span class="android">perform a
 long press on the respective entry until the desired icon
