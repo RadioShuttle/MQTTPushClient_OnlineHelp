@@ -27,8 +27,9 @@ $(document).ready(function() {
 <body>
 <h1>Dashboard</h1>
 <p>Dashboard bietet, im Gegensatz zu “Messages", eine grafische Benutzeroberfläche.
-Es können universelle Anzeige- und Steuerelemente angelegt werden, wie z.&nbsp;B.
-eine Temperaturanzeige oder ein Lichtschalter (Verwendung des MQTT-Protokolls).
+Es können Anzeige- und Steuerelemente angelegt werden, wie z.&nbsp;B.
+eine Temperaturanzeige oder ein Lichtschalter (Verwendung des MQTT-Protokolls:
+„Topic (sub)“ um Werte/Inhalte anzuzeigen, „Topic (pub)“ zum Setzen neuer Werte).
 </p>
 <ul class="instruction">
 <li>Tippen Sie nach dem Starten der App auf den Listeneintrag eines
@@ -37,10 +38,7 @@ Push-Server-Kontos.</li>
 src="../img/dashboard_icon.png" height="16"></span><span class="apple"><img
 src="../img/dashboard_icon.png" height="16"></span>.</li>
 </ul>
-<p>Die Ansicht „Dashboard“ öffnet sich. Hier lassen sich Komponenten zur
-Anzeige von Sensordaten bzw. Werten des spezifizierten Topics anlegen
-und/oder zur Eingabe von Werten (über entsprechende Steuerlelemente), die
-an das angegebene „Publish Topic“ gesendet werden.</p>
+<p>Die Ansicht „Dashboard“ öffnet sich.</p>
 <ul class="instruction">
 <li>Tippen Sie auf das Icon <span class="android"><img
 src="../img/plus_icon.png" height="16"></span><span class="apple"><img
@@ -62,8 +60,8 @@ eigene Lösungen bieten.</p>
 <th>Komponente</th><th>Erläuterung</th>
 </tr>
 <tr>
-<td><em>Text View</em></td><td>Liefert den Inhalt einer Nachricht in
-Textform. Siehe dazu den Abschnitt <a href="#textview">Text&nbsp;View</a></td>
+<td><em>Text View</em></td><td>Zur Darstellung von Nachrichten in Textform
+und zur Eingabe von Werten. Siehe dazu den Abschnitt <a href="#textview">Text&nbsp;View</a></td>
 </tr>
 <tr>
 <td><em>Button/Switch</em></td><td>Erzeugt eine Schaltfläche bzw. einen
@@ -109,24 +107,23 @@ Hier können Sie die Farbe für Vodergrund, Hintergrund und Text auswählen
 Hier können Sie die verwendete Textgröße („small“/„medium“/„large“) auswählen
 </li>
 <li><em>Image</em><br>
-Hier können Sie ein Bild auswählen oder ein eigenes <a href="#manage_images">
-Bild importieren</a></li>
+Hier können Sie ein Bild auswählen</li>
 <li><em>Topic (sub)</em><br>
-Hier geben Sie den Verzeichnispfad für die gewünschte Registrierung
-(<em>Subscribe</em>) an</li>
+Hier geben Sie ein Topic an, für das Sie Nachrichten/Werte erhalten möchten</li>
 <li><em>Filter Script</em><br>
 Hier haben Sie die Möglichkeit, JavaScript-basierte Filterskripte einzugeben,
-die Benachrichtigungen analysieren und formatieren, um die gewünschten
-Daten in Form einer Textnachricht darzustellen <span class="draft">xxx</span></li>
+die Nachrichteninhalte analysieren und formatieren <span class="draft">xxx</span></li>
 <li><em>Topic (pub)</em><br>
-Hier geben Sie den Verzeichnispfad für die gewünschte Veröffentlichung
-(<em>Publish</em>) an</li>
+Hier geben Sie das Topic an, an das Werte gesendet werden sollen</li>
 <li><em>Retain</em><br>
-Hier können Sie festlegen, dass Benachrichtigungen auf dem MQTT-Server
-vorgehalten werden</li>
+Hier können Sie festlegen, dass gesendete Nachrichten auf dem MQTT-Server
+vorgehalten werden. Es wird immer nur die letzte gesendete Nachricht
+pro Topic vorgehalten</li>
 <li><em>Script</em><br>
-Hier können Sie ein Skript eintragen, welches bei „Topic (pub)“ ausgeführt
-werden soll, also beim Betätigen der Schaltfläche <span class="draft">xxx</span></li>
+Hier können Sie ein Skript eintragen, um Daten, die gesendet werden sollen,
+aufzubereiten, z.&nbsp;B. im Format <em>JSON</em>. Je nach Komponente ist
+eine User-Aktion, z.&nbsp;B. durch Tippen auf eine Schaltfläche (siehe Abschnitt
+<a href="#button">Button/Switch</a>), erforderlich. Ein „Topic (pub)“ muss gesetzt worden sein.</li>
 </ul>
 </div>
 <h3 id="textview">Text View</h3>
