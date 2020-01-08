@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<link href="../style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/jquery/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".android").hide();
+		$(".apple").show();
+	}
+	$("img.thumb").click(function() {
+		$("img.thumb").show().next("img.large").hide();
+		$(this).hide();
+		$(this).next("img.large").fadeIn();
+	});
+	$("img.large").click(function() {
+		$(this).hide();
+		$(this).prev("img.thumb").show();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Dashboard</h1>
+<p>Dashboard bietet, im Gegensatz zu “Messages", eine grafische Benutzeroberfläche.
+Es können universelle Anzeige- und Steuerelemente angelegt werden, wie z.&nbsp;B.
+eine Temperaturanzeige oder ein Lichtschalter (Verwendung des MQTT-Protokolls).
+</p>
+<ul class="instruction">
+<li>Tippen Sie nach dem Starten der App auf den Listeneintrag eines
+Push-Server-Kontos.</li>
+<li>Tippen Sie dann im Fenster „Messages“ auf das Icon <span class="android"><img
+src="../img/dashboard_icon.png" height="16"></span><span class="apple"><img
+src="../img/dashboard_icon.png" height="16"></span>.</li>
+</ul>
+<p>Die Ansicht „Dashboard“ öffnet sich. Hier lassen sich Komponenten zur
+Anzeige von Sensordaten bzw. Werten des spezifizierten Topics anlegen
+und/oder zur Eingabe von Werten (über entsprechende Steuerlelemente), die
+an das angegebene „Publish Topic“ gesendet werden.</p>
+<ul class="instruction">
+<li>Tippen Sie auf das Icon <span class="android"><img
+src="../img/plus_icon.png" height="16"></span><span class="apple"><img
+src="../img/plus_icon.png" height="16"></span>.</li>
+</ul>
+<p>Ein Einblendmenü öffnet sich und bietet verschiedene Komponentenvorlagen an,
+welche für die unterschiedlichsten Zwecke eine gute Ausgangsbasis für
+eigene Lösungen bieten.</p>
+<div class="android">
+<p><img class="thumb" src="../img/dashboard.png" width="275">
+<img class="large" src="../img/dashboard.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/dashboard.png" width="275">
+<img class="large" src="../img/dashboard.png"></p>
+</div>
+<table border="1">
+<tr>
+<th>Komponente</th><th>Erläuterung</th>
+</tr>
+<tr>
+<td><em>Text View</em></td><td>Liefert den Inhalt einer Nachricht in
+Textform. Siehe dazu den Abschnitt <a href="#textview">Text&nbsp;View</a></td>
+</tr>
+<tr>
+<td><em>Button/Switch</em></td><td>Erzeugt eine Schaltfläche bzw. einen
+Schalter. Siehe dazu den Abschnitt <a href="#button">Button/Switch</a></td>
+</tr>
+<tr>
+<td><em>Progress&nbsp;Bar/Slider</em></td><td>Stellt einen Wertebereich
+durch einen Balken dar. Mit „Publish Topic“ kann mithilfe eines Schiebereglers
+ein neuer Wert gesetzt und gesendet werden. Siehe dazu den Abschnitt <a
+href="#slider">Progress&nbsp;Bar/Slider</a</td>
+</tr>
+<tr>
+<td><em>Option List</em></td><td>Erlaubt die Definition einer beliebigen
+Menge von Werten. Siehe dazu den Abschnitt <a href="#optionlist">Option&nbsp;List</a></td>
+</td>
+</tr>
+<tr>
+<td><em>Group View</em></td><td>Zur Gruppierung von Komponenten im Dashboard.
+Siehe dazu den Abschnitt <a href="#groupview">Group&nbsp;View</a></td>
+</td>
+</tr>
+<tr>
+<td><em>Custom View</em></td><td>Erlaubt das Anlegen neuer Komponenten
+in HTML. Siehe dazu den Abschnitt <a href="#customview">Custom&nbsp;View</a>.
+</td>
+</tr>
+</table>
+<h2>Vorlagen für Komponenten</h2>
+<div class="optionlist">
+<h6>Allgemeine Konfigurationselemente (in mehreren Komponenten verwendet):</h6>
+<ul>
+<li><em>Name</em><br>
+Hier geben Sie der anzulegenden Komponente einen Namen</li>
+<li><em>Group</em><br>
+Hier gruppieren Sie die Komponente in eine (bestehende) Gruppe</li>
+<li><em>Position</em><br>
+Hier legen Sie die Position der Komponentenkachel innerhalb einer Gruppe
+fest</li>
+<li><em>Color</em><br>
+Hier können Sie die Farbe für Vodergrund, Hintergrund und Text auswählen
+</li>
+<li><em>Text Size</em><br>
+Hier können Sie die verwendete Textgröße („small“/„medium“/„large“) auswählen
+</li>
+<li><em>Image</em><br>
+Hier können Sie ein Bild auswählen oder ein eigenes <a href="#manage_images">
+Bild importieren</a></li>
+<li><em>Topic (sub)</em><br>
+Hier geben Sie den Verzeichnispfad für die gewünschte Registrierung
+(<em>Subscribe</em>) an</li>
+<li><em>Filter Script</em><br>
+Hier haben Sie die Möglichkeit, JavaScript-basierte Filterskripte einzugeben,
+die Benachrichtigungen analysieren und formatieren, um die gewünschten
+Daten in Form einer Textnachricht darzustellen <span class="draft">xxx</span></li>
+<li><em>Topic (pub)</em><br>
+Hier geben Sie den Verzeichnispfad für die gewünschte Veröffentlichung
+(<em>Publish</em>) an</li>
+<li><em>Retain</em><br>
+Hier können Sie festlegen, dass Benachrichtigungen auf dem MQTT-Server
+vorgehalten werden</li>
+<li><em>Script</em><br>
+Hier können Sie ein Skript eintragen, welches bei „Topic (pub)“ ausgeführt
+werden soll, also beim Betätigen der Schaltfläche <span class="draft">xxx</span></li>
+</ul>
+</div>
+<h3 id="textview">Text View</h3>
+<p>Stellt den Inhalt einer Nachricht in Textform dar. Sofern ein „Publish
+Topic“ angegeben wurde, kann in der Detailansicht ein Wert eingegeben und
+gesendet werden.</p>
+<div class="optionlist">
+<h6>Zusätzliches Konfigurationselement:</h6>
+<ul>
+<li><em>Input Type</em><br>
+Hier können Sie von Text- auf Zifferneingabe umschalten</li>
+</ul>
+</div>
+<h3 id="button">Button/Switch</h3>
+<p>Erzeugt eine Schaltfläche, welche z.&nbsp;B. als Taster fungiert, der
+bei Betätigung eine Nachricht versendet. Dazu wird in „Off state“ nichts
+eingetragen. Wird die Schaltfläche als Schalter angelegt, der in
+Abhängigkeit des Wertes der letzten empfangenen Nachricht seinen Zustand
+ändert (an/aus), muss im „Off state“ ein Topic eingetragen sein.</p>
+<div class="example">
+<h6>Beispiel:</h6>
+<p>Eine Komponente soll konfiguriert werden, die eine Lampe ein- und
+ausschaltet und gleichzeitig über den aktuellen Schaltstatus informiert.</p>
+<ul class="instruction">
+<li>Wählen Sie aus dem Menü den Eintrag „Button/Switch“ aus:</li>
+</ul>
+<div class="android">
+<p><img class="thumb" src="../img/edit_button-1.png" width="275">
+<img class="large" src="../img/edit_button-1.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/edit_button-1.png" width="275">
+<img class="large" src="../img/edit_button-1.png"></p>
+</div>
+<ul class="instruction">
+<li>Legen Sie zuerst einen Namen für die Komponente fest (im obigen Beispiel
+haben wir sie „Schalter“ genannt).</li>
+<li>Definieren Sie ggf. die Hintergrundfarbe der Komponentenkachel an sich
+sowie die Vorder- und Hintergrundfarbe der Schaltzustände <em>An</em>
+(„On state“) bzw. <em>Aus</em> („Off state“).</li>
+</ul>
+<p>Zu einer Hintergrundfarbe lässt sich zusätzlich auch ein Bild verwenden:</p>
+<ul class="instruction">
+<li>Tippen Sie auf die Schaltfläche neben „Image“.</li>
+</ul>
+<p>Es öffnet sich das Fenster „Select an Image“, welches eine Reihe von
+Icons und Symbolen zur Verfügung stellt. Alternativ dazu können auch eigene
+Bilder verwendet werden, die zuvor in die App importiert wurden (<a
+href="#manage_images">Eigene Bilder in die App importieren</a>).</p>
+<div class="android">
+<p><img class="thumb" src="../img/edit_button-2.png" width="275">
+<img class="large" src="../img/edit_button-2.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/edit_button-2.png" width="275">
+<img class="large" src="../img/edit_button-2.png"></p>
+</div>
+<ul class="instruction">
+<li>Tragen Sie sowohl für den Empfang („Topic (sub)“) als auch für das
+Senden („Topic (pub)“) ein Topic ein.</li>
+</ul>
+<p>Nur so kann die Schaltkomponente den Schaltstatus („Topic (sub)“)
+vom Server abfragen und Schaltbefehle an den Server geben („Topic (pub)“).</p>
+</div><br>
+<div class="optionlist">
+<h6>Zusätzliche Konfigurationselemente:</h6>
+<ul>
+<li><em>On State</em><br>
+Hier tragen sie einen Wert für den Schaltzustand <em>An</em> ein, z.&nbsp;B.
+„On“</li>
+<li><em>Off State</em><br>
+Hier tragen sie einen Wert für den Schaltzustand <em>Aus</em> ein, z.&nbsp;B.
+„Off“</li>
+</ul>
+</div>
+<h3 id="slider">Progress Bar/Slider</h3>
+<p>Ein Wertebereich wird durch einen Balken dargestellt, wobei der Balken
+bis zum aktuellen Wert eingefärbt wird (wie bei einer Fortschrittsanzeige).
+Wurde ein „Publish Topic“ angegeben, kann in der Detailansicht durch einen
+Schieberegler ein neuer Wert gesetzt und gesendet werden.</p>
+<div class="optionlist">
+<h6>Zusätzliche Konfigurationselemente:</h6>
+<ul>
+<li><em>Range</em><br>
+Hier definieren Sie den Wertebereich eines Fortschrittsbalkens</li>
+<li><em>Display in percent</em><br>
+Hier können Sie festlegen, dass ein Wert in Prozent (bezogen auf den
+gesamten Wertebereich) angezeigt wird</li>
+<li><em>Decimal</em><br>
+Hier können Sie die Nachkommastellen des angezeigten Wertes festlegen</li>
+</ul>
+</div>
+<h3 id="optionlist">Option List</h3>
+<p>Erlaubt die Definition einer Menge von Werten. Für jede Option kann
+ein Anzeigewert definiert werden, der anstatt des tatsächlichen Wertes
+angezeigt wird.</p>
+<h3 id="groupview">Group View</h3>
+<p>Für eine bessere Übersicht im Dashboard lassen sich Gruppen anlegen,
+denen einzelne Komponenten zugeordnet werden können.</p>
+<div class="note">
+<h6>Hinweis:</h6>
+<p>Einzelne Komponenten lassen sich gruppieren oder können auch einer
+anderen <a href="#groupview">Gruppe zugeordnet werden</a>. Dazu tippen
+und halten Sie die gewünschte Komponentenkachel („Long Press“), bis ein
+<img src="../img/checkmark.png" height="16"> erscheint und Sie
+per <img src="../img/edit.png" height="16"> in den Bearbeitungsmodus
+wechseln können.<br>
+<br>
+Über „Group“ und „Pos“ kann das Icon nun in die gewünschte Position
+gebracht werden.</p>
+</div>
+<h3 id="customview">Custom View</h3>
+<p>Hier lassen sich beliebige Komponenten in HTML anlegen. Dazu kann der
+HTML-Code direkt in das dafür vorgesehene Feld geschrieben oder kopiert
+werden. Alternativ erhalten Sie durch Tippen auf das Überlaufmenü <span
+class="nowrap">(<span class="android"><img src="../img/overflow_icon.png"
+height="16"></span><span class="apple"><img src="../img/overflow_icon.png"
+height="16"></span>)</span> unter „Insert Example“ drei verschiedene
+HTML-Vorlagen <em>(Basic HTML</em>, <em>Color Picker</em> und <em>Gauge)</em>,
+die sich direkt in die Komponente einfügen und bearbeiten lassen.<p>
+<div class="android">
+<p><img class="thumb" src="../img/custom_view-examples.png" width="275">
+<img class="large" src="../img/custom_view-examples.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/custom_view-examples.png" width="275">
+<img class="large" src="../img/custom_view-examples.png"></p>
+</div>
+<div class="optionlist">
+<h6>Zusätzliches Konfigurationselement:</h6>
+<ul>
+<li><em>HTML</em><br>
+Hier können Sie Ihren eigenen HTML-Code zur Gestaltung der Komponentenkachel
+eingeben. Dabei ist auch die Einbindung von JavaScript zulässig</li>
+</ul>
+</div>
+<h2 id="manage_images">Eigene Bilder in die App importieren</h2>
+<p>Einige Dashboard-Komponenten erlauben die Einbindung von Bildern
+(Hintergründe, Status von Schaltern usw.). Damit eigene Bilder in der
+App zur Verfügung stehen, müssen diese zuvor in die App importiert werden:</p>
+<ul class="instruction">
+<li>Wählen Sie dazu im Fenster „Dashboard“ den Eintrag „Manage Images“
+aus dem Überlaufmenü <span class="nowrap">(<span class="android"><img
+src="../img/overflow_icon.png" height="16"></span><span class="apple"><img
+src="../img/overflow_icon.png" height="16"></span>)</span> aus.</li>
+</ul>
+<div class="android">
+<p><img class="thumb" src="../img/manage_images.png" width="275">
+<img class="large" src="../img/manage_images.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/manage_images.png" width="275">
+<img class="large" src="../img/manage_images.png"></p>
+</div>
+<ul class="instruction">
+<li>Öffnen Sie dann im Fenster „Manage Images“ erneut das Überlaufmenü <span class="nowrap">(<span
+class="android"><img src="../img/overflow_icon.png" height="16"></span><span
+class="apple"><img src="../img/overflow_icon.png" height="16"></span>)</span>,
+tippen Sie auf „Import“ und wählen Sie die Bilder aus, die Sie in die App
+importieren möchten.</li>
+</ul>
+<p>Alle in die App importierten Bilder landen im Fenster „Manage Images“:
+<div class="android">
+<p><img class="thumb" src="../img/import_images.png" width="275">
+<img class="large" src="../img/import_images.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/import_images.png" width="275">
+<img class="large" src="../img/import_images.png"></p>
+</div>
+<p>Jedesmal, wenn die App beendet wird, werden Bilder, die in keiner
+Komponente verwendet werden, gelöscht. Um dies zu verhindern, können sie
+geschützt werden. Im obigen Bild sind bereits zwei zuvor importierte
+Bilder zu sehen. Beide sind mit solch einem Schutz <span class="nowrap">(<span class="android"><img
+src="../img/padlock.png" height="16"></span><span class="apple"><img
+src="../img/padlock.png" height="16"></span>)</span> versehen.</p>
+<ul class="instruction">
+<li>Tippen und halten Sie die gewünschte Bilddatei („Long Press“), bis
+das Schlosssymbol erscheint.</li>
+</ul>
+Die mit einem <span class="android"><img src="../img/padlock.png"
+height="16"></span><span class="apple"><img src="../img/padlock.png"
+height="16"></span> versehenen Bilder bleiben beim Neustart der App erhalten.
+<div class="note">
+<h6>Hinweis zu Bildern mit Transparenzen:</h6>
+<p>Werden Bilder, welche Transparenzen enthalten, über das Feld „Image“
+in die Komponente eingebunden, so bleiben diese Transparenzen erhalten.
+Die folgende Abbildung zeigt den Vergleich zwischen einem Bild <em>mit</em>
+(links) und einem <em>ohne</em> Transparenzen (rechts). Beide Bilder liegen
+über einem gelb eingefärbten Hintergrund:</p>
+<div class="android">
+<p><img class="thumb" src="../img/transp_flat.png" width="275">
+<img class="large" src="../img/transp_flat.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/transp_flat.png" width="275">
+<img class="large" src="../img/transp_flat.png"></p>
+</div>
+</div>
+</body>
+</html>
