@@ -91,6 +91,10 @@ ul.instruction li:before {
 	white-space: nowrap;
 }
 
+pre.wrap {
+	white-space: pre-wrap;
+}
+
 .google-text {
 	color: #4285f4;
 }
@@ -125,6 +129,32 @@ ul.instruction li:before {
 	display: inline;
 }
 
+.draft {
+	color: #ff0000;
+}
+
+.example {
+	border: 1px solid #000;
+	background-color: #ffffcc;
+	padding: 0.7em;
+}
+.example h6 {
+	font-size: 100%;
+	font-weight: bold;
+	margin: 0.25em 0;
+}
+
+.optionlist h6 {
+	font-size: 100%;
+	font-weight: bold;
+	margin: 0.25em 0;
+}
+.optionlist {
+	border: 1px solid #000;
+	background-color: #ccffcc;
+	padding: 0.7em;
+}
+
 .mqtt-index {
 	margin: 0;
 	padding-left: 1em;
@@ -150,14 +180,15 @@ ul.instruction li:before {
 .note em {
 	font-style: normal;
 }
+
+.note p {
+	margin: 0.75em 0;
+}
+
 .note h6 {
 	font-size: 100%;
 	font-weight: bold;
 	margin: 0.25em 0;
-}
-
-.note p {
-	margin: 0.75em 0;
 }
 
 .note p:last-child {
@@ -173,17 +204,4 @@ img.large {
 	max-width: 600px;
 	display: none;
 	box-shadow: 3px 3px 5px #888888;
-}
-
-pre.wrap {
-	white-space: pre-wrap;
-}
-
-.clicklink {
-	font-size: 85%;
-}
-
-.examples {
-	line-height: 1em; 
-	margin-left: 1.5em;
 }
