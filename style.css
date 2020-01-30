@@ -63,6 +63,16 @@ td,th {
 	padding: 0.5em;
 }
 
+ol {
+	padding: 0 0 0 1.2em;
+}
+
+ol li {
+	padding: 0;
+	margin: 0.5em 0;
+	line-height:1.4em;
+}
+
 ul {
 	padding: 0 0 0 1.2em;
 }
@@ -133,6 +143,10 @@ pre.wrap {
 	color: #ff0000;
 }
 
+.indent {
+	margin-left: 1em;
+}
+
 .example {
 	border: 1px solid #000;
 	background-color: #ffffcc;
@@ -193,6 +207,10 @@ pre.wrap {
 
 .note p:last-child {
 	margin-bottom: 0;
+}
+
+img.thumb_noreplace {
+	box-shadow: 3px 3px 5px #888888;
 }
 
 img.thumb {
