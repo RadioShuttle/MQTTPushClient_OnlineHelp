@@ -28,7 +28,7 @@ $(document).ready(function() {
 <h1>Dashboard-Skripte</h1>
 <p>Jedem Dash (außer „Group“) lassen sich im Editor Skripte hinzufügen.
 Es wird zwischen Filter-Skripten (Filtern des Inhalts einer erhaltenen
-Nachricht) und Output-Skripten (zur Formartierung des Inhalts vor dem
+Nachricht) und Output-Skripten zur Formartierung des Inhalts vor dem
 Veröffentlichen (<em>publish</em>) unterschieden.</p>
 
 <p>Für „Custom Views“ muss die entsprechende Funktionalität direkt im HTML-Code
@@ -86,6 +86,26 @@ zum Konto. Siehe dazu auch <a href="filter-scripts.html#variables">die Tabelle �
 auf Eigenschaften des Dashes zugreifen, um beispielsweise Farben neu
 zu setzen. Siehe dazu <a href="#functions">diesen Abschnitt</a>.</p>
 
+<h2>Skriptfehler</h2>
+<p>JavaScript- und Verbindungsfehler (z.&nbsp;B. kein Netz bei <tt>publish()</tt>)
+sind im Dash durch einen Warnhinweis (<img src="../img/exclamation.png"
+height="16">) gekennzeichnet.</p>
+
+<ul class="instruction">
+<li>Tippen Sie erst auf den Dash (<strong><span class="draft">1</span></strong>), um
+in die Detailansicht zu gelangen und dann auf das Symbol <img src="../img/exclamation.png"
+height="16"> (<strong><span class="draft">2</span></strong>), um den Fehlertext anzuzeigen:</li>
+</ul>
+
+<div class="android">
+<p><img class="thumb" src="../img/burglaralarm.png" width="550">
+<img class="large" src="../img/burglaralarm.png"></p>
+</div>
+<div class="apple">
+<p><img class="thumb" src="../img/burglaralarm.png" width="550">
+<img class="large" src="../img/burglaralarm.png"></p>
+</div>
+
 <h2>JavaScript-Interface</h2>
 <p>Die Darstellung von Dashes lässt sich durch Skript-Code dynamisch
 verändern.</p> 
@@ -131,7 +151,7 @@ Parameter: <tt>color</tt> - Farbwert ARGB (siehe auch <a href="#color_constant">
 Dashes: <em>alle</em></p>
 
 <p><tt>setBackgroundImage(resourceName), getBackgroundImage()</tt><br>
-Beschreibung: setze/lese Hintergrund-Image<br>
+Beschreibung: setze/lese Hintergrundbild<br>
 Parameter: <tt>resourceName</tt> interner oder externer Ressourcename (vom
 Benutzer importiertes Image). Zwecks Unterscheidung kann ein Pfad „int/“
 oder „user/“ vorangestellt werden (erforderlich bei Namenskollision; wenn
@@ -220,10 +240,10 @@ for(var i = 0; i < data.length; i++) {
 }
 </pre>
 </div>
-<p><tt>msg.receivedDate</tt> - Datum (JavaScript <tt>Date</tt>-Objekt)<br>
-<tt>msg.topic</tt> - Topic (Typ <tt>string</tt>)<br>
-<tt>msg.text</tt> - Nachrichteninhalt (Typ <tt>string</tt>)<br>
-<tt>msg.raw</tt> - Nachrichteninhalt binär (JavaScript <tt>ArrayBuffer</tt>-Objekt)</p>
+<p><tt>msg.receivedDate</tt> &ndash; Datum (JavaScript <tt>Date</tt>-Objekt)<br>
+<tt>msg.topic</tt> &ndash; Topic (Typ <tt>string</tt>)<br>
+<tt>msg.text</tt> &ndash; Nachrichteninhalt (Typ <tt>string</tt>)<br>
+<tt>msg.raw</tt> &ndash; Nachrichteninhalt binär (JavaScript <tt>ArrayBuffer</tt>-Objekt)</p>
 
 <p id="getparams"><tt>getParameters()</tt><br>
 Beschreibung: Liefert eine Liste mit Parametern (der Benutzer kann in
@@ -254,36 +274,36 @@ MQTT.publish('demo/test', 'hello world!', false);
 </div>
 <p id="color_tools">Farbfunktionen:</p>
 <div class="indent">
-<p><tt>MQTT.Color.rgba(r, g, b, a)</tt> - Liefert den Farbwert aus den
+<p><tt>MQTT.Color.rgba(r, g, b, a)</tt> &ndash; Liefert den Farbwert aus den
 übergebenen Einzelwerten</p>
-<p><tt>MQTT.Color.rgb(r, g, b)</tt> - Liefert den Farbwert aus den
+<p><tt>MQTT.Color.rgb(r, g, b)</tt> &ndash; Liefert den Farbwert aus den
 übergebenen Einzelwerten (100% deckend)</p>
-<p><tt>MQTT.Color.red(color)</tt> - Liefert den Rot-Anteil der Farbe</p>
-<p><tt>MQTT.Color.green(color)</tt> - Liefert den Grün-Anteil der Farbe</p>
-<p><tt>MQTT.Color.blue(color)</tt> - Liefert den Blau-Anteil der Farbe</p>
+<p><tt>MQTT.Color.red(color)</tt> &ndash; Liefert den Rot-Anteil der Farbe</p>
+<p><tt>MQTT.Color.green(color)</tt> &ndash; Liefert den Grün-Anteil der Farbe</p>
+<p><tt>MQTT.Color.blue(color)</tt> &ndash; Liefert den Blau-Anteil der Farbe</p>
 </div>
 <p id="color_constant">Farbkonstanten:</p>
 <div class="indent">
-<p><tt>MQTT.Color.WHITE</tt> - </p>
-<p><tt>MQTT.Color.LT_GRAY</tt> - </p>
-<p><tt>MQTT.Color.DK_GRAY</tt> - </p>
-<p><tt>MQTT.Color.BLACK</tt> - </p>
-<p><tt>MQTT.Color.TAN</tt> - </p>
-<p><tt>MQTT.Color.YELLOW</tt> - </p>
-<p><tt>MQTT.Color.ORANGE</tt> - </p>
-<p><tt>MQTT.Color.RED</tt> - </p>
-<p><tt>MQTT.Color.BROWN</tt> - </p>
-<p><tt>MQTT.Color.LT_GREEN</tt> - </p>
-<p><tt>MQTT.Color.GREEN</tt> - </p>
-<p><tt>MQTT.Color.PINK</tt> - </p>
-<p><tt>MQTT.Color.PURPLE</tt> - </p>
-<p><tt>MQTT.Color.CYAN</tt> - </p>
-<p><tt>MQTT.Color.LT_BLUE</tt> - </p>
-<p><tt>MQTT.Color.BLUE</tt> - </p>
-<p><tt>MQTT.Color.TRANSPARENT</tt> - </p>
-<p><tt>MQTT.Color.OS_DEFAULT</tt> - Standardfarbe des Betriebssystems
+<p><tt>MQTT.Color.WHITE</tt> &ndash; </p>
+<p><tt>MQTT.Color.LT_GRAY</tt> &ndash; </p>
+<p><tt>MQTT.Color.DK_GRAY</tt> &ndash; </p>
+<p><tt>MQTT.Color.BLACK</tt> &ndash; </p>
+<p><tt>MQTT.Color.TAN</tt> &ndash; </p>
+<p><tt>MQTT.Color.YELLOW</tt> &ndash; </p>
+<p><tt>MQTT.Color.ORANGE</tt> &ndash; </p>
+<p><tt>MQTT.Color.RED</tt> &ndash; </p>
+<p><tt>MQTT.Color.BROWN</tt> &ndash; </p>
+<p><tt>MQTT.Color.LT_GREEN</tt> &ndash; </p>
+<p><tt>MQTT.Color.GREEN</tt> &ndash; </p>
+<p><tt>MQTT.Color.PINK</tt> &ndash; </p>
+<p><tt>MQTT.Color.PURPLE</tt> &ndash; </p>
+<p><tt>MQTT.Color.CYAN</tt> &ndash; </p>
+<p><tt>MQTT.Color.LT_BLUE</tt> &ndash; </p>
+<p><tt>MQTT.Color.BLUE</tt> &ndash; </p>
+<p><tt>MQTT.Color.TRANSPARENT</tt> &ndash; </p>
+<p><tt>MQTT.Color.OS_DEFAULT</tt> &ndash; Standardfarbe des Betriebssystems
 (gemäß iOS/Android, Darkmode)</p>
-<p><tt>MQTT.Color.CLEAR</tt> - Setzt eingefärbte Flächen zurück (z.&nbsp;B.
+<p><tt>MQTT.Color.CLEAR</tt> &ndash; Setzt eingefärbte Flächen zurück (z.&nbsp;B.
 Button/Switch)</p>
 </div>
 <h2 id="customviewHTML">Custom View HTML</h2>
