@@ -258,7 +258,7 @@ MQTT.view.getParameters()</pre>
 <h3 id="morefunctions">Weitere Funktionen und Konstanten</h3>
 <p>Über das globale Objekt MQTT stehen weitere Konstanten und Funktionen
 zur Verfügung.</p>
-<p><tt>publish()</tt><br>
+<p><tt>publish(topic, payload, retain)</tt><br>
 Beschreibung: Senden einer Nachricht (im Dash „Custom View“)<br>
 Parameter: <tt>topic</tt> (Typ <tt>String</tt>), <tt>payload</tt> (Typ
 <tt>String</tt>, wenn im Textformat oder <tt>ArrayBuffer</tt> für Binärdaten),
@@ -376,7 +376,7 @@ für den o.&nbsp;a. Code.
 
 <li>Um Daten zu senden (via <em>publish</em>), sollten sie einen Click-Handler,
 z.&nbsp;B. für einen Button, implementieren, um dann über das JavaScript-Interface
-<tt>MQTT.publsh()</tt> die Nachricht zu versenden:</li>
+<tt>MQTT.publish()</tt> die Nachricht zu versenden:</li>
 <div class="indent">
 <pre>
 &lt;button onclick="MQTT.publish('demo/test','Hello world!',false);"&gt;Send Hello World!&lt;/button&gt;
