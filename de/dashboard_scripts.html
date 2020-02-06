@@ -136,23 +136,23 @@ folgendermaßen aufgerufen werden:</p>
 Verfügung:</p>
 
 <p><tt>setTextColor(color), getTextColor()</tt><br>
-Beschreibung: setzte/lese Textfarbe<br>
-Parameter: <tt>color</tt> - Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
+Beschreibung: setze/lese Textfarbe<br>
+Parameter: <tt>color</tt> &ndash; Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
 Dashes: <em>Text View</em>, <em>Option List</em>, <em>Progress Bar/Slider</em></p>
 
 <p><tt>setTextSize(size), getTextSize()</tt><br>
 Beschreibung: setze/lese Textgröße<br>
-Parameter: <tt>size</tt> - 0 = System Default, 1 = klein, 2 = mittel 3 = groß<br>
+Parameter: <tt>size</tt> &ndash; 0 = System Default, 1 = klein, 2 = mittel 3 = groß<br>
 Dashes: <em>Text View</em>, <em>Option List</em>, <em>Progress Bar/Slider</em></p>
 
 <p><tt>setBackground(color), getBackground()</tt><br>
 Beschreibung: setze/lese Hintergrundfarbe<br>
-Parameter: <tt>color</tt> - Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
+Parameter: <tt>color</tt> &ndash; Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
 Dashes: <em>alle</em></p>
 
 <p><tt>setBackgroundImage(resourceName), getBackgroundImage()</tt><br>
 Beschreibung: setze/lese Hintergrundbild<br>
-Parameter: <tt>resourceName</tt> interner oder externer Ressourcename (vom
+Parameter: <tt>resourceName</tt> &ndash; interner oder externer Ressourcename (vom
 Benutzer importiertes Image). Zwecks Unterscheidung kann ein Pfad „int/“
 oder „user/“ vorangestellt werden (erforderlich bei Namenskollision; wenn
 nicht voll qualifiziert, hat eine externe Ressource Priorität)<br>
@@ -168,45 +168,45 @@ Beschreibung: Abfragen des Topic (<em>publish</em>)<br>
 Dashes: <em>Text View</em>, <em>Button/Switch</em>, <em>Progress Bar/Slider</em>,
 <em>Option List</em></p>
 
-<p><tt>setCtrlColor, getCtrlColor</tt><br>
-Beschreibung: setzte/lese Controller-Farbe (Vordergrund)<br>
-Parameter: <tt>color</tt> – Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
+<p><tt>setCtrlColor(color), getCtrlColor()</tt><br>
+Beschreibung: setze/lese Controller-Farbe (Vordergrund)<br>
+Parameter: <tt>color</tt> &ndash; Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
 Dashes: <em>Button/Switch „On“ State</em>, <em>ProgressBar/Slider</em></p>
 
-<p><tt>setCtrlBackground, getCtrlBackground</tt><br>
-Beschreibung: setzte/lese Controller-Hintergrundfarbe<br>
-Parameter: <tt>color</tt> – Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
+<p><tt>setCtrlBackground(color), getCtrlBackground()</tt><br>
+Beschreibung: setze/lese Controller-Hintergrundfarbe<br>
+Parameter: <tt>color</tt> &ndash; Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
 Dash: <em>Button/Switch „On“ State</em></p>
 
-<p><tt>setCtrlImage, getCtrlImage</tt><br>
+<p><tt>setCtrlImage(resourceName), getCtrlImage()</tt><br>
 Beschreibung: setze/lese Controller-Image<br>
-Parameter: <tt>resourceName</tt> – Interner oder externer Resourcename
+Parameter: <tt>resourceName</tt> &ndash; interner oder externer Resourcename
 (vom Benutzer importiertes Image). Zwecks Unterscheidung kann ein Pfad
 „int/“ oder „user/“ vorangestellt werden (erforderlich bei Namenskollision;
 wenn nicht voll qualifiziert, hat eine externe Ressource Priorität)<br>
 Dash: <em>Button/Switch „On“ State</em></p>
 
-<p><tt>setCtrlColorOff, getCtrlColorOff</tt><br>
-Beschreibung: setzte/lese Controller-Farbe (Vordergrund)<br>
-Parameter: <tt>color</tt> – Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
+<p><tt>setCtrlColorOff(color), getCtrlColorOff()</tt><br>
+Beschreibung: setze/lese Controller-Farbe (Vordergrund)<br>
+Parameter: <tt>color</tt> &ndash; Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
 Dash: <em>Button/Switch „Off“ State</em></p>
 
-<p><tt>setCtrlBackground,Off getCtrlBackgroundOff</tt><br>
-Beschreibung: setzte/lese Controller-Hintergrundfarbe<br>
-Parameter: <tt>color</tt> – Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
+<p><tt>setCtrlBackgroundOff(color) getCtrlBackgroundOff()</tt><br>
+Beschreibung: setze/lese Controller-Hintergrundfarbe<br>
+Parameter: <tt>color</tt> &ndash; Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
 Dash: <em>Button/Switch „Off“ State</em></p>
 
-<p><tt>setCtrlImageOff, getCtrlImageOff</tt><br>
+<p><tt>setCtrlImageOff(resourceName), getCtrlImageOff()</tt><br>
 Beschreibung: setze/lese Controller-Image<br>
-Parameter: <tt>resourceName</tt> – Interner oder externer Ressourcename
+Parameter: <tt>resourceName</tt> &ndash; interner oder externer Ressourcename
 (vom Benutzer importiertes Image). Zwecks Unterscheidung kann ein Pfad 
 „int/“ oder „user/“ vorangestellt werden (erforderlich bei Namenskollision;
 wenn nicht voll qualifiziert, hat externe Ressource Priorität)<br>
 Dash: <em>Button/Switch „Off“ State</em></p>
 
-<p><tt>setUserData, getUserData</tt><br>
+<p><tt>setUserData(data), getUserData()</tt><br>
 Beschreibung: Zwischenspeichern von benutzerdefinierten Werten<br>
-Parameter: <tt>JavaScript-Objekt oder -Wert</tt><br>
+Parameter: <tt>data</tt> &ndash; JavaScript-Objekt oder -Wert<br>
 Erläuterung: Beispielsweise zum Speichern von Zustandsvariablen, historischen
 Daten (Werte der letzten empfangen Nachrichten).<br>
 WICHTIG: Daten werden nicht dauerhaft gespeichert, sondern nur für die
@@ -217,14 +217,14 @@ Datentypen gespeichert, wie z.&nbsp;B. Objekte vom Typ <tt>ArrayBuffer</tt>
 und <tt>JSON.parse()</tt> verwendet).<br>
 Dashes: <em>alle</em></p>
 
-<p><tt>isDialog</tt><br>
+<p><tt>isDialog()</tt><br>
 Beschreibung: Abfrage, ob der Dash gerade in der Detail-Ansicht
 ausgeführt wird<br>
 Erläuterung: Dashes, die in der Detailansicht angezeigt werden, verwenden
 zwar die Daten des entsprechenden Dashes im Dashboard, laufen aber als eigenständige Instanz.<br>
 Dash: <em>Custom View</em></p>
 
-<p id="gethistoricaldata"><tt>getHistoricalData</tt><br>
+<p id="gethistoricaldata"><tt>getHistoricalData()</tt><br>
 Beschreibung: Liefert die letzten Nachrichten (auf dem Server werden bis
 zu 100 letzte Nachrichten vorgehalten, sofern im Dash „Provide historical
 data“ gesetzt wurde)<br>
@@ -258,7 +258,7 @@ MQTT.view.getParameters()</pre>
 <h3 id="morefunctions">Weitere Funktionen und Konstanten</h3>
 <p>Über das globale Objekt MQTT stehen weitere Konstanten und Funktionen
 zur Verfügung.</p>
-<p><tt>publish</tt><br>
+<p><tt>publish()</tt><br>
 Beschreibung: Senden einer Nachricht (im Dash „Custom View“)<br>
 Parameter: <tt>topic</tt> (Typ <tt>String</tt>), <tt>payload</tt> (Typ
 <tt>String</tt>, wenn im Textformat oder <tt>ArrayBuffer</tt> für Binärdaten),
