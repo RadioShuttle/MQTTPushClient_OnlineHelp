@@ -26,51 +26,62 @@ $(document).ready(function() {
 </head>
 <body>
 <h1>Einführung</h1>
-<p>Diese App ermöglicht es Ihnen, Push-Benachrichtigungen aus MQTT-Umgebungen
-zu empfangen. Dabei bildet sie die Verbindung zwischen dem MQTT-Push-Server und den
-Push-Diensten von Apple bzw. Google. Sie erlaubt die Konfiguration von
-Push-Benachrichtigungen auf MQTT-Topics, welche vom MQTT-Push-Server überwacht
-werden. Bei Aktivität werden diese sofort an die App weitergeleitet, welche
-die Nachricht zusammen mit einem Audiosignal als Push-Benachrichtigung
-ausgibt. Push-Benachrichtigungen werden auch dann automatisch empfangen,
-wenn die App nicht läuft.</p>
+<p>Diese App ermöglicht es, Push-Benachrichtigungen aus MQTT-Umgebungen
+zu empfangen. Die App kommuniziert mit dem öffentlichen MQTT-Push-Server
+(radioshuttle.de), welcher wiederum die Verbindung zu einem MQTT-Server
+herstellt und Nachrichten über die Push-Dienste von Apple bzw. Google
+verschickt. Die App erlaubt die Konfiguration von Push-Benachrichtigungen
+für definierte MQTT-Topics, welche vom MQTT-Push-Server automatisch überwacht
+werden. Bei Aktivität werden diese sofort an die App weitergeleitet, die
+die Nachricht als Push-Benachrichtigung ausgibt. Push-Benachrichtigungen
+werden auch dann automatisch zugestellt, wenn die App nicht läuft.</p>
 
-<p>Zusätzlich zum Empfang von Push-Benachrichtigungen auf registrierte
-Topics lassen sich auch MQTT-Aktionen definieren, welche bei den auf diese
-Aktion registrierten Empfängern ausgelöst werden.</p>
+<p>Zusätzlich zum Empfang von Push-Benachrichtigungen für registrierte
+Topics lassen sich auch MQTT-Aktionen definieren, um eine MQTT-Nachricht
+zu verschicken, die dann bei den Empfängern eine Aktion auslösen kann.</p>
 
-<p>Eine einfache Alternative dazu bietet die Dashboard-Ansicht mit grafischer
-Benutzeroberfläche, in der sich Anzeige- und Steuerelemente („Dashes“)
-anlegen lassen. Damit können beliebige Aktionen überwacht und gesteuert
-werden, z.&nbsp;B. Beleuchtung, Temperaturanzeige, Wetter, Lichtfarbe,
-Heizungssteuerung, Hausautomatisierung um nur einige Möglichkeiten zu nennen.
+<p>Die App bietet folgende Anwendungsbereiche:</p>
+<ul>
+<li>Nachrichtenansicht sämtlicher Meldungen (Push-Nachrichten oder einfache
+Meldungen)</li>
+<li>Aktionen zum Verschicken definierter Nachrichten (Menü mit MQTT-Aktionen)
+<li>Dashboard-Ansicht (aktuell nur für Android verfügbar)
+</ul>
+
+<p>Die Dashboard-Ansicht verfügt über eine grafische Benutzeroberfläche, in der sich
+Anzeige- und Steuerelemente („Dashes“) anlegen lassen. Damit können beliebige
+Aktionen überwacht und gesteuert werden, z.&nbsp;B. Beleuchtung,
+Temperaturanzeige, Wetter, Lichtfarbe, Heizungssteuerung, Hausautomatisierung
+um nur einige Möglichkeiten zu nennen.
 Dash-Controls bieten Schalter, Slider, Textanzeige, Auswahllisten und
 Web-Views, welche als gruppierbare interaktive Kacheln angezeigt werden.</p>
 <h1>Voraussetzungen</h1>
-<p>Diese App ist als Vervollständigung eines bestehenden MQTT-Netzwerks
-konzipiert und stellt lediglich eine für den Anwender einfach zu nutzende
-Oberfläche mit der Möglichkeit von Push-Benachrichtigungen bereit.</p>
+<p>Diese App ist als Ergänzung einer vorhandenen MQTT-Umgebung
+konzipiert und bietet eine für den Anwender einfach zu nutzende
+Oberfläche mit der Möglichkeit, MQTT-Nachrichten als Push-Benachrichtigungen
+zu empfangen.</p>
 <p>Es müssen bereits vorhanden sein:</p>
 <ul>
-<li>ein MQTT-Server, der die Nachrichten verwaltet, die Sie mithilfe der
+<li>ein Zugang zum MQTT-Server, der die Nachrichten verwaltet, die Sie mithilfe der
 App empfangen oder senden möchten, sowie entsprechende Zugangsdaten
-(Benutzername/Passwort, falls benötigt)</li>
+(Benutzername und Passwort)</li>
 <li>Geräte oder Sensoren, mit denen Sie MQTT-Nachrichten austauschen</li>
-<li>Informationen über die genutzten Topics sowie deren Datenstruktur</li>
+<li>Informationen über die genutzten MQTT-Topics sowie deren Datenstruktur
+(Aufbau der Nachrichten)</li>
 </ul>
-<p>Sollten Sie noch nicht über einen eigenen MQTT-Server verfügen, können
-Sie für Ihre Topics einen öffentlichen MQTT-Server nutzen, beispielsweise
-von Arduino Hannover. Unter <a href="http://mqtt.arduino-hannover.de"
-target="_blank">mqtt.arduino-hannover.de</a> können Sie sich ein
-Konto für den MQTT-Server anlegen.</p>
+<p>Ist kein eigener MQTT-Server vorhanden, kann auch ein öffentlicher
+MQTT-Server, beispielsweise von Arduino Hannover, genutzt werden. Unter
+<a href="http://mqtt.arduino-hannover.de"
+target="_blank">mqtt.arduino-hannover.de</a> kann ein
+Konto für den MQTT-Server angelegt werden.</p>
 <p>Der MQTT-Push-Server „push.radioshuttle.de“ ist beim Einrichten einer
 neuer Server-Verbindung bereits vorgesetzt und kann mit beliebigen
-MQTT-Servern genutzt werden. Selbstverständlich können Sie hier auch einen
-MQTT-Push-Server Ihrer Wahl eintragen.</p>
+MQTT-Servern genutzt werden.</p>
 <div class="note">
 <h6>Hinweis:</h6>
 <p>Die „Dashboard“-Funktion ist in der App zur Zeit nur für Android-Geräte
-verfügbar. Eine iOS-Version der App ist in Entwicklung.</p>
+verfügbar, eine „Dashboard“-Unterstützung für die  iOS-Version der App
+ist in Entwicklung.</p>
 </div>
 
 </body>
