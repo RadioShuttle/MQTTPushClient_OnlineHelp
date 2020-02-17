@@ -26,10 +26,10 @@ $(document).ready(function() {
 </head>
 <body>
 <h1>Dashboard</h1>
-<p>Zusätzlich zur Ansicht “Messages" bietet die App eine Dashboard-Ansicht.
-Diese verfügt über eine grafische Benutzeroberfläche, in der sich Anzeige-
-und Steuerelemente („Dash“) anlegen lassen, z.&nbsp;B. Temperaturanzeige,
-Steuerungsschalter für Lampen, Alarmanlagen u.&nbsp;v.&nbsp;a.&nbsp;m.</p>
+<p>In addition to the “Messages” view the app offers a “Dashboard” view
+with graphical user interface. It allows creating display and control
+elements (so-called “dashes”), such as temperature display, lamp control
+switches, alarms, and more.</p>
 <div class="android">
 <p><img class="thumb" src="../img/dashboard_view.png" width="275">
 <img class="large" src="../img/dashboard_view.png"></p>
@@ -39,21 +39,20 @@ Steuerungsschalter für Lampen, Alarmanlagen u.&nbsp;v.&nbsp;a.&nbsp;m.</p>
 <img class="large" src="../img/dashboard_view.png"></p>
 </div>
 <ul class="instruction">
-<li>Tippen Sie nach dem Starten der App auf den Listeneintrag eines
-Push-Server-Kontos.</li>
-<li>Tippen Sie dann im Fenster „Messages“ auf das Icon <span class="android"><img
+<li>After starting the app tap on the list entry of the desired push server
+account.</li>
+<li>Then, in the “Messages” window, tap on the <span class="android"><img
 src="../img/dashboard_icon.png" height="16"></span><span class="apple"><img
-src="../img/dashboard_icon.png" height="16"></span>.</li>
+src="../img/dashboard_icon.png" height="16"></span> icon.</li>
 </ul>
-<p>Die Ansicht „Dashboard“ öffnet sich.</p>
+<p>Now you are in the “Dashboard“ mode.</p>
 <ul class="instruction">
-<li>Tippen Sie auf das Icon <span class="android"><img
+<li>Tap on the <span class="android"><img
 src="../img/plus_icon.png" height="16"></span><span class="apple"><img
-src="../img/plus_icon.png" height="16"></span>.</li>
+src="../img/plus_icon.png" height="16"></span> icon.</li>
 </ul>
-<p>Ein Einblendmenü öffnet sich und bietet verschiedene Vorlagen für Dashes
-an, welche für die unterschiedlichsten Zwecke eine gute Ausgangsbasis für
-eigene Lösungen bieten.</p>
+<p>A pop-up menu provides several dash templates for various purposes, which
+offer a good base for creating own solutions.</p>
 <div class="android">
 <p><img class="thumb_noreplace" src="../img/dashboard.png" width="175"></p>
 </div>
@@ -62,48 +61,47 @@ eigene Lösungen bieten.</p>
 </div>
 <table border="1">
 <tr>
-<th>Dash</th><th>Erläuterung</th>
+<th>Dash</th><th>Explanation</th>
 </tr>
 <tr>
-<td><em>Text View</em></td><td>Zur Darstellung von Nachrichten in Textform
-und zur Eingabe von Werten. Siehe dazu den Abschnitt <a href="#textview">Text&nbsp;View</a></td>
+<td><em>Text View</em></td><td>For displaying messages in text form and
+for entering values. See the section <a href="#textview">Text&nbsp;View</a></td>
 </tr>
 <tr>
-<td><em>Button/Switch</em></td><td>Erzeugt eine Schaltfläche bzw. einen
-Schalter. Siehe dazu den Abschnitt <a href="#button">Button/Switch</a></td>
+<td><em>Button/Switch</em></td><td>Creates a button or a switch. See the
+section <a href="#button">Button/Switch</a></td>
 </tr>
 <tr>
-<td><em>Progress&nbsp;Bar/Slider</em></td><td>Stellt einen Wertebereich
-durch einen Balken dar. Wird ein „Publish Topic“ angegeben, kann mithilfe
-eines Schiebereglers ein neuer Wert gesetzt und gesendet werden. Siehe
-dazu den Abschnitt <a href="#slider">Progress&nbsp;Bar/Slider</a</td>
+<td><em>Progress&nbsp;Bar/Slider</em></td><td>Represents a value range by
+a bar. If a “Publish Topic” is specified, a new value can be set and sent
+using a slider. See the section <a href="#slider">Progress&nbsp;Bar/Slider</a</td>
 </tr>
 <tr>
-<td><em>Option List</em></td><td>Erlaubt die Definition einer beliebigen
-Menge von Werten. Siehe dazu den Abschnitt <a href="#optionlist">Option&nbsp;List</a></td>
+<td><em>Option List</em></td><td>Allows the definition of any set of
+values. See the section <a href="#optionlist">Option&nbsp;List</a></td>
 </td>
 </tr>
 <tr>
-<td><em>Group View</em></td><td>Zur Gruppierung von Dash-Kacheln.
-Siehe dazu den Abschnitt <a href="#groupview">Group&nbsp;View</a></td>
+<td><em>Group View</em></td><td>Allows grouping dash tiles.
+See the section <a href="#groupview">Group&nbsp;View</a></td>
 </td>
 </tr>
 <tr>
-<td><em>Custom View</em></td><td>Erlaubt das Anlegen neuer Dashes
-in HTML. Siehe dazu den Abschnitt <a href="#customview">Custom&nbsp;View</a>.
+<td><em>Custom View</em></td><td>Allows creating new dashes in HTML. See
+the section <a href="#customview">Custom&nbsp;View</a>
 </td>
 </tr>
 </table>
-<h2>Vorlagen für Dashes</h2>
+<h2>Templates for dashes</h2>
 <h3 id="textview">Text View</h3>
 <img class="thumb_noreplace" src="../img/text_view_thumb.png" height="100">
-<p>Stellt den Inhalt einer Nachricht in Textform dar. Sofern ein „Publish
-Topic“ angegeben wurde, kann in der Detailansicht ein Wert eingegeben und
-gesendet werden.</p>
+<p>Represents the content of a message in text form. If a “Publish
+Topic” has been specified, a value can be entered and sent in the detail
+view.</p>
 <ul>
-<li>Erforderliche Elemente:<br>
+<li>Required elements:<br>
 <em><a href="#topic_sub">Topic (sub)</a>, <a href="#input_type">Input Type</am></em></li>
-<li>Optionale Elemente:<br>
+<li>Optional elements:<br>
 <em><a href="#name">Name</a>, <a href="#group">Group</a>, <a href="#pos">Pos</a>,
 <a href="#color">Color</a>, <a href="#text_size">Text Size</a>,
 <a href="#image">Image</a>, <a href="#filter_script">Filter Script</a>,
@@ -112,38 +110,37 @@ gesendet werden.</p>
 </ul>
 <h3 id="button">Button/Switch</h3>
 <img class="thumb_noreplace" src="../img/button_switch_thumb.png" height="100">
-<p>Erzeugt eine Schaltfläche, welche z.&nbsp;B. als Taster fungiert, der
-bei Betätigung eine Nachricht versendet. Dazu wird in „Off state“ nichts
-eingetragen. Wird die Schaltfläche als Schalter angelegt, der in
-Abhängigkeit des Wertes der letzten empfangenen Nachricht seinen Zustand
-ändert (an/aus), muss im „Off state“ ein Topic eingetragen sein. Damit
-ließe sich beispielsweise eine Alarmanlage steuern. Ein weiteres Beispiel
-für einen Dash, der eine Lampe ein- und ausschaltet und gleichzeitig über
-den aktuellen Schaltstatus informiert, finden Sie <a href="#examples">hier</a>.</p>
+<p>Generates a button element which works e.g. as a push button that sends a
+message upon tapping. For this, the “Off state” fields remains blank. If
+the button is created as a switch that changes its state (on/off) depending
+on the value of the last received message, a topic must be entered in the
+“Off state”. This could be used to control an alarm system, for example.
+Another example of a dash that switches a light on and off and informs about
+the current switching status at the same time, can be found <a href="#examples">here</a>.</p>
 <ul>
-<li>Erforderliche Elemente:<br>
+<li>Required elements:<br>
 <em><a href="#topic_sub">Topic (sub)</a>, <a href="#topic_pub">Topic
 (pub)<sup>*</sup></a>, <a href="#value">Value</a></em></li>
-<li>Optionale Elemente:<br>
+<li>Optional elements:<br>
 <em><a href="#name">Name</a>, <a href="#group">Group</a>, <a href="#pos">Pos</a>,
 <a href="#color">Color</a>, <a href="#text_size">Text Size</a>,
 <a href="#image">Image</a>, <a href="#filter_script">Filter Script</a>,
 <a href="#retain">Retain</a>,
 <a href="#script">Script</a></em></li>
 </ul>
-<p><small><em>*&nbsp;Wenn als Schalter mit Statusabfrage genutzt, ansonsten
+<p><small><em>*&nbsp;If used as a switch with status request, otherwise
 optional</em></small></p>
 <h3 id="slider">Progress Bar/Slider</h3>
 <img class="thumb_noreplace" src="../img/slider_thumb.png" height="100">
-<p>Ein Wertebereich wird durch einen Balken dargestellt, wobei der Balken
-bis zum aktuellen Wert eingefärbt wird (wie bei einer Fortschrittsanzeige).
-Wurde ein „Publish Topic“ angegeben, kann in der Detailansicht durch einen
-Schieberegler ein neuer Wert gesetzt und gesendet werden.</p>
+<p>A value range is represented by a bar, with the bar being colored up
+to the current value (like a progress bar). If a “Publish Topic” has
+been specified, a new value can be set and sent in the detail view using
+a slider.</p>
 <ul>
-<li>Erforderliche Elemente:<br>
+<li>Required elements:<br>
 <em><a href="#range">Range</a>, <a href="#topic_sub">Topic (sub)</a>,
 <a href="#topic_pub">Topic (pub)<sup>*</sup></a></em></li>
-<li>Optionale Elemente:<br>
+<li>Optional elements:<br>
 <em><a href="#name">Name</a>, <a href="#group">Group</a>, <a href="#pos">Pos</a>,
 <a href="#color">Color</a>, <a href="#text_size">Text Size</a>,
 <a href="#image">Image</a>, <a href="#filter_script">Filter Script</a>,
@@ -151,17 +148,16 @@ Schieberegler ein neuer Wert gesetzt und gesendet werden.</p>
 <a href="#decimal">Decimal</a>, <a href="#display_percent">Display in percent</a>,
 <a href="#script">Script</a></em></li>
 </ul>
-<p><small><em>*&nbsp;Wenn als Slider zur Übermittlung von Werten genutzt,
-ansonsten optional</em></small></p>
+<p><small><em>*&nbsp;If used as a slider for transmitting values,
+otherwise optional</em></small></p>
 <h3 id="optionlist">Option List</h3>
 <img class="thumb_noreplace" src="../img/lang-option_thumb.png" height="100">&nbsp;&nbsp;<img class="thumb_noreplace" src="../img/languages_thumb.png" height="100">
-<p>Erlaubt die Definition einer Menge von Werten. Für jede Option kann
-ein Anzeigewert definiert werden, der anstatt des tatsächlichen Wertes
-angezeigt wird.</p>
+<p>Allows the definition of a set of values. A display value can be defined
+for each option, which is shown instead of the actual value.</p>
 <ul>
-<li>Erforderliche Elemente:<br>
+<li>Required elements:<br>
 <em><a href="#option_list">Option List</a></em></li>
-<li>Optionale Elemente:<br>
+<li>Optional elements:<br>
 <em><a href="#name">Name</a>, <a href="#group">Group</a>, <a href="#pos">Pos</a>,
 <a href="#color">Color</a>, <a href="#text_size">Text Size</a>,
 <a href="#image">Image</a>, <a href="#filter_script">Filter Script</a>,
@@ -170,55 +166,51 @@ angezeigt wird.</p>
 </ul>
 <h3 id="groupview">Group View</h3>
 <img class="thumb_noreplace" src="../img/group_thumb.png" height="100">
-<p>Für eine bessere Übersicht im Dashboard lassen sich Gruppen anlegen,
-denen einzelne Dashes zugeordnet werden können. Das könnten zum Beispiel
-folgende Gruppen-Unterteilungen sein: Keller, Erdgeschoss, Obergeschoss,
-Gartenhaus usw.</p>
+<p>For a better overview in the dashboard, groups can be created to which
+individual dashes can be assigned. These could be, for example, the following
+group subdivisions: cellar, ground floor, upper floor, garden house, etc.</p>
 <ul>
-<li>Erforderliche Elemente:<br>
+<li>Required elements:<br>
 <em>–</em></li>
-<li>Optionale Elemente:<br>
+<li>Optional elements:<br>
 <em><a href="#name">Name</a>, <a href="#pos">Pos</a>, <a href="#color">Color</a>,
 <a href="#text_size">Text Size</a></em></li>
 </ul>
 <div class="note">
-<h6>Hinweis:</h6>
-<p>Einzelne Dashes lassen sich gruppieren oder können auch einer
-anderen <a href="#groupview">Gruppe zugeordnet werden</a>. Dazu tippen
-und halten Sie die gewünschte Dash-Kachel („Long Press“), bis ein
-<img src="../img/checkmark.png" height="16"> erscheint und Sie
-per <img src="../img/edit.png" height="16"> in den Bearbeitungsmodus
-wechseln können.<br>
+<h6>Note:</h6>
+<p>Individual dashes can be grouped or <a href="#groupview">assigned to
+another group</a>. For this, tap and hold the desired dash tile (“Long
+Press”) until the <img src="../img/checkmark.png" height="16"> symbol
+appears in the tile. Then press <img src="../img/edit.png" height="16">
+to get into the edit mode.<br>
 <br>
-Über „Group“ und „Pos“ kann das Icon nun in die gewünschte Position
-gebracht werden.</p>
+Use “Group” and “Pos” to bring the tile in the desired position.</p>
 </div>
 <h3 id="customview">Custom View</h3>
 <img class="thumb_noreplace" src="../img/custom_view_thumb.png" height="100">
-<p>„Custom View“ entspricht einem Standard-Browserfenster, welches
-zur Realisierung individueller Oberflächen und Bedienelemente verwendet
-werden kann. Hiermit lassen sich beliebige Dashes in HTML anlegen. Das
-HTML kann zusätzlich JavaScript-Code enthalten, um Dashes mit individueller
-Logik zu programmieren.
-Über eine Programmierschnittstelle <em>(API)</em> können MQTT-Nachrichten
-empfangen und Einstellungen abgefragt und es kann auf Ressourcenm z.&nbsp;B.
-importierte Bilder, zugegriffen werden. Siehe dazu <a href="dashboard_scripts.html">Dashboard-Skripte</a>).
-Alternativ erhalten Sie durch Tippen auf das Überlaufmenü <span
-class="nowrap">(<span class="android"><img src="../img/overflow_icon.png"
+<p>“Custom View” corresponds to a standard browser window, which can be
+used to create individual interfaces and operating elements. This allows
+you to create any dashes in HTML. The HTML can contain additional JavaScript
+code to program dashes with individual logic.
+An application programming interface <em>(API)</em> can be used to receive
+MQTT messages, query settings and access resources such as imported images.
+See <a href="dashboard_scripts.html">Dashboard Scripts</a>).
+Alternatively, by tapping the overflow menu <span class="nowrap">(<span
+class="android"><img src="../img/overflow_icon.png"
 height="16"></span><span class="apple"><img src="../img/overflow_icon.png"
-height="16"></span>)</span> unter „Insert Example“ sieben verschiedene
-HTML-Vorlagen <em>(Basic HTML</em>, <em>Color Picker</em>, <em>Gauge</em>,
-<em>Clock</em>, <em>Light Switch with Color Picker</em>, <em>Thermometer</em>
-und <em>Line Graph)</em>,  die sich direkt in den Dash einfügen und bearbeiten
-lassen.<p>
+height="16"></span>)</span> under “Insert Example”, you can get seven
+different HTML templates <em>(Basic HTML</em>, <em>Color Picker</em>,
+<em>Gauge</em>, <em>Clock</em>, <em>Light Switch with Color Picker</em>,
+<em>Thermometer</em> and <em>Line Graph)</em> that can be inserted and
+edited directly in the dash.<p>
 <div class="note">
-<h6>Hinweis:</h6>
-<p>Zum Erstellen eines Customs Views sind fortgeschrittene Kenntnisse in HTML
-und JavaScript erforderlich. Manche Beispiele verwenden HTML5 und laufen
-möglicherweise nicht auf älteren Mobilbgeräten. In den Beispielen, in denen
-empfangene Nachrichtendaten verarbeitet werden, muss der Code entsprechend
-der Datenstruktur des Nachrichteninhalts angepasst werden. Siehe auch
-<a href="dashboard_scripts.html#customviewHTML">Custom View HTML</a>.</p>
+<h6>Note:</h6>
+<p>Advanced knowledge of HTML and JavaScript is required to create a
+Customs View. Some examples use HTML5 and may not run on older mobile
+devices. In the examples where received message data is processed, the
+code must be adapted according to the data structure of the message
+content. See <a href="dashboard_scripts.html#customviewHTML">Custom View
+HTML</a>.</p>
 </div>
 <div class="android">
 <p><img class="thumb_noreplace" src="../img/custom_view-examples.png" width="250"></p>
@@ -228,90 +220,84 @@ der Datenstruktur des Nachrichteninhalts angepasst werden. Siehe auch
 </p>
 </div>
 <ul>
-<li>Erforderliche Elemente:<br>
+<li>Required elements:<br>
 <em><a href="#html">HTML</a></em></li>
-<li>Optionale Elemente:<br>
+<li>Optional elements:<br>
 <em><a href="#name">Name</a>, <a href="#pos">Pos</a>, <a href="#color">Color</a>,
 <a href="#topic_sub">Topic (sub)</a>, <a href="#params">Parameters</a>,
 <a href="#historical_data">Provide historical data</a></em></li>
 </ul>
-<h2 id="configuration_elements">Konfigurationselemente</h2>
+<h2 id="configuration_elements">Configuration elements</h2>
 <ul>
 <li id="name"><em>Name</em><br>
-Hier geben Sie der anzulegenden Dashes einen Namen</li>
+Enter the name of the dash to be created</li>
 <li id="group"><em>Group</em><br>
-Hier ordnen Sie den Dash einer Gruppe zu</li>
+Assign the dash to a group</li>
 <li id="pos"><em>Pos</em><br>
-Hier legen Sie die Position der Dash-Kachel innerhalb einer Gruppe
-fest</li>
+Define the position of the dash tile within a group</li>
 <li id="color"><em>Color</em><br>
-Hier können Sie für den jeweiligen Konfigurationskontext eine Farbe
-auswählen (z.&nbsp;B. Vordergrund, Hintergrund, Text, Fortschrittsbalken)
+Select a color for the respective configuration context (e.g. foreground,
+background, text, progress bar)
 </li>
 <li id="text_size"><em>Text Size</em><br>
-Hier können Sie die verwendete Textgröße („small“/„medium“/„large“) auswählen
+Select the text size (“small”/“medium”/“large”)
 </li>
 <li id="image"><em>Image</em><br>
-Hier können Sie ein Bild auswählen (siehe auch <a href="#manage_images">
-Eigene Bilder in die App importieren</a>)</li>
+Select an image (see <a href="#manage_images">
+Import your own images into the app</a>)</li>
 <li id="topic_sub"><em>Topic (sub)</em><br>
-Hier geben Sie ein Topic an, für das Sie Nachrichten/Werte erhalten möchten</li>
+Specify the topic for which you wish to receive messages/values</li>
 <li id="filter_script"><em>Filter Script</em><br>
-Hier haben Sie die Möglichkeit, JavaScript-basierte Filterskripte einzugeben,
-welche Nachrichteninhalte analysieren und formatieren. Außerdem haben Sie
-die Möglichkeit, den Dash dynamisch zu gestalten (z.&nbsp;B. Hintergrundfarbe,
-Textgröße usw. in Abhängigkeit von empfangenen Werten anzuzeigen). Siehe
-dazu auch <a href="dashboard_scripts.html">Dashboard-Skripte</a></li>
+Enter JavaScript based filter scripts, which analyse and format the message
+content. In addition, you may dynamically apply styles to the dash,
+depending on the values received, e.g. background color, text
+size, etc. See <a href="dashboard_scripts.html">Dashboard Scripts</a></li>
 <li id="topic_pub"><em>Topic (pub)</em><br>
-Hier geben Sie das Topic an, an das Werte gesendet werden sollen</li>
+Specify the topic to values are to be transferred</li>
 <li id="retain"><em>Retain</em><br>
-Hier können Sie festlegen, dass gesendete Nachrichten auf dem MQTT-Server
-vorgehalten werden. Es wird immer nur die letzte gesendete Nachricht
-pro Topic vorgehalten</li>
+Specify that sent messages are retained on the MQTT server. Only the
+last message sent per topic is retained</li>
 <li id="input_type"><em>Input Type</em><br>
-Hier können Sie von Text- auf Zifferneingabe umschalten</li>
+Switch from text to numerical input</li>
 <li id="range"><em>Range</em><br>
-Hier definieren Sie den Wertebereich des darzustellenden Forschrittsbalkens
-und Schiebereglers</li>
+Define the value range of the progress bar and slider to be displayed</li>
 <li id="display_percent"><em>Display in percent</em><br>
-Hier können Sie festlegen, dass ein Wert in Prozent (bezogen auf den
-gesamten Wertebereich) angezeigt wird</li>
+Define that a value is displayed in percent (related to the entire value
+range)</li>
 <li id="decimal"><em>Decimal</em><br>
-Hier können Sie die Nachkommastellen des angezeigten Wertes festlegen</li>
+Define the decimal places of the displayed value</li>
 <li id="option_list"><em>Option List</em><br>
-Hier können Sie für jede Option einen Anzeigewert oder eine Bilddatei
-definieren, welche anstelle des tatsächlichen Wertes angezeigt werden.</li>
+Define a display value or an image file for each option, to be
+displayed instead of the actual value</li>
 <li id="script"><em>Script</em><br>
-Hier können Sie ein Skript eintragen, um Daten, die gesendet werden sollen,
-aufzubereiten, z.&nbsp;B. im Format <em>JSON</em>. Je nach Dash ist
-eine User-Aktion, z.&nbsp;B. durch Tippen auf eine Schaltfläche (siehe Abschnitt
-<a href="#button">Button/Switch</a>), erforderlich. Ein „Topic (pub)“ muss
-gesetzt worden sein. Außerdem haben Sie die Möglichkeit, den Dash
-dynamisch zu gestalten (z.&nbsp;B. Hintergrundfarbe, Textgröße usw. in
-Abhängigkeit von veröffentlichten Werten anzuzeigen). Siehe dazu auch
-<a href="dashboard_scripts.html">Dashboard-Skripte</a></li>
+Enter a script to prepare data to be sent, e.g. in the <em>JSON</em> format.
+Depending on the dash, a user action may be required, e.g. by tapping a
+button (see section <a href="#button">Button/Switch</a>). A “Topic (pub)”
+must have been set for this. You also have the option of making the dash
+dynamic (e.g. to display the background color, test size, etc. depending
+of published values). See <a href="dashboard_scripts.html">Dashboard Scripts</a></li>
 <li id="params"><em>Parameters</em><br>
-Hier können Sie Werte festlegen, die bei der Initialisierung eines Dashes
-übergeben werden, um z.&nbsp;B. die Darstellung in Abhängigkeit dieses
-Wertes zu ändern. Parameter können über das Javascript-Interface abgefragt
-werden (siehe Beschreibung zu <a href="dashboard_scripts.html#getparams"><tt>MQTT.view.getParameters()</tt></a>)</p>
+Specify values that are passed when a dash is initialized, for example,
+to change the display depending on this value. Parameters can be queried
+via the JavaScript interface (see
+<a href="dashboard_scripts.html#getparams"><tt>MQTT.view.getParameters()</tt></a> description)</p>
 <li id="html"><em>HTML</em><br>
-Hier können Sie Ihren eigenen HTML-Code zur Gestaltung der Dash-Kachel
-eingeben. Dabei ist auch die Einbindung von JavaScript zulässig</li>
+Enter your own HTML code to design the dash tile. The integration of
+JavaScript is also permitted</li>
 <li id="historical_data"><em>Provide historical data</em><br>
-Ist diese Option aktiviert, werden bis zu 100 der letzten Nachrichten
-vorgehalten. Diese können über das Javascript-Interface abgefragt werden
-(siehe Beschreibung zu <a href="dashboard_scripts.html#gethistoricaldata"><tt>MQTT.view.getHistoticalData()</tt></a>)</li>
+If this option is activated, up to 100 of the latest messages are retained.
+These can be queried via the JavaScript interface (see
+<a href="dashboard_scripts.html#gethistoricaldata"><tt>MQTT.view.getHistoticalData()</tt></a>)</li>
 </ul>
-<h2 id="manage_images">Eigene Bilder in die App importieren</h2>
-<p>Einige Dashes erlauben die Einbindung von Bildern
-(Hintergründe, Status von Schaltern usw.). Damit eigene Bilder in der
-App zur Verfügung stehen, müssen diese zuvor in die App importiert werden:</p>
+<h2 id="manage_images">Import own images into the app</h2>
+<p>Some dashes allow the integration of images (backgrounds, status of
+switches, etc.). In order for your own pictures to be available in the app,
+they must first be imported into the app:</p>
 <ul class="instruction">
-<li>Wählen Sie dazu im Fenster „Dashboard“ den Eintrag „Manage Images“
-aus dem Überlaufmenü <span class="nowrap">(<span class="android"><img
+<li>In the “Dashboard” window, select the “Manage Images” entry from the
+overflow menu <span class="nowrap">(<span class="android"><img
 src="../img/overflow_icon.png" height="16"></span><span class="apple"><img
-src="../img/overflow_icon.png" height="16"></span>)</span> aus.</li>
+src="../img/overflow_icon.png" height="16"></span>)</span>.</li>
 </ul>
 <div class="android">
 <p><img class="thumb" src="../img/manage_images.png" width="275">
@@ -322,14 +308,14 @@ src="../img/overflow_icon.png" height="16"></span>)</span> aus.</li>
 <img class="large" src="../img/manage_images.png"></p>
 </div>
 <ul class="instruction">
-<li>Öffnen Sie dann im Fenster „Manage Images“ erneut das Überlaufmenü <span class="nowrap">(<span
+<li>In the “Manage Images” window open the overflow menu <span class="nowrap">(<span
 class="android"><img src="../img/overflow_icon.png" height="16"></span><span
-class="apple"><img src="../img/overflow_icon.png" height="16"></span>)</span>,
-tippen Sie auf „Import“ und wählen Sie die Bilder aus, die Sie in die App
-importieren möchten.</li>
+class="apple"><img src="../img/overflow_icon.png" height="16"></span>)</span>
+again, tap on “Import” and select those images that you would like to
+import into the app.</li>
 </ul>
-<p>Alle in die App importierten Bilder werden im Fenster „Manage Images“
-angezeigt:
+<p>All images that were imported into the app are shown in the “Manage
+Images” window:
 <div class="android">
 <p><img class="thumb" src="../img/import_images.png" width="275">
 <img class="large" src="../img/import_images.png"></p>
@@ -338,30 +324,30 @@ angezeigt:
 <p><img class="thumb" src="../img/import_images.png" width="275">
 <img class="large" src="../img/import_images.png"></p>
 </div>
-<p>Beim Beenden der App werden Bilder, die in keinem Dash verwendet
-werden, gelöscht. Gleiches gilt auch für Bilder, die ausschließlich im
-Skriptcode referenziert werden. Um dies zu verhindern, können sie geschützt
-werden. Im obigen Bild sind bereits zwei zuvor importierte Bilder zu sehen.
-Beide sind mit solch einem Schutz <span class="nowrap">(<span class="android"><img
-src="../img/padlock.png" height="16"></span><span class="apple"><img
-src="../img/padlock.png" height="16"></span>)</span> versehen.</p>
+<p>When exiting the app, images that are not used in any dash are deleted.
+The same applies to images that are referenced exclusively in the script
+code. To prevent this, they can be protected. In the picture above you
+can already see two previously imported pictures.
+Bothe are provided with such a protection <span class="nowrap">(<span
+class="android"><img src="../img/padlock.png" height="16"></span><span
+class="apple"><img src="../img/padlock.png" height="16"></span>)</span>.</p>
 <ul class="instruction">
-<li>Tippen und halten Sie die gewünschte Bilddatei („Long Press“), bis
-das Schlosssymbol erscheint.</li>
+<li>Tap and hold the desired image file (“Long Press”) until <span
+class="android"><img src="../img/padlock.png" height="16"></span><span
+class="apple"><img src="../img/padlock.png" height="16"></span> appears.</li>
 </ul>
-<p>Die mit einem <span class="android"><img src="../img/padlock.png"
+<p>Those images marked with a <span class="android"><img src="../img/padlock.png"
 height="16"></span><span class="apple"><img src="../img/padlock.png"
-height="16"></span> versehenen Bilder sowie Bilder, die explizit als
-Hintergrundbild oder Label für die Dashes <em>Button/Switch</em> oder
-<em>Option List</em> gewählt wurden,
-bleiben beim Neustart der App erhalten.</p>
+height="16"></span>, as well as images that have been explicitly selected
+as background image or label for the <em>Button/Switch</em> or
+<em>Option List</em> dashes, will be retained when the app is restarted.</p>
 <div class="note">
-<h6>Hinweis zu Bildern mit Transparenzen:</h6>
-<p>Werden Bilder, welche Transparenzen enthalten, über das Feld „Image“
-in den Dash eingebunden, so bleiben diese Transparenzen erhalten.
-Die folgende Abbildung zeigt den Vergleich zwischen einem Bild <em>mit</em>
-(links) und einem <em>ohne</em> Transparenzen (rechts). Beide Bilder liegen
-über einem gelb eingefärbten Hintergrund:</p>
+<h6>Note on images with transparencies:</h6>
+<p>If images containing transparencies are included in the dash via the
+“Image” field, these transparencies are preserved.
+The following figure shows the comparison between an image with <em>with</em>
+(left) and one <em>without</em> transparencies (right). Both images are
+placed on a yellow background:</p>
 <div class="android">
 <p><img class="thumb" src="../img/transp_flat.png" width="275">
 <img class="large" src="../img/transp_flat.png"></p>
@@ -370,10 +356,10 @@ Die folgende Abbildung zeigt den Vergleich zwischen einem Bild <em>mit</em>
 <p><img class="thumb" src="../img/transp_flat.png" width="275">
 <img class="large" src="../img/transp_flat.png"></p>
 </div>
-<p>Bilder, die in Schaltflächen verwendet werden, können eingefärbt werden.
-Bilder ohne Transparenz würden komplett mit der gewählten Farbe eingefärbt
-werden. Die folgende Abbildung basiert auf der vorherigen, hat aber zusätzlich
-eine rote Einfärbung des Vordergrunds:</p>
+<p>Images that are used in buttons can be colorized. Images without
+transparency would be colorized completely with the selected color.
+The following figure is based on the previous one, but has an additional
+red coloration of the foreground:</p>
 <div class="android">
 <p><img class="thumb" src="../img/tinted.png" width="275">
 <img class="large" src="../img/tinted.png"></p>
@@ -383,35 +369,35 @@ eine rote Einfärbung des Vordergrunds:</p>
 <img class="large" src="../img/tinted.png"></p>
 </div>
 </div>
-<h2 id="examples">Beispiele</h2>
-<p>Ein Dash soll konfiguriert werden, der eine Lampe ein- und
-ausschaltet und gleichzeitig über den aktuellen Schaltstatus informiert.</p>
+<h2 id="examples">Examples</h2>
+<p>We configure a dash, which switches a lamp on and off and at the same
+time informs about the current switching status.</p>
 <ul class="instruction">
-<li>Wählen Sie aus dem Menü den Eintrag „Button/Switch“ aus:</li>
+<li>Select the “Button/Switch” entry from the menu:</li>
 </ul>
 <div class="android">
-<p><img class="thumb" src="../img/edit_button-1.png" width="275">
-<img class="large" src="../img/edit_button-1.png"></p>
+<p><img class="thumb" src="../img/edit_button-1-EN.png" width="275">
+<img class="large" src="../img/edit_button-1-EN.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/edit_button-1.png" width="275">
-<img class="large" src="../img/edit_button-1.png"></p>
+<p><img class="thumb" src="../img/edit_button-1-EN.png" width="275">
+<img class="large" src="../img/edit_button-1-EN.png"></p>
 </div>
 <ul class="instruction">
-<li>Legen Sie zuerst einen Namen für den Dash fest (im obigen Beispiel
-haben wir sie „Schalter“ genannt).</li>
-<li>Definieren Sie ggf. die Hintergrundfarbe der Dash-Kachel an sich
-sowie die Vorder- und Hintergrundfarbe der Schaltzustände <em>An</em>
-(„On state“) bzw. <em>Aus</em> („Off state“).</li>
+<li>First of all, specify a name for the dash (in the example above
+it is “Switch”).</li>
+<li>If necessary, define the background color of the dash tile itself
+and the foreground and background color of the switching states <em>On</em>
+(„On state“) bzw. <em>Off</em> („Off state“).</li>
 </ul>
-<p>Zu einer Hintergrundfarbe lässt sich zusätzlich auch ein Bild verwenden:</p>
+<p>An image can also be used in addition to a background color:</p>
 <ul class="instruction">
-<li>Tippen Sie auf die Schaltfläche neben „Image“.</li>
+<li>Tap on the button located next to “Image”.</li>
 </ul>
-<p>Es öffnet sich das Fenster „Select an Image“, welches eine Reihe von
-Icons und Symbolen zur Verfügung stellt. Alternativ dazu können auch eigene
-Bilder verwendet werden, die zuvor in die App importiert wurden (siehe
-Abschnitt <a href="#manage_images">Eigene Bilder in die App importieren</a>).</p>
+<p>The “Select an Image” window provides a number of icons and symbols.
+Alternatively, you can also use your own images that you have previously
+imported into the app (see <a href="#manage_images">Import own images
+into the app</a>).</p>
 <div class="android">
 <p><img class="thumb" src="../img/edit_button-2.png" width="275">
 <img class="large" src="../img/edit_button-2.png"></p>
@@ -421,10 +407,10 @@ Abschnitt <a href="#manage_images">Eigene Bilder in die App importieren</a>).</p
 <img class="large" src="../img/edit_button-2.png"></p>
 </div>
 <ul class="instruction">
-<li>Tragen Sie sowohl für den Empfang („Topic (sub)“) als auch für das
-Senden („Topic (pub)“) ein Topic ein.</li>
+<li>Enter a topic for both reception (“Topic (sub)”) and transmission
+(“Topic (pub)”).</li>
 </ul>
-<p>Nur so kann der Dash den Schaltstatus („Topic (sub)“)
-vom Server abfragen und Schaltbefehle an den Server geben („Topic (pub)“).</p>
+<p>Only in this way can the dash query the switch status (“Topic (sub)”)
+from the server and send switch commands to the server (“Topic (pub)”).</p>
 </body>
 </html>

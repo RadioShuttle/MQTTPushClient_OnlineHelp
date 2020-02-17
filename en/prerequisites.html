@@ -25,11 +25,57 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<h1>Prerequisites</h1>
-<p>You must know the push server address and your login data for the MQTT
-server (username/password). If you do not have access yet, you may work
-with the preset servers for test purposes (at <a href="http://mqtt.arduino-hannover.de" target="_blank">
-mqtt.arduino-hannover.de</a> you can create an account for the MQTT server).</p>
+<h1>Introduction</h1>
+<p>This app allows you to receive push notifications from MQTT environments.
+The app communicates with the public MQTT push server (radioshuttle.de),
+which in turn connects to an MQTT server and sends messages via the push
+services of Apple or Google. The app allows the configuration of push
+notifications for defined MQTT topics, which are automatically monitored
+by the MQTT push server. In the case of activity, these are immediately
+forwarded to the app, which outputs the message as a push notification.
+Push notifications are delivered automatically even if the app is not
+running.</p>
+
+<p>In addition to receiving push notifications for registered topics, MQTT
+actions can also be defined to send an MQTT message which can then trigger
+an action with the recipients.</p>
+
+<p>The app offers the following fields of application:</p>
+<ul>
+<li>Message view of all messages (push messages or simple messages)</li>
+<li>Actions for sending defined messages (menu with MQTT actions)
+<li>Dashboard view (currently only available in the Android version)
 </ul>
+
+<p>The dashboard view has a graphical user interface in which display and
+control elements ("dashes") can be created. These dashes can be used to
+monitor and control any actions, such as lighting, temperature display,
+weather, light color, heating control, home automation, to name just a
+few possibilities. Dash controls offer switches, sliders, text display,
+selection lists and web views, which are displayed as groupable interactive
+tiles.</p>
+<h1>Prerequisites</h1>
+<p>This app is designed as an addition to an existing MQTT environment
+and provides an easy-to-use interface with the ability to receive MQTT
+messages as push notifications.</p>
+<p>Required MQTT server:</p>
+<ul>
+<li>Access to an MQTT server that manages the messages you want to receive
+or send using the app, as well as the corresponding user name and password</li>
+<li>Devices or sensors for MQTT message exchange</li>
+<li>Information about the MQTT topics used and their message content
+(message structure)</li>
+</ul>
+<p>If no own MQTT server is available, a public MQTT server, for example
+from Arduino Hannover, can be used. At <a href="http://mqtt.arduino-hannover.de"
+target="_blank">mqtt.arduino-hannover.de</a> an account for the MQTT
+server can be created.</p>
+<p>The MQTT push server “push.radioshuttle.de” is already preset when
+setting up a new server connection and can be used with any MQTT server.</p>
+<div class="note">
+<h6>Note:</h6>
+<p>The “Dashboard” feature within the app is currently only available for
+Android devices. Dashboard support for the iOS version is in development.</p>
+</div>
 </body>
 </html>
