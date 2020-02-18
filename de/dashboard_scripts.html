@@ -214,7 +214,7 @@ Lebensdauer des Dashes, die endet, wenn das Dashboard verlassen oder
 modifiziert wird. Die Größe ist limitiert, auch werden nicht alle
 Datentypen gespeichert, wie z.&nbsp;B. Objekte vom Typ <tt>ArrayBuffer</tt>
 (zum Setzen und Lesen von Benutzerdaten wird intern <tt>JSON.stringify()</tt>
-und <tt>JSON.parse()</tt> verwendet).<br>
+und <tt>JSON.parse()</tt> verwendet)<br>
 Dashes: <em>alle</em></p>
 
 <p><tt>isDialog()</tt><br>
@@ -263,8 +263,8 @@ Beschreibung: Senden einer Nachricht (im Dash „Custom View“)<br>
 Parameter: <tt>topic</tt> (Typ <tt>String</tt>), <tt>payload</tt> (Typ
 <tt>String</tt>, wenn im Textformat oder <tt>ArrayBuffer</tt> für Binärdaten),
 <tt>retain</tt> (Typ <tt>Boolean</tt>)<br>
-Erläuterung: Zur Anwendung im Dash „Custom View“, wenn z.&nbsp;B. ein
-„SendButton“-Element geklickt wurde<br>
+Erläuterung: Zur Anwendung im Dash „Custom View“, wenn z.&nbsp;B. auf ein
+„SendButton“-Element getippt wurde<br>
 Dash: <em>Custom View</em></p>
 <div class="indent">
 <p><u>Beispiel:</u></p>
@@ -304,7 +304,7 @@ MQTT.publish('demo/test', 'hello world!', false);
 <p><tt>MQTT.Color.OS_DEFAULT</tt> &ndash; Standardfarbe des Betriebssystems
 (gemäß iOS/Android, Darkmode)</p>
 <p><tt>MQTT.Color.CLEAR</tt> &ndash; Setzt eingefärbte Flächen zurück (z.&nbsp;B.
-Button/Switch)</p>
+bei „Button/Switch“)</p>
 </div>
 <h2 id="customviewHTML">Custom View HTML</h2>
 <p>Es kann beliebiges HTML verwendet werden. Einige Dinge sollten jedoch
@@ -321,7 +321,7 @@ body {margin: 0; padding: 0;}
 </div>
 
 <li>Der darzustellende Inhalt sollte immer innerhalb des Viewports liegen.
-Bei Initialisierung und bei Ändern der Fenstergröße (nach Tippen auf Zoom)
+Bei Initialisierung und bei Änderung der Fenstergröße (nach Tippen auf Zoom)
 sollte eine Funktion aufgerufen werden, die den Inhalt an die Größen des
 Viewports anpasst. Die Viewportgrößen lassen sich mit <tt>"window.innerWidth"</tt>
 und <tt>window.innerHeight</tt> abfragen:</li>
@@ -357,7 +357,7 @@ function onMqttMessage(msg) {
 </pre>
 </div>
 <p><u>Erläuterung:</u><br>
-<tt>onMqttInit()</tt> wird von der App nach Initialisierung aufgerufen.
+<tt>onMqttInit()</tt> wird von der App nach der Initialisierung aufgerufen.
 <tt>account</tt> enthält Info über den aktuellen Account (siehe dazu auch
 <a href="filter-scripts.html#variables">die Tabelle „Variablen“</a>). Über <tt>view</tt>
 kann auf die Eigenschaften des Dashes zugegriffen werden (<a href="#filter_script">siehe oben</a>).<br>
