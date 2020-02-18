@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dashboard-Skripte</title>
+<title>Dashboard Scripts</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
 <link href="../style.css" type="text/css" rel="stylesheet" />
@@ -25,16 +25,16 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<h1>Dashboard-Skripte</h1>
-<p>Jedem Dash (außer „Group“) lassen sich im Editor Skripte hinzufügen.
-Es wird zwischen Filter-Skripten (Filtern des Inhalts einer erhaltenen
-Nachricht) und Output-Skripten zur Formartierung des Inhalts vor dem
-Veröffentlichen (<em>publish</em>) unterschieden.</p>
+<h1>Dashboard Scripts</h1>
+<p>Scripts can be added to every dash (except “Group”) in the editor.
+A distinction is made between filter scripts (filtering the content of
+a received message) and output scripts for formatting the content before
+publishing (<em>publish</em>).</p>
 
-<p>Für „Custom Views“ muss die entsprechende Funktionalität direkt im HTML-Code
-implementiert werden (siehe <a href="#customviewHTML">Custom View</a>).</p>
+<p>For “Custom Views” the corresponding functionality must be implemented
+directly in the HTML code (see <a href="#customviewHTML">Custom View</a>).</p>
 
-<h2 id="filter_script">Filter-Skript</h2>
+<h2 id="filter_script">Filter script</h2>
 <pre>
 function filterMsg(msg, acc, view) {
   var content = msg.text;
@@ -43,18 +43,17 @@ function filterMsg(msg, acc, view) {
 }
 </pre>
 <p>
-Funktionsweise wie <a href="filter-scripts.html">Topic-Filterskripte</a>.
-Hinzugekommen ist jedoch der Parameter <tt>view</tt>, über den auf Eigenschaften
-des Dashes zugegriffen werden kann. Es lässt sich z.&nbsp;B. die
-Text- oder Hintergrundfarbe in Abhängigkeit von der erhaltenen Nachricht
-<tt>msg.text</tt> ändern.</p>
+Functionality is like <a href="filter-scripts.html">Filter scripts for topics</a>.
+However, the parameter <tt>view</tt> has been added, which can be used to
+access properties of the dash. For example, the text or background color
+can be changed depending on the received message <tt>msg.text</tt>.</p>
 <div class="indent">
-<p><u>Beispiel:</u></p>
+<p><u>Example:</u></p>
 <pre>view.setTextColor(MQTT.Color.RED);</pre>
 </div>
-<p>Die einzelnen Funktionen werden in einem <a href="#functions">gesonderten
-Abschnitt</a> erläutert.</p>
-<h2 id="output_script">Output-Skript</h2>
+<p>The individual functions are explained in a <a href="#functions">separate
+section</a>.</p>
+<h2 id="output_script">Output script</h2>
 <div class="indent">
 <pre>
 function setContent(input, msg, acc, view) {
@@ -64,14 +63,14 @@ function setContent(input, msg, acc, view) {
 }
 </pre>
 </div>
-<p><tt>input</tt> enthält den Wert, der gesenedet werden soll (<em>publish</em>).
-Standardmäßig wird er der Variable <tt>msg.text</tt> zugewiesen. Soll das
-Ausgabeformat beispielsweise im JSON-Format erfolgen, muss der Variablen
-<tt>msg.txt</tt> der JSON-Inhalt (Typ <tt>string</tt>) zugewiesen werden.</p> 
-<p>Für Binärdaten weisen Sie <tt>msg.raw</tt> das entsprechende <tt>ArrayBuffer</tt>-Objekt
-(das die zu sendenden Binärdaten enthält) zu:</p>
+<p><tt>input</tt> contains the value to be sent (<em>publish</em>).
+By default it is assigned to the <tt>msg.text</tt> variable. For example,
+if the output format should be JSON, the JSON content (type <tt>string</tt>)
+must be assigned to the variable <tt>msg.txt</tt>.</p> 
+<p>For binary data, assign the corresponding <tt>ArrayBuffer</tt> object
+(which contains the binary data to be sent) to <tt>msg.raw</tt>:</p>
 <div class="indent">
-<p><u>Beispiel:</u></p>
+<p><u>Example:</u></p>
 <pre>
 var buffer = new ArrayBuffer(2);
 var dataView = new DataView(buffer);
@@ -80,21 +79,23 @@ dataView.setInt8(1, 127); // put 127 in slot 1
 msg.raw = buffer;
 </pre>
 </div>
-<p><tt>msg</tt> enthält die zu sendende Nachricht, <tt>acc</tt> Infos
-zum Konto. Siehe dazu auch <a href="filter-scripts.html#variables">die Tabelle „Variablen“</a>).</p>
-<p>Wie bei den Filter-Skripten, lässt sich über den Parameter <tt>view</tt>
-auf Eigenschaften des Dashes zugreifen, um beispielsweise Farben neu
-zu setzen. Siehe dazu <a href="#functions">diesen Abschnitt</a>.</p>
+<p><tt>msg</tt> contains the message to be sent, <tt>acc</tt> information
+on the account. See the <a href="filter-scripts.html#variables">“Variables”</a>
+table).</p>
+<p>As with the filter scripts, the parameter <tt>view</tt> can be used to
+access properties of the dash, for example to reset colors. See
+<a href="#functions">this section</a>.</p>
 
-<h2>Skriptfehler</h2>
-<p>JavaScript- und Verbindungsfehler (z.&nbsp;B. kein Netz bei <tt>publish()</tt>)
-sind im Dash durch einen Warnhinweis (<img src="../img/exclamation.png"
-height="16">) gekennzeichnet.</p>
+<h2>Script error</h2>
+<p>JavaScript and connection errors (e.g. no network connection during
+<tt>publish()</tt>) are indicated in the dash by a warning (<img
+src="../img/exclamation.png" height="16">).</p>
 
 <ul class="instruction">
-<li>Tippen Sie erst auf den Dash (<strong><span class="draft">1</span></strong>), um
-in die Detailansicht zu gelangen und dann auf das Symbol <img src="../img/exclamation.png"
-height="16"> (<strong><span class="draft">2</span></strong>), um den Fehlertext anzuzeigen:</li>
+<li>First, tap on the dash (<strong><span class="draft">1</span></strong>)
+to go to the detail view and then tap on the <img src="../img/exclamation.png"
+height="16"> icon (<strong><span class="draft">2</span></strong>) to
+display the error message:</li>
 </ul>
 
 <div class="android">
@@ -106,133 +107,126 @@ height="16"> (<strong><span class="draft">2</span></strong>), um den Fehlertext 
 <img class="large" src="../img/burglaralarm.png"></p>
 </div>
 
-<h2>JavaScript-Interface</h2>
-<p>Die Darstellung von Dashes lässt sich durch Skript-Code dynamisch
-verändern.</p> 
-<p>Filterskripte werden vor der Anzeige ausgeführt. Trifft eine neue
-Nachricht ein, kann diese ausgewertet und die Darstellung des Dash-Icons
-in Abhängigkeit vom Nachrichteninhalt modifiziert werden (z.&nbsp;B. durch
-Setzen einer anderen Textfarbe).</p>
-<p>Zugriff auf die Eigenschaften des Dashes (z.&nbsp;B. eines „Button/Switch“)
-erhält man über den Parameter <tt>view</tt>, der in den Funktionen
-<tt>filterMsg()</tt> sowie <tt>setContent()</tt> übergeben wird (siehe
-die Abschnitte <a href="#filter_script">Filter-Skript/Output-Skript</a>).</p>
-<p>Bei einem Dash des Typs „Custom View“ kann im HTML-Code über das globale Object
-<tt>MQTT.view</tt> auf die Eigenschaften des Dashes zugegriffen werden.
-Sofern implementiert, geht dies auch über die Funktion <tt>onMqttInit(account,
-view)</tt> (siehe Abschnitt <a href="#customviewHTML">Custom View HTML</a>).</p>
-<p>Um z.&nbsp;B. die Textfarbe zu ändern, muss <tt>setTextColor()</tt>
-folgendermaßen aufgerufen werden:</p>
+<h2>JavaScript interface</h2>
+<p>The display of dashes can be dynamically modified using script code.</p> 
+<p>Filter scripts are executed before the display. If a new message is
+received, it can be evaluated and the display of the dash icon can be
+modified depending on the message content (e.g. by setting a different
+text color).</p>
+<p>Access to the properties of the dash (e.g. of a “Button/Switch”)
+can be obtained by the <tt>view</tt> parameter, which is passed in the
+<tt>filterMsg()</tt> and <tt>setContent()</tt> functions (see
+the <a href="#filter_script">Filter script/Output skript</a>) sections.</p>
+<p>With a “Custom View” type dash, the properties of the dash can be accessed
+in the HTML code via the global object <tt>MQTT.view</tt>.
+If implemented, this can also be done using the <tt>onMqttInit(account,
+view)</tt> function (see the <a href="#customviewHTML">Custom View HTML</a>
+section).</p>
+<p>To change e.g. the text color, <tt>setTextColor()</tt>
+must be called as follows:</p>
 <p>a) in <tt>filterMsg()</tt>, <tt>setContent()</tt></p>
 <div class="indent">
 <p><tt>view.setTextColor(MQTT.Color.RED);</tt></p>
 </div>
-<p>b) JavaScript-Code im HTML von <em>Custom View</em></p>
+<p>b) JavaScript code in the HTML of <em>Custom View</em></p>
 <div class="indent">
 <p><tt>MQTT.view.setTextColor(MQTT.Color.RED);</tt></p>
 </div>
-<h3 id="functions">Eigenschaften/Funktionen</h3>
-<p>Manche Eigenschaften/Funktionen stehen nur für bestimmte Dashes zur
-Verfügung:</p>
+<h3 id="functions">Properties/Functions</h3>
+<p>Some properties/functions are only available for certain dashes:</p>
 
 <p><tt>setTextColor(color), getTextColor()</tt><br>
-Beschreibung: setzte/lese Textfarbe<br>
-Parameter: <tt>color</tt> - Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
+Description: set/read text color<br>
+Parameter: <tt>color</tt> - ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
 Dashes: <em>Text View</em>, <em>Option List</em>, <em>Progress Bar/Slider</em></p>
 
 <p><tt>setTextSize(size), getTextSize()</tt><br>
-Beschreibung: setze/lese Textgröße<br>
-Parameter: <tt>size</tt> - 0 = System Default, 1 = klein, 2 = mittel 3 = groß<br>
+Description: set/read text size<br>
+Parameter: <tt>size</tt> - 0 = System Default, 1 = small, 2 = medium 3 = large<br>
 Dashes: <em>Text View</em>, <em>Option List</em>, <em>Progress Bar/Slider</em></p>
 
 <p><tt>setBackground(color), getBackground()</tt><br>
-Beschreibung: setze/lese Hintergrundfarbe<br>
-Parameter: <tt>color</tt> - Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
-Dashes: <em>alle</em></p>
+Description: set/read background color<br>
+Parameter: <tt>color</tt> - ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
+Dashes: <em>all</em></p>
 
 <p><tt>setBackgroundImage(resourceName), getBackgroundImage()</tt><br>
-Beschreibung: setze/lese Hintergrundbild<br>
-Parameter: <tt>resourceName</tt> interner oder externer Ressourcename (vom
-Benutzer importiertes Image). Zwecks Unterscheidung kann ein Pfad „int/“
-oder „user/“ vorangestellt werden (erforderlich bei Namenskollision; wenn
-nicht voll qualifiziert, hat eine externe Ressource Priorität)<br>
+Description: set/read background image<br>
+Parameter: <tt>resourceName</tt> internal or external ressource name (image
+imported by the user). A path “int/” or “user/” can be prefixed (required
+for name collision; if not fully qualified, an external ressource has priority)<br>
 Dashes: <em>TextView</em>, <em>Option List</em>, <em>Progress Bar/Slider</em>,
 <em>Button/Switch</em></p>
 
 <p><tt>getSubscribedTopic()</tt><br>
-Beschreibung: Abfragen des Topic (sub)<br>
-Dashes: <em>alle</em></p>
+Description: Query the topic (<em>sub</em>)<br>
+Dashes: <em>all</em></p>
 
 <p><tt>getPublishedTopic()</tt><br>
-Beschreibung: Abfragen des Topic (<em>publish</em>)<br>
+Description: Query the topic (<em>publish</em>)<br>
 Dashes: <em>Text View</em>, <em>Button/Switch</em>, <em>Progress Bar/Slider</em>,
 <em>Option List</em></p>
 
 <p><tt>setCtrlColor, getCtrlColor</tt><br>
-Beschreibung: setzte/lese Controller-Farbe (Vordergrund)<br>
-Parameter: <tt>color</tt> – Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
-Dashes: <em>Button/Switch „On“ State</em>, <em>ProgressBar/Slider</em></p>
+Description: set/read controller color (foreground image)<br>
+Parameter: <tt>color</tt> – ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
+Dashes: <em>Button/Switch “On” State</em>, <em>ProgressBar/Slider</em></p>
 
 <p><tt>setCtrlBackground, getCtrlBackground</tt><br>
-Beschreibung: setzte/lese Controller-Hintergrundfarbe<br>
-Parameter: <tt>color</tt> – Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
-Dash: <em>Button/Switch „On“ State</em></p>
+Description: set/read controller background color<br>
+Parameter: <tt>color</tt> – ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
+Dash: <em>Button/Switch “On” State</em></p>
 
 <p><tt>setCtrlImage, getCtrlImage</tt><br>
-Beschreibung: setze/lese Controller-Image<br>
-Parameter: <tt>resourceName</tt> – Interner oder externer Resourcename
-(vom Benutzer importiertes Image). Zwecks Unterscheidung kann ein Pfad
-„int/“ oder „user/“ vorangestellt werden (erforderlich bei Namenskollision;
-wenn nicht voll qualifiziert, hat eine externe Ressource Priorität)<br>
-Dash: <em>Button/Switch „On“ State</em></p>
+Description: set/read controller image<br>
+Parameter: <tt>resourceName</tt> – internal or external ressource name (image
+imported by the user). A path “int/” or “user/” can be prefixed (required
+for name collision; if not fully qualified, an external ressource has priority)<br>
+Dash: <em>Button/Switch “On” State</em></p>
 
 <p><tt>setCtrlColorOff, getCtrlColorOff</tt><br>
-Beschreibung: setzte/lese Controller-Farbe (Vordergrund)<br>
-Parameter: <tt>color</tt> – Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
-Dash: <em>Button/Switch „Off“ State</em></p>
+Description: set/read controller color (foreground color)<br>
+Parameter: <tt>color</tt> – ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
+Dash: <em>Button/Switch “Off” State</em></p>
 
 <p><tt>setCtrlBackground,Off getCtrlBackgroundOff</tt><br>
-Beschreibung: setzte/lese Controller-Hintergrundfarbe<br>
-Parameter: <tt>color</tt> – Farbwert ARGB (siehe auch <a href="#color_constant">Farbkonstanten</a>)<br>
-Dash: <em>Button/Switch „Off“ State</em></p>
+Description: set/read controller background color<br>
+Parameter: <tt>color</tt> – ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
+Dash: <em>Button/Switch “Off” State</em></p>
 
 <p><tt>setCtrlImageOff, getCtrlImageOff</tt><br>
-Beschreibung: setze/lese Controller-Image<br>
-Parameter: <tt>resourceName</tt> – Interner oder externer Ressourcename
-(vom Benutzer importiertes Image). Zwecks Unterscheidung kann ein Pfad 
-„int/“ oder „user/“ vorangestellt werden (erforderlich bei Namenskollision;
-wenn nicht voll qualifiziert, hat externe Ressource Priorität)<br>
-Dash: <em>Button/Switch „Off“ State</em></p>
+Description: set/read controller image<br>
+Parameter: <tt>resourceName</tt> – internal or external ressource name (image
+imported by the user). A path “int/” or “user/” can be prefixed (required
+for name collision; if not fully qualified, an external ressource has priority)<br>
+Dash: <em>Button/Switch “Off” State</em></p>
 
 <p><tt>setUserData, getUserData</tt><br>
-Beschreibung: Zwischenspeichern von benutzerdefinierten Werten<br>
-Parameter: <tt>JavaScript-Objekt oder -Wert</tt><br>
-Erläuterung: Beispielsweise zum Speichern von Zustandsvariablen, historischen
-Daten (Werte der letzten empfangen Nachrichten).<br>
-WICHTIG: Daten werden nicht dauerhaft gespeichert, sondern nur für die
-Lebensdauer des Dashes, die endet, wenn das Dashboard verlassen oder
-modifiziert wird. Die Größe ist limitiert, auch werden nicht alle
-Datentypen gespeichert, wie z.&nbsp;B. Objekte vom Typ <tt>ArrayBuffer</tt>
-(zum Setzen und Lesen von Benutzerdaten wird intern <tt>JSON.stringify()</tt>
-und <tt>JSON.parse()</tt> verwendet).<br>
-Dashes: <em>alle</em></p>
+Description: Buffering user-defined values<br>
+Parameter: <tt>JavaScript object or value</tt><br>
+Explanation: For example, to buffer state variables, historical data
+(values of the last messages received).<br>
+IMPORTANT: The data is not stored permanently, but only for the lifetime
+of the dash, which ends when the dashboard is left or modified. The size
+is limited, also not all data types are stored, e.g. objects of the type
+<tt>ArrayBuffer</tt> (<tt>JSON.stringify()</tt> and <tt>JSON.parse()</tt>
+are used internally to set and read user data)<br>
+Dashes: <em>all</em></p>
 
 <p><tt>isDialog</tt><br>
-Beschreibung: Abfrage, ob der Dash gerade in der Detail-Ansicht
-ausgeführt wird<br>
-Erläuterung: Dashes, die in der Detailansicht angezeigt werden, verwenden
-zwar die Daten des entsprechenden Dashes im Dashboard, laufen aber als eigenständige Instanz.<br>
+Description: Query whether the dash is currently executed in detail view<br>
+Explanation: Dashes displayed in the detail view use the data of the
+corresponding dashboard dash, but run as a standalone instance<br>
 Dash: <em>Custom View</em></p>
 
 <p id="gethistoricaldata"><tt>getHistoricalData</tt><br>
-Beschreibung: Liefert die letzten Nachrichten (auf dem Server werden bis
-zu 100 letzte Nachrichten vorgehalten, sofern im Dash „Provide historical
-data“ gesetzt wurde)<br>
-Rückgabewert: JavaScript-Array von Nachrichten (aufsteigend sortiert)<br>
+Description: Returns the last messages (up to 100 last messages are retained
+on the server if “Provide historical data” is set in the dash)<br>
+Return value: JavaScript array of messages (sorted in ascending order)<br>
 Dash: <em>Custom View</em></p>
 
 <div class="indent">
-<p><u>Beispiel:</u></p>
+<p><u>Example:</u></p>
 <pre>
 var data = MQTT.view.getHistoricalData();
 for(var i = 0; i < data.length; i++) {
@@ -240,49 +234,48 @@ for(var i = 0; i < data.length; i++) {
 }
 </pre>
 </div>
-<p><tt>msg.receivedDate</tt> &ndash; Datum (JavaScript <tt>Date</tt>-Objekt)<br>
-<tt>msg.topic</tt> &ndash; Topic (Typ <tt>string</tt>)<br>
-<tt>msg.text</tt> &ndash; Nachrichteninhalt (Typ <tt>string</tt>)<br>
-<tt>msg.raw</tt> &ndash; Nachrichteninhalt binär (JavaScript <tt>ArrayBuffer</tt>-Objekt)</p>
+<p><tt>msg.receivedDate</tt> &ndash; Date (JavaScript <tt>Date</tt> object)<br>
+<tt>msg.topic</tt> &ndash; Topic (type <tt>string</tt>)<br>
+<tt>msg.text</tt> &ndash; message content (type <tt>string</tt>)<br>
+<tt>msg.raw</tt> &ndash; binary message content (JavaScript <tt>ArrayBuffer</tt> object)</p>
 
 <p id="getparams"><tt>getParameters()</tt><br>
-Beschreibung: Liefert eine Liste mit Parametern (der Benutzer kann in
-den Dash-Einstellungen den <em>Custom View</em>-Parameter definieren)<br>
-Rückgabewert: JavaScript-Array mit Parametern vom Typ <tt>String</tt><br>
+Description: Returns a list of parameters (the user can define the <em>Custom
+View</em> parameter in the dash settings<br>
+Return value: JavaScript array with parameters of the type <tt>String</tt><br>
 Dash: <em>Custom View</em></p>
 <div class="indent">
-<p><u>Beispiel:</u></p>
+<p><u>Example:</u></p>
 <pre>
 MQTT.view.getParameters()</pre>
 </div>
-<h3 id="morefunctions">Weitere Funktionen und Konstanten</h3>
-<p>Über das globale Objekt MQTT stehen weitere Konstanten und Funktionen
-zur Verfügung.</p>
+<h3 id="morefunctions">More functions and constants</h3>
+<p>Further functions and constants are available via the global object MQTT.</p>
 <p><tt>publish</tt><br>
-Beschreibung: Senden einer Nachricht (im Dash „Custom View“)<br>
-Parameter: <tt>topic</tt> (Typ <tt>String</tt>), <tt>payload</tt> (Typ
-<tt>String</tt>, wenn im Textformat oder <tt>ArrayBuffer</tt> für Binärdaten),
-<tt>retain</tt> (Typ <tt>Boolean</tt>)<br>
-Erläuterung: Zur Anwendung im Dash „Custom View“, wenn z.&nbsp;B. ein
-„SendButton“-Element geklickt wurde<br>
+Description: Send a message (from the “Custom View” dash)<br>
+Parameter: <tt>topic</tt> (type <tt>String</tt>), <tt>payload</tt> (type
+<tt>String</tt>, if in text format, or <tt>ArrayBuffer</tt> for binary data),
+<tt>retain</tt> (type <tt>Boolean</tt>)<br>
+Explanation: For application in the “Custom View” dash, if e.g. a “SendButton”
+element was tapped<br>
 Dash: <em>Custom View</em></p>
 <div class="indent">
-<p><u>Beispiel:</u></p>
+<p><u>Example:</u></p>
 <pre>
 MQTT.publish('demo/test', 'hello world!', false);
 </pre>
 </div>
-<p id="color_tools">Farbfunktionen:</p>
+<p id="color_tools">Color functions:</p>
 <div class="indent">
-<p><tt>MQTT.Color.rgba(r, g, b, a)</tt> &ndash; Liefert den Farbwert aus den
-übergebenen Einzelwerten</p>
-<p><tt>MQTT.Color.rgb(r, g, b)</tt> &ndash; Liefert den Farbwert aus den
-übergebenen Einzelwerten (100% deckend)</p>
-<p><tt>MQTT.Color.red(color)</tt> &ndash; Liefert den Rot-Anteil der Farbe</p>
-<p><tt>MQTT.Color.green(color)</tt> &ndash; Liefert den Grün-Anteil der Farbe</p>
-<p><tt>MQTT.Color.blue(color)</tt> &ndash; Liefert den Blau-Anteil der Farbe</p>
+<p><tt>MQTT.Color.rgba(r, g, b, a)</tt> &ndash; Returns the color value
+from the transferred individual values</p>
+<p><tt>MQTT.Color.rgb(r, g, b)</tt> &ndash; Returns the color value
+from the transferred individual values (100% opaque)</p>
+<p><tt>MQTT.Color.red(color)</tt> &ndash; Returns the red portion of a color</p>
+<p><tt>MQTT.Color.green(color)</tt> &ndash; Returns the green portion of a color</p>
+<p><tt>MQTT.Color.blue(color)</tt> &ndash; Returns the blue portion of a color</p>
 </div>
-<p id="color_constant">Farbkonstanten:</p>
+<p id="color_constant">Color constants:</p>
 <div class="indent">
 <p><tt>MQTT.Color.WHITE</tt> &ndash; </p>
 <p><tt>MQTT.Color.LT_GRAY</tt> &ndash; </p>
@@ -301,16 +294,15 @@ MQTT.publish('demo/test', 'hello world!', false);
 <p><tt>MQTT.Color.LT_BLUE</tt> &ndash; </p>
 <p><tt>MQTT.Color.BLUE</tt> &ndash; </p>
 <p><tt>MQTT.Color.TRANSPARENT</tt> &ndash; </p>
-<p><tt>MQTT.Color.OS_DEFAULT</tt> &ndash; Standardfarbe des Betriebssystems
-(gemäß iOS/Android, Darkmode)</p>
-<p><tt>MQTT.Color.CLEAR</tt> &ndash; Setzt eingefärbte Flächen zurück (z.&nbsp;B.
-Button/Switch)</p>
+<p><tt>MQTT.Color.OS_DEFAULT</tt> &ndash; Standard color of the operating
+system (according to iOS/Android, dark mode)</p>
+<p><tt>MQTT.Color.CLEAR</tt> &ndash; Resets colored areas (e.g. in
+“Button/Switch”)</p>
 </div>
 <h2 id="customviewHTML">Custom View HTML</h2>
-<p>Es kann beliebiges HTML verwendet werden. Einige Dinge sollten jedoch
-beachtet werden.</p>
+<p>Any HTML can be used. However, some things should be considered.</p>
 <ol>
-<li>Default-Ränder (des Browsers/WebView) auf 0 setzten:</li>
+<li>Set default margins (of the browser/WebView) to 0:</li>
 
 <div class="indent">
 <pre>
@@ -320,11 +312,11 @@ body {margin: 0; padding: 0;}
 </pre>
 </div>
 
-<li>Der darzustellende Inhalt sollte immer innerhalb des Viewports liegen.
-Bei Initialisierung und bei Ändern der Fenstergröße (nach Tippen auf Zoom)
-sollte eine Funktion aufgerufen werden, die den Inhalt an die Größen des
-Viewports anpasst. Die Viewportgrößen lassen sich mit <tt>"window.innerWidth"</tt>
-und <tt>window.innerHeight</tt> abfragen:</li>
+<li>The content to be displayed should always lie within the viewport.
+At initialization and when changing the window size (after tapping on Zoom)
+a function should be called which adapts the content to the size of the
+viewport. The viewport sizes can be queried with <tt>"window.innerWidth"</tt>
+and <tt>window.innerHeight</tt>:</li>
 
 <div class="indent">
 <pre>
@@ -339,8 +331,8 @@ window.addEventListener('resize', onMqttResize);
 </pre>
 </div>
 
-<li>Implementieren Sie folgende Funktionen, um Nachrichten zu erhalten und
-Infos über den aktuellen Dash abfragen zu können:</li>
+<li>Implement the following functions to receive messages and retrieve
+information about the current dash:</li>
 
 <div class="indent">
 <pre>
@@ -356,44 +348,41 @@ function onMqttMessage(msg) {
 &lt;/script&gt;
 </pre>
 </div>
-<p><u>Erläuterung:</u><br>
-<tt>onMqttInit()</tt> wird von der App nach Initialisierung aufgerufen.
-<tt>account</tt> enthält Info über den aktuellen Account (siehe dazu auch
-<a href="filter-scripts.html#variables">die Tabelle „Variablen“</a>). Über <tt>view</tt>
-kann auf die Eigenschaften des Dashes zugegriffen werden (<a href="#filter_script">siehe oben</a>).<br>
+<p><u>Explanation:</u><br>
+<tt>onMqttInit()</tt> is called by the app after initialization.
+<tt>account</tt> contains info about the current account (see also the
+table <a href="filter-scripts.html#variables">“Variables”</a>). With
+<tt>view</tt>  you can access the properties of the dash (<a
+href="#filter_script">see above</a>).<br>
 <br>
-<tt>onMqttMessage()</tt> wird von der App immer dann aufgerufen, wenn
-eine neue Nachricht eingetroffen ist (bei Initialisierung wird die letzte
-erhaltene Nachricht übergeben). Dafür muss natürlich ein Topic im
-Dash spezifiziert worden sein.<br>
+<tt>onMqttMessage()</tt> is called by the app whenever a new message has
+arrived (on initialization the last received message is passed). Of course,
+a topic must be specified in the dash for this to work.<br>
 <br>
-<tt>msg</tt>-Parameter: siehe dazu auch <a href="filter-scripts.html#variables">die Tabelle „Variablen“</a>.</p>
+<tt>msg</tt> parameter: see also the table <a href="filter-scripts.html#variables">“Variables”</a>.</p>
 <div class="note">
-<h6>Tipp:</h6>
-<p>Verwenden Sie die Vorlage „Basic HTML“ (<img src="../img/overflow_icon.png" height="16"> &gt; Insert &gt; Basic HTML)
-für den o.&nbsp;a. Code.
+<h6>Tip:</h6>
+<p>Use the “Basic HTML” template (<img src="../img/overflow_icon.png" height="16"> &gt; Insert &gt; Basic HTML)
+for the above code.
 </div>
 
-<li>Um Daten zu senden (via <em>publish</em>), sollten sie einen Click-Handler,
-z.&nbsp;B. für einen Button, implementieren, um dann über das JavaScript-Interface
-<tt>MQTT.publsh()</tt> die Nachricht zu versenden:</li>
+<li>To send data (via <em>publish</em>), you should implement a click handler,
+e.g. for a button, and then send the message via the JavaScript interface
+<tt>MQTT.publsh()</tt>:</li>
 <div class="indent">
 <pre>
 &lt;button onclick="MQTT.publish('demo/test','Hello world!',false);"&gt;Send Hello World!&lt;/button&gt;
 </pre>
 </div>
-Siehe auch <a href="#morefunctions">Weitere Funktionen und Konstanten</a>.<br>
+See also <a href="#morefunctions">More functions and constants</a>.<br>
 
-<li>Interne und importierte Bilder können in HTML referenziert werden.
-Verwenden Sie dazu den Ressourcenamen, wie er unter <a
-href="dashboard.html#manage_images">„Manage Images“</a>
-angezeigt wird. Zwecks Unterscheidung kann ein Pfad „int/“ oder „user/“
-vorangestellt werden (erforderlich bei Namenskollision; wenn nicht voll
-qualifiziert, hat eine externe Ressource Priorität).<br>
-<br><u>Beispiel:</u><br>
+<li>Internal and imported images can be referenced in HTML. Use the ressource
+name as specified under <a href="dashboard.html#manage_images">“Manage Images”</a>.
+For distinction, a path “int/” or “user/” can be prefixed (required for
+name collision; if not fully qualified, an external ressource has priority).<br>
+<br><u>Example:</u><br>
 <br>
-Verwenden eines importierten Images mit dem (Ressource-)Namen
-„light_on“:</li>
+Using an imported image with the (ressource) name “light_on”:</li>
 <div class="indent">
 <pre>
 &lt;img src="light_on"&gt;&lt;/img&gt;
@@ -403,9 +392,9 @@ oder
 &lt;img src="user/light_on"&gt;&lt;/img&gt;
 </pre>
 </div>
-<li>Historische Daten:<br>
-Checkbox „Provide historical data“ muss gesetzt werden. Siehe dazu den
-Abschnitt <a href="#gethistoricaldata">getHistoricalData()</a></li>
+<li>Historical data:<br>
+Checkbox “Provide historical data” must be set. See the section <a
+href="#gethistoricaldata">getHistoricalData()</a></li>
 </ol>
 </body>
 </html>
