@@ -160,11 +160,11 @@ Dashes: <em>TextView</em>, <em>Option List</em>, <em>Progress Bar/Slider</em>,
 <em>Button/Switch</em></p>
 
 <p><tt>getSubscribedTopic()</tt><br>
-Beschreibung: Abfragen des Topic (sub)<br>
+Beschreibung: Topic <em>(sub)</em> auslesen<br>
 Dashes: <em>alle</em></p>
 
 <p><tt>getPublishedTopic()</tt><br>
-Beschreibung: Abfragen des Topic <em>(publish)</em><br>
+Beschreibung: Topic <em>(publish)</em> auslesen<br>
 Dashes: <em>Text View</em>, <em>Button/Switch</em>, <em>Progress Bar/Slider</em>,
 <em>Option List</em></p>
 
@@ -256,7 +256,7 @@ Dash: <em>Custom View</em></p>
 MQTT.view.getParameters()</pre>
 </div>
 <h3 id="morefunctions">Weitere Funktionen und Konstanten</h3>
-<p>Über das globale Objekt MQTT stehen weitere Konstanten und Funktionen
+<p>Über das globale Objekt <tt>MQTT</tt> stehen weitere Konstanten und Funktionen
 zur Verfügung.</p>
 <p><tt>publish(topic, payload, retain)</tt><br>
 Beschreibung: Senden einer Nachricht (im Dash „Custom View“)<br>
@@ -321,9 +321,9 @@ body {margin: 0; padding: 0;}
 </div>
 
 <li>Der darzustellende Inhalt sollte immer innerhalb des Viewports liegen.
-Bei Initialisierung und bei Änderung der Fenstergröße (nach Tippen auf Zoom)
+Bei Initialisierung und bei Änderung der Fenstergröße (nach Tippen auf „Zoom“)
 sollte eine Funktion aufgerufen werden, die den Inhalt an die Größen des
-Viewports anpasst. Die Viewportgrößen lassen sich mit <tt>"window.innerWidth"</tt>
+Viewports anpasst. Die Viewportgrößen lassen sich mit <tt>window.innerWidth</tt>
 und <tt>window.innerHeight</tt> abfragen:</li>
 
 <div class="indent">
@@ -358,7 +358,7 @@ function onMqttMessage(msg) {
 </div>
 <p><u>Erläuterung:</u><br>
 <tt>onMqttInit()</tt> wird von der App nach der Initialisierung aufgerufen.
-<tt>account</tt> enthält Info über den aktuellen Account (siehe dazu auch
+<tt>account</tt> enthält Informationen über den aktuellen Account (siehe dazu auch
 <a href="filter-scripts.html#variables">die Tabelle „Variablen“</a>). Über <tt>view</tt>
 kann auf die Eigenschaften des Dashes zugegriffen werden (<a href="#filter_script">siehe oben</a>).<br>
 <br>
@@ -404,7 +404,7 @@ oder
 </pre>
 </div>
 <li>Historische Daten:<br>
-Checkbox „Provide historical data“ muss gesetzt werden. Siehe dazu den
+Die Checkbox „Provide historical data“ muss gesetzt werden. Siehe dazu den
 Abschnitt <a href="#gethistoricaldata">getHistoricalData()</a></li>
 </ol>
 </body>

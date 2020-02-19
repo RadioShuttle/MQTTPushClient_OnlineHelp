@@ -28,7 +28,7 @@ $(document).ready(function() {
 <h1>Dashboard</h1>
 <p>In addition to the “Messages” view the app offers a “Dashboard” view
 with graphical user interface. It allows creating display and control
-elements (so-called “dashes”), such as temperature display, lamp control
+elements (so-called “dashes”), e.g. temperature display, lamp control
 switches, alarms, and more.</p>
 <div class="android">
 <p><img class="thumb" src="../img/dashboard_view.png" width="275">
@@ -64,32 +64,29 @@ offer a good base for creating own solutions.</p>
 <th>Dash</th><th>Explanation</th>
 </tr>
 <tr>
-<td><em>Text View</em></td><td>For displaying messages in text form and
-for entering values. See the section <a href="#textview">Text&nbsp;View</a></td>
+<td><em>Text View</em></td><td>Allows displaying messages in text form and
+entering values. See the <a href="#textview">Text&nbsp;View</a> section</td>
 </tr>
 <tr>
 <td><em>Button/Switch</em></td><td>Creates a button or a switch. See the
-section <a href="#button">Button/Switch</a></td>
+<a href="#button">Button/Switch</a> section</td>
 </tr>
 <tr>
 <td><em>Progress&nbsp;Bar/Slider</em></td><td>Represents a value range by
 a bar. If a “Publish Topic” is specified, a new value can be set and sent
-using a slider. See the section <a href="#slider">Progress&nbsp;Bar/Slider</a</td>
+using a slider. See the <a href="#slider">Progress&nbsp;Bar/Slider</a> section</td>
 </tr>
 <tr>
 <td><em>Option List</em></td><td>Allows the definition of any set of
-values. See the section <a href="#optionlist">Option&nbsp;List</a></td>
-</td>
+values. See the <a href="#optionlist">Option&nbsp;List</a> section</td>
 </tr>
 <tr>
 <td><em>Group View</em></td><td>Allows grouping dash tiles.
-See the section <a href="#groupview">Group&nbsp;View</a></td>
-</td>
+See the <a href="#groupview">Group&nbsp;View</a> section</td>
 </tr>
 <tr>
 <td><em>Custom View</em></td><td>Allows creating new dashes in HTML. See
-the section <a href="#customview">Custom&nbsp;View</a>
-</td>
+the <a href="#customview">Custom&nbsp;View</a> section</td>
 </tr>
 </table>
 <h2>Templates for dashes</h2>
@@ -100,7 +97,7 @@ Topic” has been specified, a value can be entered and sent in the detail
 view.</p>
 <ul>
 <li>Required elements:<br>
-<em><a href="#topic_sub">Topic (sub)</a>, <a href="#input_type">Input Type</am></em></li>
+<em><a href="#topic_sub">Topic (sub)</a>, <a href="#input_type">Input Type</a></em></li>
 <li>Optional elements:<br>
 <em><a href="#name">Name</a>, <a href="#group">Group</a>, <a href="#pos">Pos</a>,
 <a href="#color">Color</a>, <a href="#text_size">Text Size</a>,
@@ -110,12 +107,12 @@ view.</p>
 </ul>
 <h3 id="button">Button/Switch</h3>
 <img class="thumb_noreplace" src="../img/button_switch_thumb.png" height="100">
-<p>Generates a button element which works e.g. as a push button that sends a
+<p>Generates a button element which works e.g. as a push button which sends a
 message upon tapping. For this, the “Off state” fields remains blank. If
 the button is created as a switch that changes its state (on/off) depending
-on the value of the last received message, a topic must be entered in the
+on the value of the last received message, a topic must be entered in
 “Off state”. This could be used to control an alarm system, for example.
-Another example of a dash that switches a light on and off and informs about
+Another example of a dash that switches a light on and off, and informs about
 the current switching status at the same time, can be found <a href="#examples">here</a>.</p>
 <ul>
 <li>Required elements:<br>
@@ -167,7 +164,7 @@ for each option, which is shown instead of the actual value.</p>
 <h3 id="groupview">Group View</h3>
 <img class="thumb_noreplace" src="../img/group_thumb.png" height="100">
 <p>For a better overview in the dashboard, groups can be created to which
-individual dashes can be assigned. These could be, for example, the following
+individual dashes can be assigned. These could be, for example, logical
 group subdivisions: cellar, ground floor, upper floor, garden house, etc.</p>
 <ul>
 <li>Required elements:<br>
@@ -178,11 +175,11 @@ group subdivisions: cellar, ground floor, upper floor, garden house, etc.</p>
 </ul>
 <div class="note">
 <h6>Note:</h6>
-<p>Individual dashes can be grouped or <a href="#groupview">assigned to
-another group</a>. For this, tap and hold the desired dash tile (“Long
-Press”) until the <img src="../img/checkmark.png" height="16"> symbol
-appears in the tile. Then press <img src="../img/edit.png" height="16">
-to get into the edit mode.<br>
+<p>Individual dashes can be grouped or assigned to another group. For
+this, tap and hold the desired dash tile (“Long Press”) until the <img
+src="../img/checkmark.png" height="16"> symbol appears in the tile.
+Then press <img src="../img/edit.png" height="16"> to get into the edit
+mode.<br>
 <br>
 Use “Group” and “Pos” to bring the tile in the desired position.</p>
 </div>
@@ -206,7 +203,7 @@ edited directly in the dash.<p>
 <div class="note">
 <h6>Note:</h6>
 <p>Advanced knowledge of HTML and JavaScript is required to create a
-Customs View. Some examples use HTML5 and may not run on older mobile
+Custom View. Some examples use HTML5 and may not run on older mobile
 devices. In the examples where received message data is processed, the
 code must be adapted according to the data structure of the message
 content. See <a href="dashboard_scripts.html#customviewHTML">Custom View
@@ -253,7 +250,7 @@ content. In addition, you may dynamically apply styles to the dash,
 depending on the values received, e.g. background color, text
 size, etc. See <a href="dashboard_scripts.html">Dashboard Scripts</a></li>
 <li id="topic_pub"><em>Topic (pub)</em><br>
-Specify the topic to values are to be transferred</li>
+Specify the topic to which values are to be sent</li>
 <li id="retain"><em>Retain</em><br>
 Specify that sent messages are retained on the MQTT server. Only the
 last message sent per topic is retained</li>

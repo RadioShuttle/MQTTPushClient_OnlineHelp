@@ -29,7 +29,7 @@ $(document).ready(function() {
 <p>Scripts can be added to every dash (except “Group”) in the editor.
 A distinction is made between filter scripts (filtering the content of
 a received message) and output scripts for formatting the content before
-publishing (<em>publish</em>).</p>
+publishing <em>(publish)</em>.</p>
 
 <p>For “Custom Views” the corresponding functionality must be implemented
 directly in the HTML code (see <a href="#customviewHTML">Custom View</a>).</p>
@@ -63,7 +63,7 @@ function setContent(input, msg, acc, view) {
 }
 </pre>
 </div>
-<p><tt>input</tt> contains the value to be sent (<em>publish</em>).
+<p><tt>input</tt> contains the value to be sent <em>(publish)</em>.
 By default it is assigned to the <tt>msg.text</tt> variable. For example,
 if the output format should be JSON, the JSON content (type <tt>string</tt>)
 must be assigned to the variable <tt>msg.txt</tt>.</p> 
@@ -80,8 +80,7 @@ msg.raw = buffer;
 </pre>
 </div>
 <p><tt>msg</tt> contains the message to be sent, <tt>acc</tt> information
-on the account. See the <a href="filter-scripts.html#variables">“Variables”</a>
-table).</p>
+on the account. See the table <a href="filter-scripts.html#variables">“Variables”</a>).</p>
 <p>As with the filter scripts, the parameter <tt>view</tt> can be used to
 access properties of the dash, for example to reset colors. See
 <a href="#functions">this section</a>.</p>
@@ -109,7 +108,7 @@ display the error message:</li>
 
 <h2>JavaScript interface</h2>
 <p>The display of dashes can be dynamically modified using script code.</p> 
-<p>Filter scripts are executed before the display. If a new message is
+<p>Filter scripts are executed before they are displayed. If a new message is
 received, it can be evaluated and the display of the dash icon can be
 modified depending on the message content (e.g. by setting a different
 text color).</p>
@@ -159,11 +158,11 @@ Dashes: <em>TextView</em>, <em>Option List</em>, <em>Progress Bar/Slider</em>,
 <em>Button/Switch</em></p>
 
 <p><tt>getSubscribedTopic()</tt><br>
-Description: Query the topic (<em>sub</em>)<br>
+Description: read out topic <em>(sub)</em><br>
 Dashes: <em>all</em></p>
 
 <p><tt>getPublishedTopic()</tt><br>
-Description: Query the topic (<em>publish</em>)<br>
+Description: read out topic <em>(publish)</em><br>
 Dashes: <em>Text View</em>, <em>Button/Switch</em>, <em>Progress Bar/Slider</em>,
 <em>Option List</em></p>
 
@@ -216,12 +215,12 @@ Dashes: <em>all</em></p>
 <p><tt>isDialog</tt><br>
 Description: Query whether the dash is currently executed in detail view<br>
 Explanation: Dashes displayed in the detail view use the data of the
-corresponding dashboard dash, but run as a standalone instance<br>
+corresponding dash in the dashboard, but run as a standalone instance<br>
 Dash: <em>Custom View</em></p>
 
 <p id="gethistoricaldata"><tt>getHistoricalData</tt><br>
 Description: Returns the last messages (up to 100 last messages are retained
-on the server if “Provide historical data” is set in the dash)<br>
+on the server if the “Provide historical data” option is selected in the dash)<br>
 Return value: JavaScript array of messages (sorted in ascending order)<br>
 Dash: <em>Custom View</em></p>
 
@@ -234,14 +233,14 @@ for(var i = 0; i < data.length; i++) {
 }
 </pre>
 </div>
-<p><tt>msg.receivedDate</tt> &ndash; Date (JavaScript <tt>Date</tt> object)<br>
-<tt>msg.topic</tt> &ndash; Topic (type <tt>string</tt>)<br>
+<p><tt>msg.receivedDate</tt> &ndash; date (JavaScript <tt>Date</tt> object)<br>
+<tt>msg.topic</tt> &ndash; topic (type <tt>string</tt>)<br>
 <tt>msg.text</tt> &ndash; message content (type <tt>string</tt>)<br>
 <tt>msg.raw</tt> &ndash; binary message content (JavaScript <tt>ArrayBuffer</tt> object)</p>
 
 <p id="getparams"><tt>getParameters()</tt><br>
 Description: Returns a list of parameters (the user can define the <em>Custom
-View</em> parameter in the dash settings<br>
+View</em> parameter in the dash settings)<br>
 Return value: JavaScript array with parameters of the type <tt>String</tt><br>
 Dash: <em>Custom View</em></p>
 <div class="indent">
@@ -250,8 +249,9 @@ Dash: <em>Custom View</em></p>
 MQTT.view.getParameters()</pre>
 </div>
 <h3 id="morefunctions">More functions and constants</h3>
-<p>Further functions and constants are available via the global object MQTT.</p>
-<p><tt>publish</tt><br>
+<p>Further functions and constants are available via the global object
+<tt>MQTT</tt>.</p>
+<p><tt>publish(topic, payload, retain)</tt><br>
 Description: Send a message (from the “Custom View” dash)<br>
 Parameter: <tt>topic</tt> (type <tt>String</tt>), <tt>payload</tt> (type
 <tt>String</tt>, if in text format, or <tt>ArrayBuffer</tt> for binary data),
@@ -268,9 +268,9 @@ MQTT.publish('demo/test', 'hello world!', false);
 <p id="color_tools">Color functions:</p>
 <div class="indent">
 <p><tt>MQTT.Color.rgba(r, g, b, a)</tt> &ndash; Returns the color value
-from the transferred individual values</p>
+from the passed individual values</p>
 <p><tt>MQTT.Color.rgb(r, g, b)</tt> &ndash; Returns the color value
-from the transferred individual values (100% opaque)</p>
+from the passed individual values (100% opaque)</p>
 <p><tt>MQTT.Color.red(color)</tt> &ndash; Returns the red portion of a color</p>
 <p><tt>MQTT.Color.green(color)</tt> &ndash; Returns the green portion of a color</p>
 <p><tt>MQTT.Color.blue(color)</tt> &ndash; Returns the blue portion of a color</p>
@@ -313,9 +313,9 @@ body {margin: 0; padding: 0;}
 </div>
 
 <li>The content to be displayed should always lie within the viewport.
-At initialization and when changing the window size (after tapping on Zoom)
+At initialization and when changing the window size (after tapping on “Zoom”)
 a function should be called which adapts the content to the size of the
-viewport. The viewport sizes can be queried with <tt>"window.innerWidth"</tt>
+viewport. The viewport sizes can be queried with <tt>window.innerWidth</tt>
 and <tt>window.innerHeight</tt>:</li>
 
 <div class="indent">
@@ -350,9 +350,9 @@ function onMqttMessage(msg) {
 </div>
 <p><u>Explanation:</u><br>
 <tt>onMqttInit()</tt> is called by the app after initialization.
-<tt>account</tt> contains info about the current account (see also the
-table <a href="filter-scripts.html#variables">“Variables”</a>). With
-<tt>view</tt>  you can access the properties of the dash (<a
+<tt>account</tt> contains information about the current account (see also the
+table <a href="filter-scripts.html#variables">“Variables”</a>). Using
+<tt>view</tt> you can access the properties of the dash (<a
 href="#filter_script">see above</a>).<br>
 <br>
 <tt>onMqttMessage()</tt> is called by the app whenever a new message has
@@ -387,13 +387,13 @@ Using an imported image with the (ressource) name “light_on”:</li>
 <pre>
 &lt;img src="light_on"&gt;&lt;/img&gt;
 </pre>
-oder
+or
 <pre>
 &lt;img src="user/light_on"&gt;&lt;/img&gt;
 </pre>
 </div>
 <li>Historical data:<br>
-Checkbox “Provide historical data” must be set. See the section <a
+The checkbox “Provide historical data” must be selected. See the section <a
 href="#gethistoricaldata">getHistoricalData()</a></li>
 </ol>
 </body>
