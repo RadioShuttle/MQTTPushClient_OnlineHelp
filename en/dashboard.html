@@ -28,7 +28,7 @@ $(document).ready(function() {
 <h1>Dashboard</h1>
 <p>In addition to the “Messages” view the app offers a “Dashboard” view
 with graphical user interface. It allows creating display and control
-elements (so-called “dashes”), e.g. temperature display, lamp control
+elements (so-called “dashes”), e.g. temperature display, light control
 switches, alarms, and more.</p>
 <div class="android">
 <p><img class="thumb" src="../img/dashboard_view.png" width="275">
@@ -232,6 +232,9 @@ Enter the name of the dash to be created</li>
 Assign the dash to a group</li>
 <li id="pos"><em>Pos</em><br>
 Define the position of the dash tile within a group</li>
+<li id="value"><em>Value</em><br>
+Define a value for the respective switching state
+</li>
 <li id="color"><em>Color</em><br>
 Select a color for the respective configuration context (e.g. foreground,
 background, text, progress bar)
@@ -241,7 +244,7 @@ Select the text size (“small”/“medium”/“large”)
 </li>
 <li id="image"><em>Image</em><br>
 Select an image (see <a href="#manage_images">
-Import your own images into the app</a>)</li>
+Import own images into the app</a>)</li>
 <li id="topic_sub"><em>Topic (sub)</em><br>
 Specify the topic for which you wish to receive messages/values</li>
 <li id="filter_script"><em>Filter Script</em><br>
@@ -367,7 +370,7 @@ red coloration of the foreground:</p>
 </div>
 </div>
 <h2 id="examples">Examples</h2>
-<p>We configure a dash, which switches a lamp on and off and at the same
+<p>We configure a dash, which switches a light on and off and at the same
 time informs about the current switching status.</p>
 <ul class="instruction">
 <li>Select the “Button/Switch” entry from the menu:</li>
@@ -383,9 +386,10 @@ time informs about the current switching status.</p>
 <ul class="instruction">
 <li>First of all, specify a name for the dash (in the example above
 it is “Switch”).</li>
-<li>If necessary, define the background color of the dash tile itself
-and the foreground and background color of the switching states <em>On</em>
-(„On state“) bzw. <em>Off</em> („Off state“).</li>
+<li>Specify a unique value (“Value”) for the switching states <em>On</em>
+(“On state”) and <em>Off</em> (“Off state”). If necessary, define the
+background color for the dash tile itself and the foreground and background
+color for the switching states.</li>
 </ul>
 <p>An image can also be used in addition to a background color:</p>
 <ul class="instruction">
@@ -407,7 +411,7 @@ into the app</a>).</p>
 <li>Enter a topic for both reception (“Topic (sub)”) and transmission
 (“Topic (pub)”).</li>
 </ul>
-<p>Only in this way can the dash query the switch status (“Topic (sub)”)
+<p>Only in this way the dash can query the switch status (“Topic (sub)”)
 from the server and send switch commands to the server (“Topic (pub)”).</p>
 </body>
 </html>
