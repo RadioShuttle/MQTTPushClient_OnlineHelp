@@ -5,7 +5,7 @@ This is the web-based online help for the MQTT Push Client app that can be publi
 The online help files are available in the “MQTTPushClient_OnlineHelp” folder which contains the help files per language (“en”, “de”), the index files per language (“index.en.html”, “index.de.html”), the images folder (“img”), the style file (“style.css”), and some extra files which manage the correct display of the help files depending on the user agent (iOS or Android) and the used language (“htaccess”, “index.var”).
 
 
-Implementation
+## Implementation
 
  -	Clone the “MQTTPushClient_OnlineHelp” repository from GitHub
  -	Make the content available on the web server, e.g. Apache
@@ -15,7 +15,7 @@ The online documentation can be tested in any web browser. By default, the Andro
 The MQTT Push Client app help menu uses a web view which redirects to this online help. The documentation utilizes JavaScript (with jQuery libraries) for image enlargement and user agent selection. The documentation content itself is basic HTML /CSS.
 
 
-Links
+## Links
 
  - RadioShuttle MQTT basics: https://www.radioshuttle.de/en/mqtt-en/the-basics/
  - RadioShuttle MQTT Push Client app online help: https://help.radioshuttle.de/mqttapp/1.0/index.en.html
