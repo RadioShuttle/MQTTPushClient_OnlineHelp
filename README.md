@@ -1,3 +1,5 @@
+![Title image](/img/title_image.png)
+
 # MQTT Push Client app online help
 
 This is the web-based online help for the MQTT Push Client app that can be published on a web server and viewed in any common web browser.
