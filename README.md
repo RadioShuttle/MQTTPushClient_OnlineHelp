@@ -1,3 +1,5 @@
+![Title image](/img/title_image.png)
+
 # MQTT Push Client app online help
 
 This is the web-based online help for the MQTT Push Client app that can be published on a web server and viewed in any common web browser.
@@ -12,7 +14,7 @@ The online help files are available in the “MQTTPushClient_OnlineHelp” folde
 
 The online documentation can be tested in any web browser. By default, the Android version is displayed. However, when accessing the online help from an iOS device, the content will display the iOS illustrations flavor of this app. Alternatively the user agent can be set to iPod/iPhone/iPad to display the iOS content.
 
-The MQTT Push Client app help menu uses a web view which redirects to this online help. The documentation utilizes JavaScript (with jQuery libraries) for image enlargement and user agent selection. The documentation content itself is basic HTML /CSS.
+The MQTT Push Client app help menu uses a web view which redirects to this online help. The documentation utilizes JavaScript (with jQuery libraries) for image enlargement and user agent selection. The documentation content itself is basic HTML/CSS.
 
 
 ## Links
