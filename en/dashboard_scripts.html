@@ -138,12 +138,17 @@ Description: set/read text color<br>
 Parameter: <tt>color</tt> - ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
 Dashes: <em>Text View</em>, <em>Option List</em>, <em>Progress Bar/Slider</em></p>
 
+<p><tt>setTextFieldDefaultValue(defaultInputValue), getTextFieldDefaultValue()</tt><br>
+Description: Preset input field displayed in detail view<br>
+Parameter: <tt>defaultInputValue</tt> &ndash; Preset value<br>
+Dashes: <em>alle</em></p>
+
 <p><tt>setTextSize(size), getTextSize()</tt><br>
 Description: set/read text size<br>
 Parameter: <tt>size</tt> - 0 = System Default, 1 = small, 2 = medium 3 = large<br>
 Dashes: <em>Text View</em>, <em>Option List</em>, <em>Progress Bar/Slider</em></p>
 
-<p><tt>setBackground(color), getBackground()</tt><br>
+<p><tt>setBackgroundColor(color), getBackgroundColor()</tt><br>
 Description: set/read background color<br>
 Parameter: <tt>color</tt> - ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
 Dashes: <em>all</em></p>
@@ -160,46 +165,46 @@ Dashes: <em>TextView</em>, <em>Option List</em>, <em>Progress Bar/Slider</em>,
 Description: read out topic <em>(sub)</em><br>
 Dashes: <em>all</em></p>
 
-<p><tt>getPublishedTopic()</tt><br>
+<p><tt>getPublishTopic()</tt><br>
 Description: read out topic <em>(publish)</em><br>
 Dashes: <em>Text View</em>, <em>Button/Switch</em>, <em>Progress Bar/Slider</em>,
 <em>Option List</em></p>
 
-<p><tt>setCtrlColor, getCtrlColor</tt><br>
+<p><tt>setCtrlColor(color), getCtrlColorColor()</tt><br>
 Description: set/read controller color (foreground image)<br>
 Parameter: <tt>color</tt> – ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
 Dashes: <em>Button/Switch “On” State</em>, <em>ProgressBar/Slider</em></p>
 
-<p><tt>setCtrlBackground, getCtrlBackground</tt><br>
+<p><tt>setCtrlBackgroundColor(color), getCtrlBackgroundColor()</tt><br>
 Description: set/read controller background color<br>
 Parameter: <tt>color</tt> – ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
 Dash: <em>Button/Switch “On” State</em></p>
 
-<p><tt>setCtrlImage, getCtrlImage</tt><br>
+<p><tt>setCtrlImage(resourceName), getCtrlImage()</tt><br>
 Description: set/read controller image<br>
 Parameter: <tt>resourceName</tt> – internal or external ressource name (image
 imported by the user). A path “int/” or “user/” can be prefixed (required
 for name collision; if not fully qualified, an external ressource has priority)<br>
 Dash: <em>Button/Switch “On” State</em></p>
 
-<p><tt>setCtrlColorOff, getCtrlColorOff</tt><br>
+<p><tt>setCtrlColorOff(color), getCtrlColorOff()</tt><br>
 Description: set/read controller color (foreground color)<br>
 Parameter: <tt>color</tt> – ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
 Dash: <em>Button/Switch “Off” State</em></p>
 
-<p><tt>setCtrlBackground,Off getCtrlBackgroundOff</tt><br>
+<p><tt>setCtrlBackgroundColorOff(color), setCtrlBackgroundColorOff()</tt><br>
 Description: set/read controller background color<br>
 Parameter: <tt>color</tt> – ARGB color value (see <a href="#color_constant">Color constants</a>)<br>
 Dash: <em>Button/Switch “Off” State</em></p>
 
-<p><tt>setCtrlImageOff, getCtrlImageOff</tt><br>
+<p><tt>setCtrlImageOff(resourceName), getCtrlImageOff()</tt><br>
 Description: set/read controller image<br>
 Parameter: <tt>resourceName</tt> – internal or external ressource name (image
 imported by the user). A path “int/” or “user/” can be prefixed (required
 for name collision; if not fully qualified, an external ressource has priority)<br>
 Dash: <em>Button/Switch “Off” State</em></p>
 
-<p><tt>setUserData, getUserData</tt><br>
+<p><tt>setUserData(data), getUserData()</tt><br>
 Description: Buffering user-defined values<br>
 Parameter: <tt>JavaScript object or value</tt><br>
 Explanation: For example, to buffer state variables, historical data
@@ -211,13 +216,13 @@ is limited, also not all data types are stored, e.g. objects of the type
 are used internally to set and read user data)<br>
 Dashes: <em>all</em></p>
 
-<p><tt>isDialog</tt><br>
+<p><tt>isDialog()</tt><br>
 Description: Query whether the dash is currently executed in detail view<br>
 Explanation: Dashes displayed in the detail view use the data of the
 corresponding dash in the dashboard, but run as a standalone instance<br>
 Dash: <em>Custom View</em></p>
 
-<p id="gethistoricaldata"><tt>getHistoricalData</tt><br>
+<p id="gethistoricaldata"><tt>getHistoricalData()</tt><br>
 Description: Returns the last messages (up to 100 last messages are retained
 on the server if the “Provide historical data” option is selected in the dash)<br>
 Return value: JavaScript array of messages (sorted in ascending order)<br>
