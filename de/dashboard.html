@@ -29,27 +29,32 @@ $(document).ready(function() {
 <p>Zusätzlich zur Ansicht „Messages“ bietet die App eine Dashboard-Ansicht.
 Diese verfügt über eine grafische Benutzeroberfläche, in der sich Anzeige-
 und Steuerelemente („Dashes“) anlegen lassen, z.&nbsp;B. Temperaturanzeige,
-Steuerungsschalter für Lampen, Alarmanlagen u.&nbsp;v.&nbsp;a.&nbsp;m.</p>
+Steuerungsschalter für Lampen, Alarmanlagen usw.</p>
 <div class="android">
 <p><img class="thumb" src="../img/dashboard_view.png" width="275">
 <img class="large" src="../img/dashboard_view.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/dashboard_view.png" width="275">
-<img class="large" src="../img/dashboard_view.png"></p>
+<p><img class="thumb" src="../img/dashboard_view_iOS.png" width="275">
+<img class="large" src="../img/dashboard_view_iOS.png"></p>
 </div>
 <ul class="instruction">
 <li>Tippen Sie nach dem Starten der App auf den Listeneintrag eines
 Push-Server-Kontos.</li>
-<li>Tippen Sie dann im Fenster „Messages“ auf das Icon <span class="android"><img
-src="../img/dashboard_icon.png" height="16"></span><span class="apple"><img
-src="../img/dashboard_icon.png" height="16"></span>.</li>
+<li>Tippen Sie dann im Fenster „Messages“ auf <span class="android"> das Icon <img
+src="../img/dashboard_icon.png" height="16">.</span><span class="apple"><img
+src="../img/overflow_iOS.png" height="16"> und wählen Sie <span class="iOS">Dashboard</span>
+aus.</span></li>
 </ul>
 <p>Die Ansicht „Dashboard“ öffnet sich.</p>
 <ul class="instruction">
-<li>Tippen Sie auf das Icon <span class="android"><img
-src="../img/plus_icon.png" height="16"></span><span class="apple"><img
-src="../img/plus_icon.png" height="16"></span>.</li>
+<li><span class="android">Tippen Sie auf das Icon <img src="../img/plus_icon.png"
+height="16">.</span><span class="apple">Tippen Sie erneut auf
+das Icon <img src="../img/overflow_iOS.png" height="16"> und wählen Sie <span
+class="iOS">Edit Dashboard</span> aus.</span></li>
+<div class="apple">
+<li>Tippen Sie auf das Icon <img src="../img/plus_icon_iOS.png" height="16">.</li>
+</div>
 </ul>
 <p>Ein Einblendmenü öffnet sich und bietet verschiedene Vorlagen für Dashes
 an, welche für die unterschiedlichsten Zwecke eine gute Ausgangsbasis für
@@ -58,7 +63,7 @@ eigene Lösungen bieten.</p>
 <p><img class="thumb_noreplace" src="../img/dashboard.png" width="175"></p>
 </div>
 <div class="apple">
-<p><img class="thumb_noreplace" src="../img/dashboard.png" width="175"></p>
+<p><img class="thumb_noreplace" src="../img/dashboard_iOS.png" width="250"></p>
 </div>
 <table border="1">
 <tr>
@@ -83,12 +88,12 @@ dazu den Abschnitt <a href="#slider">Progress&nbsp;Bar/Slider</a></td>
 Menge von Werten. Siehe dazu den Abschnitt <a href="#optionlist">Option&nbsp;List</a></td>
 </tr>
 <tr>
-<td><em>Group View</em></td><td>Zur Gruppierung von Dash-Kacheln.
-Siehe dazu den Abschnitt <a href="#groupview">Group&nbsp;View</a></td>
-</tr>
-<tr>
 <td><em>Custom View</em></td><td>Erlaubt das Anlegen neuer Dashes
 in HTML. Siehe dazu den Abschnitt <a href="#customview">Custom&nbsp;View</a></td>
+</tr>
+<tr>
+<td><em>Group</em></td><td>Zur Gruppierung von Dash-Kacheln.
+Siehe dazu den Abschnitt <a href="#groupview">Group</a></td>
 </tr>
 </table>
 <h2>Vorlagen für Dashes</h2>
@@ -165,7 +170,7 @@ angezeigt wird.</p>
 <a href="#topic_pub">Topic (pub)</a>, <a href="#retain">Retain</a>,
 <a href="#script">Script</a></em></li>
 </ul>
-<h3 id="groupview">Group View</h3>
+<h3 id="groupview">Group</h3>
 <img class="thumb_noreplace" src="../img/group_thumb.png" height="100">
 <p>Für eine bessere Übersicht im Dashboard lassen sich Gruppen anlegen,
 denen einzelne Dashes zugeordnet werden können. Das könnten zum Beispiel
@@ -180,14 +185,23 @@ Gartenhaus usw.</p>
 </ul>
 <div class="note">
 <h6>Hinweis:</h6>
-<p>Einzelne Dashes lassen sich gruppieren oder einer anderen Gruppe
-zuordnen. Dazu tippen und halten Sie die gewünschte Dash-Kachel
+<div class="android"><p>Einzelne Dashes lassen sich gruppieren oder einer anderen Gruppe
+zuordnen. Tippen und halten Sie dazu die gewünschte Dash-Kachel
 („Long Press“), bis ein <img src="../img/checkmark.png" height="16">
-erscheint und Sie per <img src="../img/edit.png" height="16"> in den
-Bearbeitungsmodus wechseln können.<br>
+erscheint und Sie per <img src="../img/edit.png" height="16"> zum Bearbeiten der Dash-Kachel
+in den Editor wechseln können.
+</div>
+<div class="apple">
+<p>Einzelne Dashes lassen sich gruppieren oder einer anderen Gruppe
+zuordnen. Tippen Sie dazu auf <img src="../img/overflow_iOS.png" height="16"> und
+wählen Sie <span class="iOS">Edit Dashboard</span> aus. Tippen Sie dann auf die
+gewünschte Dash-Kachel, bis ein <img src="../img/checkmark.png" height="16"> erscheint
+und Sie per <img src="../img/edit_iOS.png" height="16"> zum Bearbeiten der
+Dash-Kachel in den Editor wechseln können.
+</div>
 <br>
-Über „Group“ und „Pos“ kann die Kachel nun in die gewünschte Position
-gebracht werden.</p>
+<br>
+Über „Group“ und „Pos“ kann die Kachel nun in die gewünschte Position gebracht werden.</p>
 </div>
 <h3 id="customview">Custom View</h3>
 <img class="thumb_noreplace" src="../img/custom_view_thumb.png" height="100">
@@ -199,11 +213,11 @@ Logik zu programmieren.
 Über eine Programmierschnittstelle <em>(API)</em> lassen sich MQTT-Nachrichten
 empfangen und Einstellungen abfragen. Außerdem kann auf Ressourcen, z.&nbsp;B.
 importierte Bilder, zugegriffen werden (siehe dazu <a href="dashboard_scripts.html">Dashboard-Skripte</a>).
-Alternativ erhalten Sie durch Tippen auf das Überlaufmenü <span
-class="nowrap">(<span class="android"><img src="../img/overflow_icon.png"
-height="16"></span><span class="apple"><img src="../img/overflow_icon.png"
-height="16"></span>)</span> unter „Insert Example“ sieben verschiedene
-HTML-Vorlagen <em>(Basic HTML</em>, <em>Color Picker</em>, <em>Gauge</em>,
+Alternativ erhalten Sie durch Tippen auf das Überlaufmenü <span class="android"><span
+class="nowrap">(<img src="../img/overflow_icon.png" height="16">)</span> unter „Insert
+Example“</span><span class="apple"><span class="nowrap">(<img src="../img/overflow_iOS.png"
+height="16">)</span> und Auswahl von <span class="iOS">Insert Example</span></span> sieben
+verschiedene HTML-Vorlagen <em>(Basic HTML</em>, <em>Color Picker</em>, <em>Gauge</em>,
 <em>Clock</em>, <em>Light Switch with Color Picker</em>, <em>Thermometer</em>
 und <em>Line Graph)</em>,  die sich direkt in den Dash einfügen und bearbeiten
 lassen.<p>
@@ -220,7 +234,7 @@ der Datenstruktur des Nachrichteninhalts angepasst werden. Siehe auch
 <p><img class="thumb_noreplace" src="../img/custom_view-examples.png" width="250"></p>
 </div>
 <div class="apple">
-<p><img class="thumb_noreplace" src="../img/custom_view-examples.png" width="250">
+<p><img class="thumb_noreplace" src="../img/custom_view-examples_iOS.png" width="250">
 </p>
 </div>
 <ul>
@@ -307,24 +321,21 @@ vorgehalten. Diese können über das JavaScript-Interface abgefragt werden
 (Hintergründe, Status von Schaltern usw.). Damit eigene Bilder in der
 App zur Verfügung stehen, müssen diese zuvor in die App importiert werden:</p>
 <ul class="instruction">
-<li>Wählen Sie dazu im Fenster „Dashboard“ den Eintrag „Manage Images“
-aus dem Überlaufmenü <span class="nowrap">(<span class="android"><img
-src="../img/overflow_icon.png" height="16"></span><span class="apple"><img
-src="../img/overflow_icon.png" height="16"></span>)</span> aus.</li>
+<li>Wählen Sie dazu im Fenster „Dashboard“ den Eintrag <span class="android">„Manage Images“</span>
+<span class="apple"><span class="iOS">Manage Images</span></span> aus dem Überlaufmenü <span class="nowrap">(<span
+class="android"><img src="../img/overflow_icon.png" height="16"></span><span class="apple"><img
+src="../img/overflow_iOS.png" height="16"></span>)</span> aus.</li>
 </ul>
 <div class="android">
-<p><img class="thumb" src="../img/manage_images.png" width="275">
-<img class="large" src="../img/manage_images.png"></p>
-</div>
-<div class="apple">
 <p><img class="thumb" src="../img/manage_images.png" width="275">
 <img class="large" src="../img/manage_images.png"></p>
 </div>
 <ul class="instruction">
 <li>Öffnen Sie dann im Fenster „Manage Images“ erneut das Überlaufmenü <span class="nowrap">(<span
 class="android"><img src="../img/overflow_icon.png" height="16"></span><span
-class="apple"><img src="../img/overflow_icon.png" height="16"></span>)</span>,
-tippen Sie auf „Import“ und wählen Sie die Bilder aus, die Sie in die App
+class="apple"><img src="../img/overflow_iOS.png" height="16"></span>)</span>,
+tippen Sie auf <span class="android">“Import”</span><span class="iOS">Import</span> und
+wählen Sie die Bilder aus, die Sie in die App
 importieren möchten.</li>
 </ul>
 <p>Alle in die App importierten Bilder werden im Fenster „Manage Images“
@@ -334,8 +345,8 @@ angezeigt:
 <img class="large" src="../img/import_images.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/import_images.png" width="275">
-<img class="large" src="../img/import_images.png"></p>
+<p><img class="thumb" src="../img/import_images_iOS.png" width="275">
+<img class="large" src="../img/import_images_iOS.png"></p>
 </div>
 <p>Beim Beenden der App werden Bilder, die in keinem Dash verwendet
 werden, gelöscht. Gleiches gilt auch für Bilder, die ausschließlich im
@@ -345,9 +356,15 @@ Beide sind mit solch einem Schutz <span class="nowrap">(<span class="android"><i
 src="../img/padlock.png" height="16"></span><span class="apple"><img
 src="../img/padlock.png" height="16"></span>)</span> versehen.</p>
 <ul class="instruction">
+<div class="android">
 <li>Tippen und halten Sie die gewünschte Bilddatei („Long Press“), bis
 <span class="android"><img src="../img/padlock.png" height="16"></span><span
 class="apple"><img src="../img/padlock.png" height="16"></span> erscheint.</li>
+</div>
+<div class="apple">
+<li>Tippen Sie auf <img src="../img/overflow_iOS.png" height="16">, wählen Sie <span
+class="iOS">Edit</span> aus und tippen Sie dann auf die gewünschte Bilddatei.</li>
+</div>
 </ul>
 <p>Die mit einem <span class="android"><img src="../img/padlock.png"
 height="16"></span><span class="apple"><img src="../img/padlock.png"
@@ -362,26 +379,14 @@ in den Dash eingebunden, so bleiben diese Transparenzen erhalten.
 Die folgende Abbildung zeigt den Vergleich zwischen einem Bild <em>mit</em>
 (links) und einem <em>ohne</em> Transparenzen (rechts). Beide Bilder liegen
 über einem gelb eingefärbten Hintergrund:</p>
-<div class="android">
 <p><img class="thumb" src="../img/transp_flat.png" width="275">
 <img class="large" src="../img/transp_flat.png"></p>
-</div>
-<div class="apple">
-<p><img class="thumb" src="../img/transp_flat.png" width="275">
-<img class="large" src="../img/transp_flat.png"></p>
-</div>
 <p>Bilder, die in Schaltflächen verwendet werden, können eingefärbt werden.
 Bilder ohne Transparenz würden komplett mit der gewählten Farbe eingefärbt
 werden. Die folgende Abbildung basiert auf der vorherigen, hat aber zusätzlich
 eine rote Einfärbung des Vordergrunds:</p>
-<div class="android">
 <p><img class="thumb" src="../img/tinted.png" width="275">
 <img class="large" src="../img/tinted.png"></p>
-</div>
-<div class="apple">
-<p><img class="thumb" src="../img/tinted.png" width="275">
-<img class="large" src="../img/tinted.png"></p>
-</div>
 </div>
 <h2 id="examples">Beispiele</h2>
 <p>Ein Dash soll konfiguriert werden, der eine Lampe ein- und
@@ -394,8 +399,8 @@ ausschaltet und gleichzeitig über den aktuellen Schaltstatus informiert.</p>
 <img class="large" src="../img/edit_button-1.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/edit_button-1.png" width="275">
-<img class="large" src="../img/edit_button-1.png"></p>
+<p><img class="thumb" src="../img/edit_button-1_iOS.png" width="275">
+<img class="large" src="../img/edit_button-1_iOS.png"></p>
 </div>
 <ul class="instruction">
 <li>Legen Sie zuerst einen Namen für den Dash fest (im obigen Beispiel
@@ -418,14 +423,21 @@ Abschnitt <a href="#manage_images">Eigene Bilder in die App importieren</a>).</p
 <img class="large" src="../img/edit_button-2.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/edit_button-2.png" width="275">
-<img class="large" src="../img/edit_button-2.png"></p>
+<p><img class="thumb" src="../img/edit_button-2_iOS.png" width="275">
+<img class="large" src="../img/edit_button-2_iOS.png"></p>
 </div>
 <ul class="instruction">
-<li>Tragen Sie sowohl für den Empfang („Topic (sub)“) als auch für das
-Senden („Topic (pub)“) ein Topic ein.</li>
+<li>Tragen Sie sowohl für den Empfang (<span class="android">„Topic (sub)“</span><span
+class="apple">im Abschnitt „Subscribe“</span>)
+als auch für das Senden (<span class="android">„Topic (pub)“</span><span class="apple">im
+Abschnitt „Publish“</span>) ein Topic ein.</li>
+<li>Tippen Sie nach Abschluss dieser Konfiguration auf <span class="android"><img
+src="../img/save.png" height="16"></span><span class="apple"><img src="../img/save_iOS.png"
+height="16"></span>, um Ihre Eingaben/Änderungen zu sichern.</li>
 </ul>
-<p>Nur so kann der Dash den Schaltstatus („Topic (sub)“)
-vom Server abfragen und Schaltbefehle an den Server geben („Topic (pub)“).</p>
+<p>Nur so kann der Dash den Schaltstatus (<span class="android">„Topic (sub)“</span><span
+class="apple">im Abschnitt „Subscribe“</span>)
+vom Server abfragen und Schaltbefehle an den Server geben (<span class="android">„Topic (pub)“</span><span
+class="apple">im Abschnitt „Publish“</span>).</p>
 </body>
 </html>

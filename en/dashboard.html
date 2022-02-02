@@ -35,21 +35,25 @@ switches, alarms, and more.</p>
 <img class="large" src="../img/dashboard_view.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/dashboard_view.png" width="275">
-<img class="large" src="../img/dashboard_view.png"></p>
+<p><img class="thumb" src="../img/dashboard_view_iOS.png" width="275">
+<img class="large" src="../img/dashboard_view_iOS.png"></p>
 </div>
 <ul class="instruction">
 <li>After starting the app tap on the list entry of the desired push server
 account.</li>
-<li>Then, in the “Messages” window, tap on the <span class="android"><img
-src="../img/dashboard_icon.png" height="16"></span><span class="apple"><img
-src="../img/dashboard_icon.png" height="16"></span> icon.</li>
+<li>Then, in the “Messages” window, tap on <span class="android"> the <img
+src="../img/dashboard_icon.png" height="16"> icon.</span><span class="apple"><img
+src="../img/overflow_iOS.png" height="16"> and select <span class="iOS">Dashboard</span>.</span></li>
 </ul>
 <p>Now you are in the “Dashboard“ mode.</p>
 <ul class="instruction">
-<li>Tap on the <span class="android"><img
-src="../img/plus_icon.png" height="16"></span><span class="apple"><img
-src="../img/plus_icon.png" height="16"></span> icon.</li>
+<li><span class="android">Tap on the <img src="../img/plus_icon.png"
+height="16"> icon.</span></span><span class="apple">Again tap on the <img
+src="../img/overflow_iOS.png" height="16"> icon and select the <span class="iOS">Edit Dashboard</span>
+entry.</span></li>
+<div class="apple">
+<li>Tap on the <img src="../img/plus_icon_iOS.png" height="16"> icon.</li>
+</div>
 </ul>
 <p>A pop-up menu provides several dash templates for various purposes, which
 offer a good base for creating own solutions.</p>
@@ -57,7 +61,7 @@ offer a good base for creating own solutions.</p>
 <p><img class="thumb_noreplace" src="../img/dashboard.png" width="175"></p>
 </div>
 <div class="apple">
-<p><img class="thumb_noreplace" src="../img/dashboard.png" width="175"></p>
+<p><img class="thumb_noreplace" src="../img/dashboard_iOS.png" width="250"></p>
 </div>
 <table border="1">
 <tr>
@@ -81,12 +85,12 @@ using a slider. See the <a href="#slider">Progress&nbsp;Bar/Slider</a> section</
 values. See the <a href="#optionlist">Option&nbsp;List</a> section</td>
 </tr>
 <tr>
-<td><em>Group View</em></td><td>Allows grouping dash tiles.
-See the <a href="#groupview">Group&nbsp;View</a> section</td>
-</tr>
-<tr>
 <td><em>Custom View</em></td><td>Allows creating new dashes in HTML. See
 the <a href="#customview">Custom&nbsp;View</a> section</td>
+</tr>
+<tr>
+<td><em>Group</em></td><td>Allows grouping dash tiles.
+See the <a href="#groupview">Group</a> section</td>
 </tr>
 </table>
 <h2>Templates for dashes</h2>
@@ -148,7 +152,8 @@ a slider.</p>
 <p><small><em>*&nbsp;If used as a slider for transmitting values,
 otherwise optional</em></small></p>
 <h3 id="optionlist">Option List</h3>
-<img class="thumb_noreplace" src="../img/lang-option_thumb.png" height="100">&nbsp;&nbsp;<img class="thumb_noreplace" src="../img/languages_thumb.png" height="100">
+<img class="thumb_noreplace" src="../img/lang-option_thumb.png" height="100">&nbsp;&nbsp;
+<img class="thumb_noreplace" src="../img/languages_thumb.png" height="100">
 <p>Allows the definition of a set of values. A display value can be defined
 for each option, which is shown instead of the actual value.</p>
 <ul>
@@ -161,7 +166,7 @@ for each option, which is shown instead of the actual value.</p>
 <a href="#topic_pub">Topic (pub)</a>, <a href="#retain">Retain</a>,
 <a href="#script">Script</a></em></li>
 </ul>
-<h3 id="groupview">Group View</h3>
+<h3 id="groupview">Group</h3>
 <img class="thumb_noreplace" src="../img/group_thumb.png" height="100">
 <p>For a better overview in the dashboard, groups can be created to which
 individual dashes can be assigned. These could be, for example, logical
@@ -175,11 +180,21 @@ group subdivisions: cellar, ground floor, upper floor, garden house, etc.</p>
 </ul>
 <div class="note">
 <h6>Note:</h6>
+<div class="android">
 <p>Individual dashes can be grouped or assigned to another group. For
 this, tap and hold the desired dash tile (“Long Press”) until the <img
 src="../img/checkmark.png" height="16"> symbol appears in the tile.
-Then press <img src="../img/edit.png" height="16"> to get into the edit
-mode.<br>
+Then press <img src="../img/edit.png" height="16"> to open the dash
+tile editor.
+</div>
+<div class="apple">
+<p>Individual dashes can be grouped or assigned to another group. For
+this, tap on <img src="../img/overflow_iOS.png" height="16"> and select <span
+class="iOS">Edit Dashboard</span>. Then, tap on the desired tiles (the <img
+src="../img/checkmark.png" height="16"> symbol appears in the tile) and press
+<img src="../img/edit_iOS.png" height="16"> to open the dash tile editor.
+</div>
+<br>
 <br>
 Use “Group” and “Pos” to bring the tile in the desired position.</p>
 </div>
@@ -190,12 +205,13 @@ used to create individual interfaces and operating elements. This allows
 you to create any dashes in HTML. The HTML can contain additional JavaScript
 code to program dashes with individual logic.
 An application programming interface <em>(API)</em> can be used to receive
-MQTT messages, query settings and access resources such as imported images.
-See <a href="dashboard_scripts.html">Dashboard Scripts</a>.
+MQTT messages, query settings and access resources such as imported images (see
+<a href="dashboard_scripts.html">Dashboard Scripts</a>).
 Alternatively, by tapping the overflow menu <span class="nowrap">(<span
 class="android"><img src="../img/overflow_icon.png"
-height="16"></span><span class="apple"><img src="../img/overflow_icon.png"
-height="16"></span>)</span> under “Insert Example”, you can get seven
+height="16"></span><span class="apple"><img src="../img/overflow_iOS.png"
+height="16"></span>)</span> <span class="android">under “Insert Example”</span><span
+class="apple">and selecting <span class="iOS">Insert Example</span></span>, you can get seven
 different HTML templates <em>(Basic HTML</em>, <em>Color Picker</em>,
 <em>Gauge</em>, <em>Clock</em>, <em>Light Switch with Color Picker</em>,
 <em>Thermometer</em> and <em>Line Graph)</em> that can be inserted and
@@ -213,14 +229,15 @@ HTML</a>.</p>
 <p><img class="thumb_noreplace" src="../img/custom_view-examples.png" width="250"></p>
 </div>
 <div class="apple">
-<p><img class="thumb_noreplace" src="../img/custom_view-examples.png" width="250">
+<p><img class="thumb_noreplace" src="../img/custom_view-examples_iOS.png" width="250">
 </p>
 </div>
 <ul>
 <li>Required elements:<br>
 <em><a href="#html">HTML</a></em></li>
 <li>Optional elements:<br>
-<em><a href="#name">Name</a>, <a href="#group">Group</a>, <a href="#pos">Pos</a>, <a href="#color">Color</a>,
+<em><a href="#name">Name</a>, <a href="#group">Group</a>, <a href="#pos">Pos</a>,
+<a href="#color">Color</a>,
 <a href="#topic_sub">Topic (sub)</a>, <a href="#params">Parameters</a>,
 <a href="#historical_data">Provide historical data</a></em></li>
 </ul>
@@ -294,25 +311,21 @@ These can be queried via the JavaScript interface (see
 switches, etc.). In order for your own pictures to be available in the app,
 they must first be imported into the app:</p>
 <ul class="instruction">
-<li>In the “Dashboard” window, select the “Manage Images” entry from the
-overflow menu <span class="nowrap">(<span class="android"><img
-src="../img/overflow_icon.png" height="16"></span><span class="apple"><img
-src="../img/overflow_icon.png" height="16"></span>)</span>.</li>
+<li>In the “Dashboard” window, select the <span class="android">“Manage Images”</span>
+<span class="apple"><span class="iOS">Manage Images</span></span> entry from the overflow
+menu <span class="nowrap">(<span class="android"><img src="../img/overflow_icon.png"
+height="16"></span><span class="apple"><img src="../img/overflow_iOS.png" height="16"></span>)</span>.</li>
 </ul>
 <div class="android">
-<p><img class="thumb" src="../img/manage_images.png" width="275">
-<img class="large" src="../img/manage_images.png"></p>
-</div>
-<div class="apple">
 <p><img class="thumb" src="../img/manage_images.png" width="275">
 <img class="large" src="../img/manage_images.png"></p>
 </div>
 <ul class="instruction">
 <li>In the “Manage Images” window open the overflow menu <span class="nowrap">(<span
 class="android"><img src="../img/overflow_icon.png" height="16"></span><span
-class="apple"><img src="../img/overflow_icon.png" height="16"></span>)</span>
-again, tap on “Import” and select those images that you would like to
-import into the app.</li>
+class="apple"><img src="../img/overflow_iOS.png" height="16"></span>)</span>
+again, tap on <span class="android">“Import”</span><span class="iOS">Import</span>
+and select those images that you would like to import into the app.</li>
 </ul>
 <p>All images that were imported into the app are shown in the “Manage
 Images” window:
@@ -321,20 +334,25 @@ Images” window:
 <img class="large" src="../img/import_images.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/import_images.png" width="275">
-<img class="large" src="../img/import_images.png"></p>
+<p><img class="thumb" src="../img/import_images_iOS.png" width="275">
+<img class="large" src="../img/import_images_iOS.png"></p>
 </div>
 <p>When exiting the app, images that are not used in any dash are deleted.
 The same applies to images that are referenced exclusively in the script
 code. To prevent this, they can be protected. In the picture above you
 can already see two previously imported pictures.
-Bothe are provided with such a protection <span class="nowrap">(<span
+Both are marked with such a protection <span class="nowrap">(<span
 class="android"><img src="../img/padlock.png" height="16"></span><span
 class="apple"><img src="../img/padlock.png" height="16"></span>)</span>.</p>
 <ul class="instruction">
-<li>Tap and hold the desired image file (“Long Press”) until <span
-class="android"><img src="../img/padlock.png" height="16"></span><span
-class="apple"><img src="../img/padlock.png" height="16"></span> appears.</li>
+<div class="android">
+<li>Tap and hold the desired image file (“Long Press”) until <img src="../img/padlock.png"
+height="16"> appears.</li>
+</div>
+<div class="apple">
+<li>Tap on <img src="../img/overflow_iOS.png" height="16">, select <span class="iOS">Edit</span>
+and tap on the desired image file.</li>
+</div>
 </ul>
 <p>Those images marked with a <span class="android"><img src="../img/padlock.png"
 height="16"></span><span class="apple"><img src="../img/padlock.png"
@@ -345,32 +363,20 @@ as background image or label for the <em>Button/Switch</em> or
 <h6>Note on images with transparencies:</h6>
 <p>If images containing transparencies are included in the dash via the
 “Image” field, these transparencies are preserved.
-The following figure shows the comparison between an image with <em>with</em>
+The following figure shows the comparison between an image <em>with</em>
 (left) and one <em>without</em> transparencies (right). Both images are
 placed on a yellow background:</p>
-<div class="android">
 <p><img class="thumb" src="../img/transp_flat.png" width="275">
 <img class="large" src="../img/transp_flat.png"></p>
-</div>
-<div class="apple">
-<p><img class="thumb" src="../img/transp_flat.png" width="275">
-<img class="large" src="../img/transp_flat.png"></p>
-</div>
 <p>Images that are used in buttons can be colorized. Images without
 transparency would be colorized completely with the selected color.
 The following figure is based on the previous one, but has an additional
 red coloration of the foreground:</p>
-<div class="android">
 <p><img class="thumb" src="../img/tinted.png" width="275">
 <img class="large" src="../img/tinted.png"></p>
-</div>
-<div class="apple">
-<p><img class="thumb" src="../img/tinted.png" width="275">
-<img class="large" src="../img/tinted.png"></p>
-</div>
 </div>
 <h2 id="examples">Examples</h2>
-<p>We configure a dash, which switches a light on and off and at the same
+<p>Let's configure a dash, which switches a light on and off and at the same
 time informs about the current switching status.</p>
 <ul class="instruction">
 <li>Select the “Button/Switch” entry from the menu:</li>
@@ -380,8 +386,8 @@ time informs about the current switching status.</p>
 <img class="large" src="../img/edit_button-1-EN.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/edit_button-1-EN.png" width="275">
-<img class="large" src="../img/edit_button-1-EN.png"></p>
+<p><img class="thumb" src="../img/edit_button-1_iOS.png" width="275">
+<img class="large" src="../img/edit_button-1_iOS.png"></p>
 </div>
 <ul class="instruction">
 <li>First of all, specify a name for the dash (in the example above
@@ -404,14 +410,21 @@ into the app</a>).</p>
 <img class="large" src="../img/edit_button-2.png"></p>
 </div>
 <div class="apple">
-<p><img class="thumb" src="../img/edit_button-2.png" width="275">
-<img class="large" src="../img/edit_button-2.png"></p>
+<p><img class="thumb" src="../img/edit_button-2_iOS.png" width="275">
+<img class="large" src="../img/edit_button-2_iOS.png"></p>
 </div>
 <ul class="instruction">
-<li>Enter a topic for both reception (“Topic (sub)”) and transmission
-(“Topic (pub)”).</li>
+<li>Enter a topic for both reception (<span class="android">“Topic (sub)”</span><span
+class="apple">in the “Subscribe” section</span>) and transmission
+(<span class="android">“Topic (pub)”</span><span
+class="apple">in the “Publish” section</span>).</li>
+<li>As soon as you have finished the configuration tap on <span class="android"><img
+src="../img/save.png" height="16"></span><span class="apple"><img src="../img/save_iOS.png"
+height="16"></span> to save your entries/changes.</li>
 </ul>
-<p>Only in this way the dash can query the switch status (“Topic (sub)”)
-from the server and send switch commands to the server (“Topic (pub)”).</p>
+<p>Only in this way the dash can query the switch status (<span class="android">“Topic (sub)”</span><span
+class="apple">in the “Subscribe” section</span>)
+from the server and send switch commands to the server (<span class="android">“Topic (pub)”</span><span
+class="apple">in the “Publish” section</span>).</p>
 </body>
 </html>
