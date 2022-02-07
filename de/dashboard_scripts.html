@@ -325,6 +325,20 @@ body {margin: 0; padding: 0;}
 </pre>
 </div>
 
+<li>Verwendung des Metadaten-Tags „viewport“</li>
+<div class="indent">
+<pre>
+&lt;meta name="viewport" content="width=250,
+height=250,initial-scale=1,user-scalable=no"&gt;
+</pre>
+</div>
+<p><u>Erläuterung:</u><br>
+<span class="android">Für HTML, das auch in der iOS-Variante der „MQTT Push“-App laufen
+soll, ist diese Angabe zwingend erforderlich.</span>
+Das Weglassen oder die Verwendung anderer Parameter könnten dazu führen, dass Elemente
+des Custom View zu klein oder unter Android und iOS unterschiedlich dargestellt werden.</p>
+
+
 <li>Der darzustellende Inhalt sollte immer innerhalb des Viewports liegen.
 Bei Initialisierung und bei Änderung der Fenstergröße (nach Tippen auf „Zoom“)
 sollte eine Funktion aufgerufen werden, die den Inhalt an die Größen des

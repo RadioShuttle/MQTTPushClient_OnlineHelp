@@ -304,7 +304,7 @@ system (according to iOS/Android, dark mode)</p>
 “Button/Switch”)</p>
 </div>
 <h2 id="customviewHTML">Custom View HTML</h2>
-<p>Any HTML can be used. However, some things should be considered.</p>
+<p>Any HTML can be used. However, some points should be considered.</p>
 <ol>
 <li>Set default margins (of the browser/WebView) to 0:</li>
 
@@ -315,6 +315,19 @@ body {margin: 0; padding: 0;}
 &lt;/style&gt;
 </pre>
 </div>
+
+<li>Usage of the meta data “viewport” tag</li>
+<div class="indent">
+<pre>
+&lt;meta name="viewport" content="width=250,
+height=250,initial-scale=1,user-scalable=no"&gt;
+</pre>
+</div>
+<p><u>Explanation:</u><br>
+<span class="android">This statement is mandatory for HTML that is also subject to run in
+the iOS “MQTT Push” app.</span>
+Omitting or using other parameters could cause elements of the Custom View to be too small
+or to display differently on Android and iOS. </p>
 
 <li>The content to be displayed should always lie within the viewport.
 At initialization and when changing the window size (after tapping on “Zoom”)
