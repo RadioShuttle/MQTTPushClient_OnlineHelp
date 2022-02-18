@@ -13,6 +13,10 @@ $(document).ready(function() {
 		$(".apple").show();
 		window.history.replaceState(null, null, "?client=iOS");
 	} 
+	if (window.location.href.match(/(client=iOS)/)){ 
+		$(".android").hide();
+		$(".apple").show();
+	}
 	else if (navigator.userAgent.match(/(iPod|iPhone|iPad|Safari)/)) {
 		$(".android").hide();
 		$(".apple").show();
