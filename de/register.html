@@ -88,7 +88,12 @@ Benachrichtigung und Tonsignal (je nach Einstellung) informiert werden.</p>
 <p>Viele MQTT-Server antworten nicht mit einer Fehlermeldung, wenn Sie
 keine Berechtigung für ein Topic besitzen oder das Topic nicht existiert.
 Daher kann es sein, dass ein Topic in der App angezeigt wird, Sie aber
-keine Nachrichten dafür erhalten.</p>
+keine Nachrichten dafür erhalten.<br>
+<br>
+Bitte bedenken Sie außerdem, dass Nachrichten mit einer Größe von mehr als
+256&nbsp;kB ignoriert und nicht als Push-Nachricht zugestellt werden. Ist der
+Inhalt einer Push-Benachrichtigung größer als 255&nbsp;Bytes, wird er immer
+abgeschnitten.</p>
 </div>
 <div class="android">
 <p><img class="thumb" src="../img/topics_list.png" width="275">

@@ -282,7 +282,14 @@ Select the text size (“small”/“medium”/“large”)
 Select an image (see <a href="#manage_images">
 Import own images into the app</a>)</li>
 <li id="topic_sub"><em>Topic (sub)</em><br>
-Specify the topic for which you wish to receive messages/values</li>
+Specify the topic for which you wish to receive messages/values. To receive also push
+notifications for this topic, register the topic as described in <a href="register.html">Register for Topics</a></li>
+<div class="note">
+<h6>Note:</h6>
+<p>Keep the size of your message content small! Messages larger than 256&nbsp;kB will
+be ignored and not delivered as a push message. If the content of a push notification
+is larger than 255&nbsp;bytes, it will always be truncated.</p>
+</div>
 <li id="filter_script"><em>Filter Script</em><br>
 Enter JavaScript based filter scripts, which analyse and format the message
 content. In addition, you may dynamically apply styles to the dash,

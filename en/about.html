@@ -35,14 +35,17 @@ else if (navigator.userAgent.match(/(iPod|iPhone|iPad|Safari)/)) {
 </head>
 <body>
 <h1>About MQTT Push Client</h1>
-<p>MQTT topics that have been defined in this app are monitored by the
-RadioShuttle MQTT push server. Upon activity, they are immediately forwarded
-to the app, which displays the message, accompanied by an audio signal,
-as a push notification.</p>
-<p>The app manages push notification settings. It can also display all push
-notifications. After one-time setup, push notifications are automatically
-received, even if the app is not running. The app is the link between the
-RadioShuttle MQTT push server and the push services by Apple and Google.</p>
+<p>“MQTT Push Client” is a remote control app for MQTT environments. It allows displaying
+MQTT messages and provides a user interface for displaying custom controls <em>(Dashes)</em>,
+which interacts with  MQTT messages. In addition, it can issue Apple/Google push messages
+to issue alarm notifications to iOS and/or Android mobile devices for specified
+topics.</p>
+<p>After a one-time setup on the mobile device, push notifications are automatically
+received, even if the app is not running. Multiple mobile devices for the same account
+can be added.</p>
+<p>The app interacts with the RadioShuttle MQTT push server which in turn communicates
+with the user's MQTT server <em>(Broker)</em> to collect and handle MQTT messages for
+defined topics.</p>
 <h3>More information:</h3>
 <p style="margin-bottom: -0.5em"><a href="http://www.radioshuttle.de/en/mqtt-2/push-notification/">RadioShuttle Push Notification</a></p>
 <p><a href="http://www.radioshuttle.de/en/radioshuttle-2/">RadioShuttle</a></p>

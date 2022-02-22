@@ -86,7 +86,11 @@ notification and sound signal (depending on the setting).</p>
 <p>Many MQTT servers do not response with an error message if you do not
 have authorization for a topic or the topic does not exist. Therefore it
 is possible that a topic is displayed in the app, but you do not receive
-any notification for that.</p>
+any notification for that.<br>
+<br>
+Also consider that messages larger than 256 kB will be ignored and not delivered
+as a push message. If the content of a push notification is larger than 255 bytes,
+it will always be truncated.</p>
 </div>
 <div class="android">
 <p><img class="thumb" src="../img/topics_list.png" width="275">
