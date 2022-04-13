@@ -17,10 +17,6 @@ $(document).ready(function() {
 		$(".android").hide();
 		$(".apple").show();
 	}
-else if (navigator.userAgent.match(/(iPod|iPhone|iPad|Safari)/)) {
-		$(".android").hide();
-		$(".apple").show();
-	} 
 	$("img.thumb").click(function() {
 		$("img.thumb").show().next("img.large").hide();
 		$(this).hide();
